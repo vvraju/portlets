@@ -1,0 +1,320 @@
+/**
+ * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
+ *
+ * The contents of this file are subject to the terms of the Liferay Enterprise
+ * Subscription License ("License"). You may not use this file except in
+ * compliance with the License. You can obtain a copy of the License by
+ * contacting Liferay, Inc. See the License for the specific language governing
+ * permissions and limitations under the License, including but not limited to
+ * distribution rights of the Software.
+ *
+ *
+ *
+ */
+
+package com.ifli.rapid.service;
+
+import com.liferay.portal.service.ServiceWrapper;
+
+/**
+ * Provides a wrapper for {@link ActiveServiceRequestsLocalService}.
+ *
+ * @author Satya Kola
+ * @see ActiveServiceRequestsLocalService
+ * @generated
+ */
+public class ActiveServiceRequestsLocalServiceWrapper
+	implements ActiveServiceRequestsLocalService,
+		ServiceWrapper<ActiveServiceRequestsLocalService> {
+	public ActiveServiceRequestsLocalServiceWrapper(
+		ActiveServiceRequestsLocalService activeServiceRequestsLocalService) {
+		_activeServiceRequestsLocalService = activeServiceRequestsLocalService;
+	}
+
+	/**
+	* Adds the active service requests to the database. Also notifies the appropriate model listeners.
+	*
+	* @param activeServiceRequests the active service requests
+	* @return the active service requests that was added
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	public com.ifli.rapid.model.ActiveServiceRequests addActiveServiceRequests(
+		com.ifli.rapid.model.ActiveServiceRequests activeServiceRequests)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _activeServiceRequestsLocalService.addActiveServiceRequests(activeServiceRequests);
+	}
+
+	/**
+	* Creates a new active service requests with the primary key. Does not add the active service requests to the database.
+	*
+	* @param QRC_ASR_ID the primary key for the new active service requests
+	* @return the new active service requests
+	*/
+	@Override
+	public com.ifli.rapid.model.ActiveServiceRequests createActiveServiceRequests(
+		int QRC_ASR_ID) {
+		return _activeServiceRequestsLocalService.createActiveServiceRequests(QRC_ASR_ID);
+	}
+
+	/**
+	* Deletes the active service requests with the primary key from the database. Also notifies the appropriate model listeners.
+	*
+	* @param QRC_ASR_ID the primary key of the active service requests
+	* @return the active service requests that was removed
+	* @throws PortalException if a active service requests with the primary key could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	public com.ifli.rapid.model.ActiveServiceRequests deleteActiveServiceRequests(
+		int QRC_ASR_ID)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _activeServiceRequestsLocalService.deleteActiveServiceRequests(QRC_ASR_ID);
+	}
+
+	/**
+	* Deletes the active service requests from the database. Also notifies the appropriate model listeners.
+	*
+	* @param activeServiceRequests the active service requests
+	* @return the active service requests that was removed
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	public com.ifli.rapid.model.ActiveServiceRequests deleteActiveServiceRequests(
+		com.ifli.rapid.model.ActiveServiceRequests activeServiceRequests)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _activeServiceRequestsLocalService.deleteActiveServiceRequests(activeServiceRequests);
+	}
+
+	@Override
+	public com.liferay.portal.kernel.dao.orm.DynamicQuery dynamicQuery() {
+		return _activeServiceRequestsLocalService.dynamicQuery();
+	}
+
+	/**
+	* Performs a dynamic query on the database and returns the matching rows.
+	*
+	* @param dynamicQuery the dynamic query
+	* @return the matching rows
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	@SuppressWarnings("rawtypes")
+	public java.util.List dynamicQuery(
+		com.liferay.portal.kernel.dao.orm.DynamicQuery dynamicQuery)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _activeServiceRequestsLocalService.dynamicQuery(dynamicQuery);
+	}
+
+	/**
+	* Performs a dynamic query on the database and returns a range of the matching rows.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.ifli.rapid.model.impl.ActiveServiceRequestsModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param dynamicQuery the dynamic query
+	* @param start the lower bound of the range of model instances
+	* @param end the upper bound of the range of model instances (not inclusive)
+	* @return the range of matching rows
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	@SuppressWarnings("rawtypes")
+	public java.util.List dynamicQuery(
+		com.liferay.portal.kernel.dao.orm.DynamicQuery dynamicQuery, int start,
+		int end) throws com.liferay.portal.kernel.exception.SystemException {
+		return _activeServiceRequestsLocalService.dynamicQuery(dynamicQuery,
+			start, end);
+	}
+
+	/**
+	* Performs a dynamic query on the database and returns an ordered range of the matching rows.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.ifli.rapid.model.impl.ActiveServiceRequestsModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param dynamicQuery the dynamic query
+	* @param start the lower bound of the range of model instances
+	* @param end the upper bound of the range of model instances (not inclusive)
+	* @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	* @return the ordered range of matching rows
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	@SuppressWarnings("rawtypes")
+	public java.util.List dynamicQuery(
+		com.liferay.portal.kernel.dao.orm.DynamicQuery dynamicQuery, int start,
+		int end,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _activeServiceRequestsLocalService.dynamicQuery(dynamicQuery,
+			start, end, orderByComparator);
+	}
+
+	/**
+	* Returns the number of rows that match the dynamic query.
+	*
+	* @param dynamicQuery the dynamic query
+	* @return the number of rows that match the dynamic query
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	public long dynamicQueryCount(
+		com.liferay.portal.kernel.dao.orm.DynamicQuery dynamicQuery)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _activeServiceRequestsLocalService.dynamicQueryCount(dynamicQuery);
+	}
+
+	/**
+	* Returns the number of rows that match the dynamic query.
+	*
+	* @param dynamicQuery the dynamic query
+	* @param projection the projection to apply to the query
+	* @return the number of rows that match the dynamic query
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	public long dynamicQueryCount(
+		com.liferay.portal.kernel.dao.orm.DynamicQuery dynamicQuery,
+		com.liferay.portal.kernel.dao.orm.Projection projection)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _activeServiceRequestsLocalService.dynamicQueryCount(dynamicQuery,
+			projection);
+	}
+
+	@Override
+	public com.ifli.rapid.model.ActiveServiceRequests fetchActiveServiceRequests(
+		int QRC_ASR_ID)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _activeServiceRequestsLocalService.fetchActiveServiceRequests(QRC_ASR_ID);
+	}
+
+	/**
+	* Returns the active service requests with the primary key.
+	*
+	* @param QRC_ASR_ID the primary key of the active service requests
+	* @return the active service requests
+	* @throws PortalException if a active service requests with the primary key could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	public com.ifli.rapid.model.ActiveServiceRequests getActiveServiceRequests(
+		int QRC_ASR_ID)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _activeServiceRequestsLocalService.getActiveServiceRequests(QRC_ASR_ID);
+	}
+
+	@Override
+	public com.liferay.portal.model.PersistedModel getPersistedModel(
+		java.io.Serializable primaryKeyObj)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _activeServiceRequestsLocalService.getPersistedModel(primaryKeyObj);
+	}
+
+	/**
+	* Returns a range of all the active service requestses.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.ifli.rapid.model.impl.ActiveServiceRequestsModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param start the lower bound of the range of active service requestses
+	* @param end the upper bound of the range of active service requestses (not inclusive)
+	* @return the range of active service requestses
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	public java.util.List<com.ifli.rapid.model.ActiveServiceRequests> getActiveServiceRequestses(
+		int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _activeServiceRequestsLocalService.getActiveServiceRequestses(start,
+			end);
+	}
+
+	/**
+	* Returns the number of active service requestses.
+	*
+	* @return the number of active service requestses
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	public int getActiveServiceRequestsesCount()
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _activeServiceRequestsLocalService.getActiveServiceRequestsesCount();
+	}
+
+	/**
+	* Updates the active service requests in the database or adds it if it does not yet exist. Also notifies the appropriate model listeners.
+	*
+	* @param activeServiceRequests the active service requests
+	* @return the active service requests that was updated
+	* @throws SystemException if a system exception occurred
+	*/
+	@Override
+	public com.ifli.rapid.model.ActiveServiceRequests updateActiveServiceRequests(
+		com.ifli.rapid.model.ActiveServiceRequests activeServiceRequests)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _activeServiceRequestsLocalService.updateActiveServiceRequests(activeServiceRequests);
+	}
+
+	/**
+	* Returns the Spring bean ID for this bean.
+	*
+	* @return the Spring bean ID for this bean
+	*/
+	@Override
+	public java.lang.String getBeanIdentifier() {
+		return _activeServiceRequestsLocalService.getBeanIdentifier();
+	}
+
+	/**
+	* Sets the Spring bean ID for this bean.
+	*
+	* @param beanIdentifier the Spring bean ID for this bean
+	*/
+	@Override
+	public void setBeanIdentifier(java.lang.String beanIdentifier) {
+		_activeServiceRequestsLocalService.setBeanIdentifier(beanIdentifier);
+	}
+
+	@Override
+	public java.lang.Object invokeMethod(java.lang.String name,
+		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
+		throws java.lang.Throwable {
+		return _activeServiceRequestsLocalService.invokeMethod(name,
+			parameterTypes, arguments);
+	}
+
+	/**
+	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
+	 */
+	public ActiveServiceRequestsLocalService getWrappedActiveServiceRequestsLocalService() {
+		return _activeServiceRequestsLocalService;
+	}
+
+	/**
+	 * @deprecated As of 6.1.0, replaced by {@link #setWrappedService}
+	 */
+	public void setWrappedActiveServiceRequestsLocalService(
+		ActiveServiceRequestsLocalService activeServiceRequestsLocalService) {
+		_activeServiceRequestsLocalService = activeServiceRequestsLocalService;
+	}
+
+	@Override
+	public ActiveServiceRequestsLocalService getWrappedService() {
+		return _activeServiceRequestsLocalService;
+	}
+
+	@Override
+	public void setWrappedService(
+		ActiveServiceRequestsLocalService activeServiceRequestsLocalService) {
+		_activeServiceRequestsLocalService = activeServiceRequestsLocalService;
+	}
+
+	private ActiveServiceRequestsLocalService _activeServiceRequestsLocalService;
+}

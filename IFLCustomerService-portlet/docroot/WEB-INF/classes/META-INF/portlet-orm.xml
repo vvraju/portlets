@@ -1,0 +1,1944 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.ifli.rapid.model.impl.ActiveServiceRequestsModelImpl">
+		<attributes>
+			<id name="QRC_ASR_ID" />
+			<basic name="TYPE_ID" />
+			<basic name="SUB_TYPE_ID" />
+			<basic name="ASSIGNED_TO" />
+			<basic name="HANDLED_BY" />
+			<basic name="STATUS_ID" />
+			<basic name="CUSTOMER_ID" />
+			<basic name="CUST_SR_NUMBER" />
+			<basic name="ADDITIONAL_DATA_XML" />
+			<basic name="INSERTED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="INSERTED_BY" />
+			<basic name="UPDATED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="UPDATED_BY" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.AddressChangeReqDetailsModelImpl">
+		<attributes>
+			<id name="ADDR_CHANGE_DETAILS_ID" />
+			<basic name="REQUEST_SUBMIT_TYPE" />
+			<basic name="SERVICE_REQUEST_ID" />
+			<basic name="SUB_TYPE" />
+			<basic name="ADDRESS_TYPE_ID" />
+			<basic name="CUSTOMER_ID" />
+			<basic name="SUBMIT_AT_BRANCH" />
+			<basic name="PICKUP_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="PICKUP_TIME" />
+			<basic name="INSERTED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="INSERTED_BY" />
+			<basic name="UPDATED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="UPDATED_BY" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.AddressTypeModelImpl">
+		<attributes>
+			<id name="ADDRESS_TYPE_ID" />
+			<basic name="INSERTED_BY" />
+			<basic name="INSERTED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="UPDATED_BY" />
+			<basic name="UPDATED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ACTIVE_FLAG" />
+			<basic name="ADDRESS_TYPE_DESC" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.BranchDetailsModelImpl">
+		<attributes>
+			<id name="BRANCH_ID" />
+			<basic name="LOCATION_ID" />
+			<basic name="BRANCH_NAME" />
+			<basic name="BRANCH_OPENING_TIME" />
+			<basic name="BRANCH_CLOSING_TIME" />
+			<basic name="ADDRESS_FIRST_LINE" />
+			<basic name="ADDRESS_SECOND_LINE" />
+			<basic name="CITY" />
+			<basic name="STATE" />
+			<basic name="PIN" />
+			<basic name="PRIMARY_CONTACT_NO" />
+			<basic name="OTHER_CONTACT_NO" />
+			<basic name="FAX_NUMBER" />
+			<basic name="BRANCH_CODE" />
+			<basic name="WORK_TIMINGS" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.ChequePaymentRequestModelImpl">
+		<attributes>
+			<id name="ServiceRequestID" />
+			<basic name="ServiceRequestMasterId" />
+			<basic name="description" />
+			<basic name="contactId" />
+			<basic name="startPreferedTime">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="endPreferedTime">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="PreferedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.CityDetailsModelImpl">
+		<attributes>
+			<id name="CITY_ID" />
+			<basic name="CITY_CODE" />
+			<basic name="CITY_NAME" />
+			<basic name="STATE_ID" />
+			<basic name="IS_ACTIVE" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.ClosedServiceRequestsModelImpl">
+		<attributes>
+			<id name="QRC_CSR_ID" />
+			<basic name="TYPE_ID" />
+			<basic name="ASSIGNED_TO" />
+			<basic name="HANDLED_BY" />
+			<basic name="STATUS_ID" />
+			<basic name="CUSTOMER_ID" />
+			<basic name="customerSRNumber" />
+			<basic name="ADDITIONAL_DATA_XML" />
+			<basic name="INSERTED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="INSERTED_BY" />
+			<basic name="UPDATED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="UPDATED_BY" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.ConfirmDetailsModelImpl">
+		<attributes>
+			<id name="ID" />
+			<basic name="QRC_ASR_ID" />
+			<basic name="Approval_Status" />
+			<basic name="Comments" />
+			<basic name="Sign_Flag" />
+			<basic name="CreatedBy" />
+			<basic name="CreatedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.CustomerModelImpl">
+		<attributes>
+			<id name="CUSTOMER_ID" />
+			<basic name="CUSTOMER_SALUTATION" />
+			<basic name="CUSTOMER_FIRST_NAME" />
+			<basic name="CUSTOMER_LAST_NAME" />
+			<basic name="CUSTOMER_MIDDLE_NAME" />
+			<basic name="CUSTOMER_DATE_OF_BIRTH" />
+			<basic name="CUSTOMER_EMAIL_ADDR" />
+			<basic name="OFFICE_NAME" />
+			<basic name="DESIGNATION" />
+			<basic name="DEPARTMENT" />
+			<basic name="PRIMARY_ADDRESS_LINE_1" />
+			<basic name="PRIMARY_ADDRESS_LINE_2" />
+			<basic name="PRIMARY_ADDRESS_LINE_3" />
+			<basic name="PRIMARY_ADDRESS_CITY" />
+			<basic name="PRIMARY_ADDRESS_STATE" />
+			<basic name="PRIMARY_ADDRESS_PINCODE" />
+			<basic name="PHONE_NUMBER_1" />
+			<basic name="PHONE_NUMBER_2" />
+			<basic name="PHONE_NUMBER_3" />
+			<basic name="LOGIN_NAME" />
+			<basic name="GENDER" />
+			<basic name="MARITAL_STATUS" />
+			<basic name="COUNTRY" />
+			<basic name="PRIMARY_ADDRESS_STATE_ID" />
+			<basic name="PRIMARY_ADDRESS_CITY_ID" />
+			<basic name="ADDED_BY" />
+			<basic name="ADDED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="UPDATED_BY" />
+			<basic name="UPDATED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="PANCARD" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.customerAddressModelImpl">
+		<attributes>
+			<id name="CUSTOMER_ADDRESS_ID" />
+			<basic name="CUSTOMER_ID" />
+			<basic name="ADDRESS_LINE_1" />
+			<basic name="ADDRESS_LINE_2" />
+			<basic name="ADDRESS_LINE_3" />
+			<basic name="CHANGE_REQUEST_TYPE" />
+			<basic name="CITY" />
+			<basic name="STATE" />
+			<basic name="CITY_ID" />
+			<basic name="STATE_ID" />
+			<basic name="PIN_CODE" />
+			<basic name="CHANGE_REQUEST_FOR" />
+			<basic name="ADDRESS_TYPE_ID" />
+			<basic name="ADDR_STATUS" />
+			<basic name="INSERTED_BY" />
+			<basic name="INSERTED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="UPDATED_BY" />
+			<basic name="UPDATED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.CustomerFamilyDetailsModelImpl">
+		<attributes>
+			<id name="CUSTOMER_FAMILY_ID" />
+			<basic name="PERSON_NAME" />
+			<basic name="RELATION" />
+			<basic name="DEPENDENT" />
+			<basic name="AGE" />
+			<basic name="CUSTOMER_ID" />
+			<basic name="ADDED_BY" />
+			<basic name="ADDED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="UPDATED_BY" />
+			<basic name="UPDATED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.customerMailIdsModelImpl">
+		<attributes>
+			<id name="ID" />
+			<basic name="CUSTOMER_ID" />
+			<basic name="EMAIL_ID" />
+			<basic name="INSERTED_BY" />
+			<basic name="INSERTED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="UPDATED_BY" />
+			<basic name="UPDATED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.CustomerMobileNumbersModelImpl">
+		<attributes>
+			<id name="ID" />
+			<basic name="CUSTOMER_ID" />
+			<basic name="MOBILE_NUMBER" />
+			<basic name="INSERTED_BY" />
+			<basic name="INSERTED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="UPDATED_BY" />
+			<basic name="UPDATED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.CustomerOtpModelImpl">
+		<attributes>
+			<id name="CUSTOMER_ID" />
+			<basic name="EMAIL_OTP" />
+			<basic name="PHONE_OTP" />
+			<basic name="STATUS" />
+			<basic name="ADDED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="UPDATED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.FamilyRelationsModelImpl">
+		<attributes>
+			<id name="RELATION_ID" />
+			<basic name="RELATION_NAME" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.FundMasterModelImpl">
+		<attributes>
+			<id name="FUND_ID" />
+			<basic name="FUND_NAME" />
+			<basic name="FUND_CODE" />
+			<basic name="INSERTED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="INSERTED_BY" />
+			<basic name="UPDATED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="UPDATED_BY" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.LocationDetailsModelImpl">
+		<attributes>
+			<id name="LOCATION_ID" />
+			<basic name="LOCATION_NAME" />
+			<basic name="CITY_ID" />
+			<basic name="STATE_ID" />
+			<basic name="LATITUDE" />
+			<basic name="LONGITUDE" />
+			<basic name="BRANCH_FLAG" />
+			<basic name="MEDICAL_CENTER_FLAG" />
+			<basic name="DROP_BOX_FLAG" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.NavHistoryModelImpl">
+		<attributes>
+			<id name="NAV_HISTORY_ID" />
+			<basic name="DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="NAV" />
+			<basic name="SALE_PRICE" />
+			<basic name="PURCHASE_PRICE" />
+			<basic name="FUND_CODE" />
+			<basic name="FUND_NAME" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.PaymentDetailsModelImpl">
+		<attributes>
+			<id name="PaymentId" />
+			<basic name="PremiumFrequencyID" />
+			<basic name="TransactionStatusID" />
+			<basic name="RequestTypeID" />
+			<basic name="PaymentOptionId" />
+			<basic name="PaymentMethodID" />
+			<basic name="ProductID" />
+			<basic name="ProposalId" />
+			<basic name="PremiumAmount" />
+			<basic name="BankName" />
+			<basic name="CreditCardNo" />
+			<basic name="CardType" />
+			<basic name="NameAsCard" />
+			<basic name="CVVNo" />
+			<basic name="CardExpiryDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="CreatedBy" />
+			<basic name="CreatedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedBy" />
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ChequePickupRequestId" />
+			<basic name="TransactionReferenceNo" />
+			<basic name="BillDeskMerchantId" />
+			<basic name="BobMerchantTxnId" />
+			<basic name="PaymentReceiptNo" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.PaymentGatewayMasterModelImpl">
+		<attributes>
+			<id name="GatewayID" />
+			<basic name="GatewayDescription" />
+			<basic name="GatewayKey" />
+			<basic name="IsActive" />
+			<basic name="CreatedBy" />
+			<basic name="CreatedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedBy" />
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="Priority" />
+			<basic name="ItemCode" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.PaymentMethodMasterModelImpl">
+		<attributes>
+			<id name="PaymentMethodID" />
+			<basic name="PaymentMethodKey" />
+			<basic name="IsActive" />
+			<basic name="CreatedBy" />
+			<basic name="CreatedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedBy" />
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="Priority" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.PaymentMethodTypeModelImpl">
+		<attributes>
+			<id name="Id" />
+			<basic name="PaymentMethodID" />
+			<basic name="GatewayID" />
+			<basic name="TypeKey" />
+			<basic name="Description" />
+			<basic name="BankId" />
+			<basic name="Active" />
+			<basic name="CreatedBy" />
+			<basic name="CreatedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedBy" />
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="Type" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.PaymentOptionMasterModelImpl">
+		<attributes>
+			<id name="PaymentOptionId" />
+			<basic name="PaymentOptionKey" />
+			<basic name="IsActive" />
+			<basic name="CreatedBy" />
+			<basic name="CreatedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedBy" />
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="Priority" />
+			<basic name="PaymentOptionDesc" />
+			<basic name="isProcessPayment" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.PaymentOptionTypesModelImpl">
+		<attributes>
+			<id name="PaymentOptionTypesId" />
+			<basic name="PaymentOptionId" />
+			<basic name="OptionTypesKey" />
+			<basic name="IsActive" />
+			<basic name="CreatedBy" />
+			<basic name="CreatedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedBy" />
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="Priority" />
+			<basic name="PaymentOptionTypeDesc" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.PaymentTransactionStatusMasterModelImpl">
+		<attributes>
+			<id name="TransactionStatusID" />
+			<basic name="StatusCode" />
+			<basic name="StatusName" />
+			<basic name="StatusDesc" />
+			<basic name="IsActive" />
+			<basic name="CreatedBy" />
+			<basic name="CreatedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedBy" />
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.PincodeDetailsModelImpl">
+		<attributes>
+			<id name="PIN_ID" />
+			<basic name="CITY_ID" />
+			<basic name="STATE_ID" />
+			<basic name="PIN_CODE" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.POLICY_DOC_TYPESModelImpl">
+		<attributes>
+			<id name="ID" />
+			<basic name="DOC_NAME" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.PolicyAddressModelImpl">
+		<attributes>
+			<id name="ID" />
+			<basic name="POLICY_ID" />
+			<basic name="CUSTOMER_ID" />
+			<basic name="CUSTOMER_ADDRESS_ID" />
+			<basic name="PINCODE" />
+			<basic name="CITY" />
+			<basic name="STATE" />
+			<basic name="ADDRESS_LINE_1" />
+			<basic name="ADDRESS_LINE_2" />
+			<basic name="ADDRESS_LINE_3" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.PolicyFundModelImpl">
+		<attributes>
+			<id name="POLICY_FUND_ID" />
+			<basic name="POLICY_ID" />
+			<basic name="FUND_ID" />
+			<basic name="FUND_UNITS" />
+			<basic name="NAV" />
+			<basic name="TOTAL_FUND" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.PolicyFundSwitchCounterModelImpl">
+		<attributes>
+			<id name="POLICY_ID" />
+			<basic name="FUND_SWITCH_COUNTER" />
+			<basic name="FUND_SWITCH_YEAR">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.PolicyFundSwitchDetailsModelImpl">
+		<attributes>
+			<id name="FUND_SWITCH_ID" />
+			<basic name="POLICY_ID" />
+			<basic name="QRC_ASR_ID" />
+			<basic name="FUND_FROM" />
+			<basic name="FUND_TO" />
+			<basic name="PRECENTAGE_OF_UNITS" />
+			<basic name="INSERTED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="INSERTED_BY" />
+			<basic name="UPDATED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="UPDATED_BY" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.PolicyInfoModelImpl">
+		<attributes>
+			<id name="POLICY_ID" />
+			<basic name="CUSTOMER_ID" />
+			<basic name="PRODUCT_ID" />
+			<basic name="POLICY_DATE" />
+			<basic name="NEXT_PREMIUM_DUEDATE" />
+			<basic name="POLICY_HOLDER1_FIRST_NAME" />
+			<basic name="POLICY_HOLDER1_MIDDLE_NAME" />
+			<basic name="POLICY_HOLDER1_LAST_NAME" />
+			<basic name="SUM_ASSURED" />
+			<basic name="POLICY_HOLDER2_FIRST_NAME" />
+			<basic name="POLICY_HOLDER2_MIDDLE_NAME" />
+			<basic name="POLICY_HOLDER2_LAST_NAME" />
+			<basic name="CHILD_FIRST_NAME" />
+			<basic name="CHILD_DOB" />
+			<basic name="CHILD_LAST_NAME" />
+			<basic name="CURRENT_STATUS" />
+			<basic name="PREMIUM_AMOUNT" />
+			<basic name="FREQUENCY" />
+			<basic name="BRANCH_CODE" />
+			<basic name="LG_CODE" />
+			<basic name="APPLICATION_NUMBER" />
+			<basic name="APPLICATION_DATE" />
+			<basic name="POLICY_HOLDER1_TITLE" />
+			<basic name="CRO_NAME" />
+			<basic name="CRO_NUMBER" />
+			<basic name="BRANCH_NAME" />
+			<basic name="PRODUCT_NAME" />
+			<basic name="REQUIREMENT_FLAG" />
+			<basic name="TERM" />
+			<basic name="MATURITY_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="AMOUNT_DEPOSITED" />
+			<basic name="TOTAL_DUE_AMT" />
+			<basic name="CHANNEL_TYPE" />
+			<basic name="LIFE_ASSURED_NAME" />
+			<basic name="LIFE_ASSURED_DOB">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="POLICY_HOLDER1_EMAIL" />
+			<basic name="POLICY_HOLDER1_ADD1" />
+			<basic name="POLICY_HOLDER1_ADD2" />
+			<basic name="POLICY_HOLDER1_CONTACT1" />
+			<basic name="POLICY_HOLDER1_CONTACT2" />
+			<basic name="POLICY_HOLDER1_DOB" />
+			<basic name="RISK_COMMENCEMENT_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.PolicyPremPercentageModelImpl">
+		<attributes>
+			<id name="PREM_PERCENTAGE_ID" />
+			<basic name="POLICY_ID" />
+			<basic name="FUND_ID" />
+			<basic name="FUND_PERCENTAGE" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.PolicyPremRedirectionDetailsModelImpl">
+		<attributes>
+			<id name="PREM_REDIRECTION_ID" />
+			<basic name="POLICY_ID" />
+			<basic name="TRANSACTION_AUDIT_ID" />
+			<basic name="FUND_CODE" />
+			<basic name="ALLOCATION_PERCENTAGE" />
+			<basic name="SENT_TO_ODS_FLAG" />
+			<basic name="INSERTED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="INSERTED_BY" />
+			<basic name="UPDATED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="UPDATED_BY" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.PolicyTopupDetailsModelImpl">
+		<attributes>
+			<id name="TOPUP_ID" />
+			<basic name="POLICY_ID" />
+			<basic name="QRC_ASR_ID" />
+			<basic name="FUND_ID" />
+			<basic name="FUND_VALUE" />
+			<basic name="TOPUP_VALUE" />
+			<basic name="TOT_VALUE" />
+			<basic name="TOPUP_PERCENTAGE" />
+			<basic name="CreatedBy" />
+			<basic name="CreatedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedBy" />
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.PREMIUM_PAID_CERTIFICATEModelImpl">
+		<attributes>
+			<id name="ID" />
+			<basic name="Financial_Year" />
+			<basic name="Generation_Date" />
+			<basic name="OwnerName" />
+			<basic name="Addrs1" />
+			<basic name="Addrs2" />
+			<basic name="Addrs3" />
+			<basic name="Addrs4" />
+			<basic name="Addrs5" />
+			<basic name="Postcode" />
+			<basic name="MobilePhoneNo" />
+			<basic name="Email_ID" />
+			<basic name="Client_ID" />
+			<basic name="Contract_Type_Desc" />
+			<basic name="ContrNo" />
+			<basic name="Installment_Prem" />
+			<basic name="Billing_Frequency" />
+			<basic name="SumAssured" />
+			<basic name="Total_Pre_Paid" />
+			<basic name="Total_Pre_Due" />
+			<basic name="Coverage" />
+			<basic name="Fin_Year" />
+			<basic name="LETTERCTL" />
+			<basic name="LOCPATH" />
+			<basic name="DOCIDNUM" />
+			<basic name="status" />
+			<basic name="lastProcessedDate" />
+			<basic name="createDate" />
+			<basic name="GLCODE" />
+			<basic name="BRANCH_CODE" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.PremiumFrequencyMasterModelImpl">
+		<attributes>
+			<id name="PremiumFrequencyId" />
+			<basic name="PremiumFrequencyDescription" />
+			<basic name="IsActive" />
+			<basic name="CreatedBy" />
+			<basic name="CreatedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedBy" />
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="Priority" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.PremiumTypeModelImpl">
+		<attributes>
+			<id name="Id" />
+			<basic name="Name" />
+			<basic name="Active" />
+			<basic name="CreatedBy" />
+			<basic name="CreatedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedBy" />
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="Priority" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.ProductFundMappingModelImpl">
+		<attributes>
+			<id name="ID" />
+			<basic name="PRODUCT_CODE" />
+			<basic name="FUND_CODE" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.ProofDocsModelImpl">
+		<attributes>
+			<id name="ID" />
+			<basic name="DOC_TYPE" />
+			<basic name="DOC_NAME" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.QRCStatusModelImpl">
+		<attributes>
+			<id name="QRC_STATUS_ID" />
+			<basic name="STATUS_DESC" />
+			<basic name="ACTIVE_FLAG" />
+			<basic name="INSERTED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="INSERTED_BY" />
+			<basic name="UPDATED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="UPDATED_BY" />
+			<basic name="DELETED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="DELETED_BY" />
+			<basic name="QRC_ASR_ID" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.QRCSubTypeMasterModelImpl">
+		<attributes>
+			<id name="QRC_SUB_TYPE_ID" />
+			<basic name="QRC_TYPE_ID" />
+			<basic name="SUB_TYPE_DESC" />
+			<basic name="ACTIVE_FLAG" />
+			<basic name="INSERTED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="INSERTED_BY" />
+			<basic name="UPDATED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="UPDATED_BY" />
+			<basic name="DELETED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="DELETED_BY" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.QRCTeamMasterModelImpl">
+		<attributes>
+			<id name="QRC_TM_ID" />
+			<basic name="TM_DESC" />
+			<basic name="ACTIVE_FLAG" />
+			<basic name="INSERTED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="INSERTED_BY" />
+			<basic name="UPDATED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="UPDATED_BY" />
+			<basic name="DELETED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="DELETED_BY" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.QRCTypeMasterModelImpl">
+		<attributes>
+			<id name="QRC_TYPE_ID" />
+			<basic name="TYPE_DESC" />
+			<basic name="ACTIVE_FLAG" />
+			<basic name="INSERTED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="INSERTED_BY" />
+			<basic name="UPDATED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="UPDATED_BY" />
+			<basic name="DELETED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="DELETED_BY" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.QRCUserModelImpl">
+		<attributes>
+			<id name="QRC_USER_ID" />
+			<basic name="USER_NAME" />
+			<basic name="TEAM_ID" />
+			<basic name="USER_DETAILS" />
+			<basic name="ACTIVE_FLAG" />
+			<basic name="INSERTED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="INSERTED_BY" />
+			<basic name="UPDATED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="UPDATED_BY" />
+			<basic name="DELETED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="DELETED_BY" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.Recommended_ProductsModelImpl">
+		<attributes>
+			<id name="PRODUCT_ID" />
+			<basic name="PRODUCT_NAME" />
+			<basic name="IMG_URL" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.RENEWAL_PREMIUMModelImpl">
+		<attributes>
+			<id name="ID_old" />
+			<basic name="LETTERCT" />
+			<basic name="LOCPATH" />
+			<basic name="DOCIDNUM" />
+			<basic name="CLNTNUM" />
+			<basic name="OwnerName" />
+			<basic name="Addrs5" />
+			<basic name="Postcode" />
+			<basic name="Document_Number" />
+			<basic name="ContrNo" />
+			<basic name="Next_Premium_due_Date" />
+			<basic name="Total_Premium" />
+			<basic name="MainCovr_Risk_Cess_Term" />
+			<basic name="MainCovr_Prem_Cess_Term" />
+			<basic name="Contract_Commencement_Date" />
+			<basic name="Billing_Date" />
+			<basic name="Payment_Desc" />
+			<basic name="Receipt_Date" />
+			<basic name="Payment_Mode" />
+			<basic name="Payment_Description" />
+			<basic name="Receipt_Amount" />
+			<basic name="Contract_Type" />
+			<basic name="Contract_Type_Desc" />
+			<basic name="Current_Bill_Frequency" />
+			<basic name="Suspense_Amount" />
+			<basic name="Footer_Details" />
+			<basic name="Addrs1" />
+			<basic name="Addrs2" />
+			<basic name="Addrs3" />
+			<basic name="Addrs4" />
+			<basic name="Temp_Rcptno" />
+			<basic name="Life_Name" />
+			<basic name="CAMPAIGN" />
+			<basic name="Agent_Bank_Branch_Code" />
+			<basic name="Agent_Branch_name" />
+			<basic name="Agent_Bank_name" />
+			<basic name="Mobile_phone" />
+			<basic name="Email_id" />
+			<basic name="CreateDate" />
+			<basic name="BatchMode" />
+			<basic name="Status" />
+			<basic name="LastProcessedDate" />
+			<basic name="MobilePhoneNo" />
+			<basic name="Cheque_Number" />
+			<basic name="Bank_Name" />
+			<basic name="EmailAddr" />
+			<basic name="ID" />
+			<basic name="BDM" />
+			<basic name="Term" />
+			<basic name="Campaign_Code" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.ServiceMasterModelImpl">
+		<attributes>
+			<id name="SERVICE_MASTER_ID" />
+			<basic name="SERVICE_MASTER_NAME" />
+			<basic name="SERVICE_MASTER_DESC" />
+			<basic name="ACTIVE_FLAG" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.ServiceRequestMasterModelImpl">
+		<attributes>
+			<id name="Id" />
+			<basic name="Type" />
+			<basic name="ContactId" />
+			<basic name="addressTypeId" />
+			<basic name="address" />
+			<basic name="PolicyNo" />
+			<basic name="MobileNo" />
+			<basic name="description" />
+			<basic name="startPreferedTime">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="endPreferedTime">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="PreferedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.ServiceSubMasterModelImpl">
+		<attributes>
+			<id name="SUBMASTER_ID" />
+			<basic name="SUBMASTER_NAME" />
+			<basic name="SUBMASTER_URL" />
+			<basic name="SERVICE_MASTER_ID" />
+			<basic name="ACTIVE_FLAG" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.StateDetailsModelImpl">
+		<attributes>
+			<id name="STATE_ID" />
+			<basic name="STATE_NAME" />
+			<basic name="STATE_CODE" />
+			<basic name="BRANCH_FLAG" />
+			<basic name="MEDICAL_CENTER_FLAG" />
+			<basic name="DROP_BOX_FLAG" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.TempCustomerModelImpl">
+		<attributes>
+			<id name="CUSTOMER_ID" />
+			<basic name="CUSTOMER_SALUTATION" />
+			<basic name="CUSTOMER_FIRST_NAME" />
+			<basic name="CUSTOMER_LAST_NAME" />
+			<basic name="CUSTOMER_MIDDLE_NAME" />
+			<basic name="CUSTOMER_DATE_OF_BIRTH" />
+			<basic name="CUSTOMER_EMAIL_ADDR" />
+			<basic name="OFFICE_NAME" />
+			<basic name="DESIGNATION" />
+			<basic name="DEPARTMENT" />
+			<basic name="PRIMARY_ADDRESS_LINE_1" />
+			<basic name="PRIMARY_ADDRESS_LINE_2" />
+			<basic name="PRIMARY_ADDRESS_LINE_3" />
+			<basic name="PRIMARY_ADDRESS_CITY" />
+			<basic name="PRIMARY_ADDRESS_STATE" />
+			<basic name="PRIMARY_ADDRESS_PINCODE" />
+			<basic name="PHONE_NUMBER_1" />
+			<basic name="PHONE_NUMBER_2" />
+			<basic name="PHONE_NUMBER_3" />
+			<basic name="LOGIN_NAME" />
+			<basic name="GENDER" />
+			<basic name="MARITAL_STATUS" />
+			<basic name="COUNTRY" />
+			<basic name="PRIMARY_ADDRESS_STATE_ID" />
+			<basic name="PRIMARY_ADDRESS_CITY_ID" />
+			<basic name="QRC_ASR_ID" />
+			<basic name="PANCARD" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifli.rapid.model.impl.TempCustomerAddressModelImpl">
+		<attributes>
+			<id name="CUSTOMER_ADDRESS_ID" />
+			<basic name="CUSTOMER_ID" />
+			<basic name="ADDRESS_LINE_1" />
+			<basic name="ADDRESS_LINE_2" />
+			<basic name="ADDRESS_LINE_3" />
+			<basic name="CHANGE_REQUEST_TYPE" />
+			<basic name="CITY" />
+			<basic name="STATE" />
+			<basic name="CITY_ID" />
+			<basic name="STATE_ID" />
+			<basic name="PIN_CODE" />
+			<basic name="CHANGE_REQUEST_FOR" />
+			<basic name="ADDRESS_TYPE_ID" />
+			<basic name="ADDR_STATUS" />
+			<basic name="INSERTED_BY" />
+			<basic name="INSERTED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="UPDATED_BY" />
+			<basic name="UPDATED_DATE">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="QRC_ASR_ID" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifl.rapid.customer.model.impl.ApplyTrnApplicationFormModelImpl">
+		<attributes>
+			<id name="ApplicationFormId" />
+			<basic name="QuoteId" />
+			<basic name="ApplicationRefNo" />
+			<basic name="SeqGenerator" />
+			<basic name="LTRFFormRefNo" />
+			<basic name="PremiumAmount" />
+			<basic name="IsMedicalRequired" />
+			<basic name="ShortPremium" />
+			<basic name="PremiumDueDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="PolicyNo" />
+			<basic name="PolicyElapsedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="PolicyIssueDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="Status" />
+			<basic name="Completion" />
+			<basic name="IsLapsed" />
+			<basic name="NextPremiumDueDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="PolicyStatus" />
+			<basic name="IsActive" />
+			<basic name="CreatedBy" />
+			<basic name="CreatedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedBy" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifl.rapid.customer.model.impl.ApplyTrnQuoteDetailsModelImpl">
+		<attributes>
+			<id name="QuoteId" />
+			<basic name="ContactId" />
+			<basic name="ProductId" />
+			<basic name="PremiumTypeId" />
+			<basic name="PremiumFrequencyId" />
+			<basic name="AssuredTerm" />
+			<basic name="AssuredAge" />
+			<basic name="DataXml" />
+			<basic name="DeathBenefitOption" />
+			<basic name="ExpiryDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="IsStaff" />
+			<basic name="IsActive" />
+			<basic name="PolicyOption" />
+			<basic name="PayingTerm" />
+			<basic name="ProposalStartDate" />
+			<basic name="RefNo" />
+			<basic name="PlanTerm" />
+			<basic name="PremiumTerm" />
+			<basic name="PremiumAmount" />
+			<basic name="SumAssured" />
+			<basic name="SummaryXml" />
+			<basic name="PdfLocation" />
+			<basic name="CreatedBy" />
+			<basic name="CreatedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedBy" />
+			<basic name="pdfDataXml" />
+			<basic name="IsSmoker" />
+			<basic name="SignatureFilePath" />
+			<basic name="BDMSignatureFilePath" />
+			<basic name="BDMId" />
+			<basic name="IsAssisted" />
+			<basic name="InputXML" />
+			<basic name="LeadId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifl.rapid.customer.model.impl.CityModelImpl">
+		<attributes>
+			<id name="CityId" />
+			<basic name="CityCode" />
+			<basic name="CityName" />
+			<basic name="IsActive" />
+			<basic name="CreatedBy" />
+			<basic name="CreatedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedBy" />
+			<basic name="StateId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifl.rapid.customer.model.impl.Config_Mst_GenericMasterModelImpl">
+		<attributes>
+			<id name="GenericMasterId" />
+			<basic name="MasterType" />
+			<basic name="MasterId" />
+			<basic name="MasterKey" />
+			<basic name="IsActive" />
+			<basic name="CreatedBy" />
+			<basic name="CreatedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedBy" />
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="Description" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifl.rapid.customer.model.impl.CRM_Trn_AddressModelImpl">
+		<attributes>
+			<id name="AddressId" />
+			<basic name="ContactId" />
+			<basic name="AddressTypeId" />
+			<basic name="AddressLine1" />
+			<basic name="AddressLine2" />
+			<basic name="AddressLine3" />
+			<basic name="District" />
+			<basic name="StateId" />
+			<basic name="CityId" />
+			<basic name="Pincode" />
+			<basic name="CountryId" />
+			<basic name="IsActive" />
+			<basic name="CreatedBy" />
+			<basic name="CreatedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedBy" />
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifl.rapid.customer.model.impl.CRM_Trn_ContactModelImpl">
+		<attributes>
+			<id name="ContactId" />
+			<basic name="Salutation" />
+			<basic name="FirstName" />
+			<basic name="MiddleName" />
+			<basic name="LastName" />
+			<basic name="PANNo" />
+			<basic name="Gender" />
+			<basic name="BloodGroup" />
+			<basic name="DateOfBirth">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="MaritalStatus" />
+			<basic name="QualificationId" />
+			<basic name="OccupationId" />
+			<basic name="SourceId" />
+			<basic name="CategoryId" />
+			<basic name="ReferredBy" />
+			<basic name="ContactTypeId" />
+			<basic name="DNDActivated" />
+			<basic name="PoliticallyExposed" />
+			<basic name="EIANumber" />
+			<basic name="SeqGenerator" />
+			<basic name="ReferenceNo" />
+			<basic name="EIAServiceProvider" />
+			<basic name="AadharCardNo" />
+			<basic name="WeddingAnniversary">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="Photograph" />
+			<basic name="CreatedBy" />
+			<basic name="CreatedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedBy" />
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="IsActive" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifl.rapid.customer.model.impl.CRM_Trn_PhoneModelImpl">
+		<attributes>
+			<id name="PhoneId" />
+			<basic name="ContactId" />
+			<basic name="PhoneType" />
+			<basic name="PhoneNumber" />
+			<basic name="CreatedBy" />
+			<basic name="CreatedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedBy" />
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="IsActive" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifl.rapid.customer.model.impl.CRM_Trn_PolicyAddressModelImpl">
+		<attributes>
+			<id name="PolicyAddressId" />
+			<basic name="ContactId" />
+			<basic name="PolicyNo" />
+			<basic name="AddressId" />
+			<basic name="IsActive" />
+			<basic name="CreatedBy" />
+			<basic name="CreatedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedBy" />
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifl.rapid.customer.model.impl.CRMTrnContactCommunicationModelImpl">
+		<attributes>
+			<id name="ContactCommunicationId" />
+			<basic name="ContactId" />
+			<basic name="CommunicationMedium" />
+			<basic name="CommunicationMediumId" />
+			<basic name="CreatedBy" />
+			<basic name="CreatedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedBy" />
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="IsActive" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifl.rapid.customer.model.impl.CRMTrnFamilyMemberModelImpl">
+		<attributes>
+			<id name="FamilyMemberId" />
+			<basic name="ContactId" />
+			<basic name="MemberId" />
+			<basic name="RelationshipId" />
+			<basic name="FinanciallyDependent" />
+			<basic name="IsActive" />
+			<basic name="CreatedBy" />
+			<basic name="CreatedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedBy" />
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifl.rapid.customer.model.impl.LocMstBranchLocationModelImpl">
+		<attributes>
+			<id name="BranchId" />
+			<basic name="BranchName" />
+			<basic name="BranchOpeningTime" />
+			<basic name="BranchClosingTime" />
+			<basic name="AddressFirstLine" />
+			<basic name="AddressSecondLine" />
+			<basic name="PrimaryContactNo" />
+			<basic name="OtherContactNo" />
+			<basic name="FaxNumber" />
+			<basic name="LocationId" />
+			<basic name="LocationId_old" />
+			<basic name="Longitude" />
+			<basic name="Latitude" />
+			<basic name="BranchCode" />
+			<basic name="CreatedBy" />
+			<basic name="CreatedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedBy" />
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="IsActive" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifl.rapid.customer.model.impl.LocMstLocationModelImpl">
+		<attributes>
+			<id name="LocationId" />
+			<basic name="StateId" />
+			<basic name="CityId" />
+			<basic name="PinCode" />
+			<basic name="AreaName" />
+			<basic name="Latitude" />
+			<basic name="Longitude" />
+			<basic name="CreatedBy" />
+			<basic name="CreatedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedBy" />
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="IsActive" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifl.rapid.customer.model.impl.PrdMstProductModelImpl">
+		<attributes>
+			<id name="ProductId" />
+			<basic name="ProductKey" />
+			<basic name="DisplayOrder" />
+			<basic name="RenewalDuration" />
+			<basic name="ShortTermDuration" />
+			<basic name="MinPlanTerm" />
+			<basic name="MaxPlanTerm" />
+			<basic name="MinSumAssured" />
+			<basic name="MaxSumAssured" />
+			<basic name="IsRegularPremium" />
+			<basic name="IsLimitedPremium" />
+			<basic name="IsSinglePremium" />
+			<basic name="IsActive" />
+			<basic name="CreatedBy" />
+			<basic name="CreatedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedBy" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifl.rapid.customer.model.impl.QrcMstRequestsModelImpl">
+		<attributes>
+			<id name="RequestId" />
+			<basic name="Category" />
+			<basic name="CallType" />
+			<basic name="CallSubType" />
+			<basic name="Keyword" />
+			<basic name="IsActive" />
+			<basic name="CreatedBy" />
+			<basic name="CreatedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedBy" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifl.rapid.customer.model.impl.QrcMstServicesModelImpl">
+		<attributes>
+			<id name="ServiceId" />
+			<basic name="ServiceName" />
+			<basic name="Description" />
+			<basic name="CreatedBy" />
+			<basic name="CreatedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedBy" />
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="IsActive" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifl.rapid.customer.model.impl.QrcMstSubServicesModelImpl">
+		<attributes>
+			<id name="SubServiceId" />
+			<basic name="SubServiceName" />
+			<basic name="SubServiceUrl" />
+			<basic name="ServiceId" />
+			<basic name="IsActive" />
+			<basic name="CreatedBy" />
+			<basic name="CreatedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedBy" />
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifl.rapid.customer.model.impl.QrcTrnHistoryModelImpl">
+		<attributes>
+			<id name="HistoryId" />
+			<basic name="ContactId" />
+			<basic name="CreatedContactId" />
+			<basic name="RequestType" />
+			<basic name="ChangeRequestType" />
+			<basic name="PickupDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="PickupTime" />
+			<basic name="XMLData" />
+			<basic name="AddressTypeId" />
+			<basic name="BranchId" />
+			<basic name="IsActive" />
+			<basic name="CreatedBy" />
+			<basic name="CreatedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedBy" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifl.rapid.customer.model.impl.QrcTrnOtpModelImpl">
+		<attributes>
+			<id name="Otp_Id" />
+			<basic name="Otp" />
+			<basic name="ContactId" />
+			<basic name="CreatedBy" />
+			<basic name="CreatedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedBy" />
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="IsActive" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifl.rapid.customer.model.impl.QrcTrnServiceRequestsModelImpl">
+		<attributes>
+			<id name="ServiceRequestId" />
+			<basic name="ContactId" />
+			<basic name="SrId" />
+			<basic name="ProcessId" />
+			<basic name="Source" />
+			<basic name="Channel" />
+			<basic name="Priority" />
+			<basic name="PolicyNo" />
+			<basic name="CaseDetails" />
+			<basic name="IsManual" />
+			<basic name="IsLAUpdated" />
+			<basic name="Comments" />
+			<basic name="IsSignVerified" />
+			<basic name="RequestId" />
+			<basic name="AssignedTo" />
+			<basic name="CreatedContactId" />
+			<basic name="HistoryId" />
+			<basic name="AddressTypeId" />
+			<basic name="IsActive" />
+			<basic name="CreatedBy" />
+			<basic name="CreatedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedBy" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ifl.rapid.customer.model.impl.StateModelImpl">
+		<attributes>
+			<id name="StateId" />
+			<basic name="StateCode" />
+			<basic name="StateName" />
+			<basic name="IsActive" />
+			<basic name="CreatedBy" />
+			<basic name="CreatedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="ModifiedBy" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.ifli.rapid.model.impl.ActiveServiceRequestsImpl" name="ActiveServiceRequests">
+		<table name="QRC_ACTIVE_SERVICE_REQS" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.AddressChangeReqDetailsImpl" name="AddressChangeReqDetails">
+		<table name="addr_change_req_details" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.AddressTypeImpl" name="AddressType">
+		<table name="address_type" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.BranchDetailsImpl" name="BranchDetails">
+		<table name="branch_details" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.ChequePaymentRequestImpl" name="ChequePaymentRequest">
+		<table name="ChequePaymentRequest" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.CityDetailsImpl" name="CityDetails">
+		<table name="city_details" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.ClosedServiceRequestsImpl" name="ClosedServiceRequests">
+		<table name="QRC_CLOSED_SERVICE_REQS" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.ConfirmDetailsImpl" name="ConfirmDetails">
+		<table name="confirm_details" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.CustomerImpl" name="Customer">
+		<table name="customer" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.customerAddressImpl" name="customerAddress">
+		<table name="customer_address" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.CustomerFamilyDetailsImpl" name="CustomerFamilyDetails">
+		<table name="customer_family" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.customerMailIdsImpl" name="customerMailIds">
+		<table name="customer_mailids" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.CustomerMobileNumbersImpl" name="CustomerMobileNumbers">
+		<table name="customer_mobile_numbers" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.CustomerOtpImpl" name="CustomerOtp">
+		<table name="customer_otp" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.FamilyRelationsImpl" name="FamilyRelations">
+		<table name="family_relations" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.FundMasterImpl" name="FundMaster">
+		<table name="fund_master" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.LocationDetailsImpl" name="LocationDetails">
+		<table name="location_details" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.NavHistoryImpl" name="NavHistory">
+		<table name="nav_history" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.PaymentDetailsImpl" name="PaymentDetails">
+		<table name="PaymentDetails" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.PaymentGatewayMasterImpl" name="PaymentGatewayMaster">
+		<table name="PaymentGatewayMaster" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.PaymentMethodMasterImpl" name="PaymentMethodMaster">
+		<table name="PaymentMethodMaster" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.PaymentMethodTypeImpl" name="PaymentMethodType">
+		<table name="PaymentMethodType" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.PaymentOptionMasterImpl" name="PaymentOptionMaster">
+		<table name="PaymentOptionMaster" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.PaymentOptionTypesImpl" name="PaymentOptionTypes">
+		<table name="PaymentOptionTypes" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.PaymentTransactionStatusMasterImpl" name="PaymentTransactionStatusMaster">
+		<table name="PaymentTransactionStatusMaster" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.PincodeDetailsImpl" name="PincodeDetails">
+		<table name="pincode_details" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.POLICY_DOC_TYPESImpl" name="POLICY_DOC_TYPES">
+		<table name="POLICY_DOC_TYPES" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.PolicyAddressImpl" name="PolicyAddress">
+		<table name="policy_address" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.PolicyFundImpl" name="PolicyFund">
+		<table name="policy_fund" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.PolicyFundSwitchCounterImpl" name="PolicyFundSwitchCounter">
+		<table name="policy_fund_switch_counter" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.PolicyFundSwitchDetailsImpl" name="PolicyFundSwitchDetails">
+		<table name="policy_fund_switch_details" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.PolicyInfoImpl" name="PolicyInfo">
+		<table name="policy_info" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.PolicyPremPercentageImpl" name="PolicyPremPercentage">
+		<table name="policy_prem_percentage" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.PolicyPremRedirectionDetailsImpl" name="PolicyPremRedirectionDetails">
+		<table name="policy_prem_redirection_details" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.PolicyTopupDetailsImpl" name="PolicyTopupDetails">
+		<table name="policy_topup_details" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.PREMIUM_PAID_CERTIFICATEImpl" name="PREMIUM_PAID_CERTIFICATE">
+		<table name="PREMIUM_PAID_CERTIFICATE" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.PremiumFrequencyMasterImpl" name="PremiumFrequencyMaster">
+		<table name="PremiumFrequencyMaster" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.PremiumTypeImpl" name="PremiumType">
+		<table name="PremiumType" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.ProductFundMappingImpl" name="ProductFundMapping">
+		<table name="product_fund_mapping" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.ProofDocsImpl" name="ProofDocs">
+		<table name="proof_docs" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.QRCStatusImpl" name="QRCStatus">
+		<table name="QRC_Status" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.QRCSubTypeMasterImpl" name="QRCSubTypeMaster">
+		<table name="QRC_SUBTYPE_MASTER" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.QRCTeamMasterImpl" name="QRCTeamMaster">
+		<table name="QRC_TEAM_MASTER" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.QRCTypeMasterImpl" name="QRCTypeMaster">
+		<table name="QRC_TYPE_MASTER" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.QRCUserImpl" name="QRCUser">
+		<table name="QRC_USER" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.Recommended_ProductsImpl" name="Recommended_Products">
+		<table name="recommended_products" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.RENEWAL_PREMIUMImpl" name="RENEWAL_PREMIUM">
+		<table name="HPRMRCP1" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.ServiceMasterImpl" name="ServiceMaster">
+		<table name="service_master" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.ServiceRequestMasterImpl" name="ServiceRequestMaster">
+		<table name="ServiceRequestMaster" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.ServiceSubMasterImpl" name="ServiceSubMaster">
+		<table name="service_submaster" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.StateDetailsImpl" name="StateDetails">
+		<table name="state_details" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.TempCustomerImpl" name="TempCustomer">
+		<table name="temp_customer" />
+		<attributes />
+	</entity>
+	<entity class="com.ifli.rapid.model.impl.TempCustomerAddressImpl" name="TempCustomerAddress">
+		<table name="temp_customer_address" />
+		<attributes />
+	</entity>
+	<entity class="com.ifl.rapid.customer.model.impl.ApplyTrnApplicationFormImpl" name="ApplyTrnApplicationForm">
+		<table name="Apply_Trn_ApplicationForm" />
+		<attributes />
+	</entity>
+	<entity class="com.ifl.rapid.customer.model.impl.ApplyTrnQuoteDetailsImpl" name="ApplyTrnQuoteDetails">
+		<table name="Apply_Trn_QuoteDetails" />
+		<attributes />
+	</entity>
+	<entity class="com.ifl.rapid.customer.model.impl.CityImpl" name="City">
+		<table name="Loc_Mst_City" />
+		<attributes />
+	</entity>
+	<entity class="com.ifl.rapid.customer.model.impl.Config_Mst_GenericMasterImpl" name="Config_Mst_GenericMaster">
+		<table name="Config_Mst_GenericMaster" />
+		<attributes />
+	</entity>
+	<entity class="com.ifl.rapid.customer.model.impl.CRM_Trn_AddressImpl" name="CRM_Trn_Address">
+		<table name="CRM_Trn_Address" />
+		<attributes />
+	</entity>
+	<entity class="com.ifl.rapid.customer.model.impl.CRM_Trn_ContactImpl" name="CRM_Trn_Contact">
+		<table name="CRM_Trn_Contact" />
+		<attributes />
+	</entity>
+	<entity class="com.ifl.rapid.customer.model.impl.CRM_Trn_PhoneImpl" name="CRM_Trn_Phone">
+		<table name="CRM_Trn_Phone" />
+		<attributes />
+	</entity>
+	<entity class="com.ifl.rapid.customer.model.impl.CRM_Trn_PolicyAddressImpl" name="CRM_Trn_PolicyAddress">
+		<table name="CRM_Trn_PolicyAddress" />
+		<attributes />
+	</entity>
+	<entity class="com.ifl.rapid.customer.model.impl.CRMTrnContactCommunicationImpl" name="CRMTrnContactCommunication">
+		<table name="CRM_Trn_ContactCommunication" />
+		<attributes />
+	</entity>
+	<entity class="com.ifl.rapid.customer.model.impl.CRMTrnFamilyMemberImpl" name="CRMTrnFamilyMember">
+		<table name="CRM_Trn_FamilyMember" />
+		<attributes />
+	</entity>
+	<entity class="com.ifl.rapid.customer.model.impl.LocMstBranchLocationImpl" name="LocMstBranchLocation">
+		<table name="Loc_Mst_BranchLocation" />
+		<attributes />
+	</entity>
+	<entity class="com.ifl.rapid.customer.model.impl.LocMstLocationImpl" name="LocMstLocation">
+		<table name="Loc_Mst_Location" />
+		<attributes />
+	</entity>
+	<entity class="com.ifl.rapid.customer.model.impl.PrdMstProductImpl" name="PrdMstProduct">
+		<table name="Prd_Mst_Product" />
+		<attributes />
+	</entity>
+	<entity class="com.ifl.rapid.customer.model.impl.QrcMstRequestsImpl" name="QrcMstRequests">
+		<table name="Qrc_Mst_Requests" />
+		<attributes />
+	</entity>
+	<entity class="com.ifl.rapid.customer.model.impl.QrcMstServicesImpl" name="QrcMstServices">
+		<table name="Qrc_Mst_Services" />
+		<attributes />
+	</entity>
+	<entity class="com.ifl.rapid.customer.model.impl.QrcMstSubServicesImpl" name="QrcMstSubServices">
+		<table name="Qrc_Mst_Sub_Services" />
+		<attributes />
+	</entity>
+	<entity class="com.ifl.rapid.customer.model.impl.QrcTrnHistoryImpl" name="QrcTrnHistory">
+		<table name="Qrc_Trn_History" />
+		<attributes />
+	</entity>
+	<entity class="com.ifl.rapid.customer.model.impl.QrcTrnOtpImpl" name="QrcTrnOtp">
+		<table name="Qrc_Trn_Otp" />
+		<attributes />
+	</entity>
+	<entity class="com.ifl.rapid.customer.model.impl.QrcTrnServiceRequestsImpl" name="QrcTrnServiceRequests">
+		<table name="Qrc_Trn_ServiceRequests" />
+		<attributes />
+	</entity>
+	<entity class="com.ifl.rapid.customer.model.impl.StateImpl" name="State">
+		<table name="Loc_Mst_State" />
+		<attributes />
+	</entity>
+</entity-mappings>

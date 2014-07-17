@@ -1,0 +1,1026 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="com.ifl.rapid.customer"
+	auto-namespace-tables="true">
+	<author>Satya Kola</author>
+	<namespace>IFLServiceModule</namespace>
+
+
+	<!-- START NEW VERSION -->
+
+
+
+
+
+	<entity name="Config_Mst_GenericMaster" table="Config_Mst_GenericMaster"
+		local-service="true" remote-service="false" data-source="servicesDataSourceService"
+		session-factory="servicesSessionFactoryService" tx-manager="servicesTransactionManagerService">
+
+		<column name="GenericMasterId" type="int" primary="true" />
+		<column name="MasterType" type="String" />
+		<column name="MasterId" type="int" />
+		<column name="MasterKey" type="String" />
+		<column name="IsActive" type="String" />
+		<column name="CreatedBy" type="String" />
+		<column name="CreatedDate" type="Date" />
+		<column name="ModifiedBy" type="String" />
+		<column name="ModifiedDate" type="Date" />
+		<column name="Description" type="String" />
+		
+		<finder return-type="String" name="GenericMasterId">
+			<finder-column name="GenericMasterId"/>
+		</finder>
+		
+		<finder return-type="String" name="MasterTypeAndMasterKey">
+			<finder-column name="MasterType"/>
+			<finder-column name="MasterKey"/>
+		</finder>
+		
+		<finder return-type="Collection" name="MasterType">
+			<finder-column name="MasterType"/>
+		</finder>
+
+	</entity>
+
+	
+	<entity name="CRM_Trn_Contact" table="CRM_Trn_Contact" local-service="true" remote-service="true"  data-source="servicesDataSourceService" session-factory="servicesSessionFactoryService" tx-manager="servicesTransactionManagerService" >
+  	
+  	<column name="ContactId" type="int" primary="true"  id-type="identity"/>
+  	<column name="Salutation" type="String" />
+  	<column name="FirstName" type="String" />
+  	<column name="MiddleName" type="String" />
+  	<column name="LastName" type="String" />
+  	<column name="PANNo" type="String" />
+  	<column name="Gender" type="String" />
+  	<column name="BloodGroup" type="String" />
+  	<column name="DateOfBirth" type="Date" />
+  	<column name="MaritalStatus" type="String" />
+  	<column name="QualificationId" type="int" />
+  	<column name="OccupationId" type="int" />
+  	<column name="SourceId" type="int" />
+  	<column name="CategoryId" type="int" />
+  	<column name="ReferredBy" type="int"/>
+  	<column name="ContactTypeId" type="int"/>
+  	<column name="DNDActivated" type="boolean" />
+  	<column name="PoliticallyExposed" type="boolean" />
+  	<column name="EIANumber" type="String" />
+  	<column name="SeqGenerator" type="int" />
+  	<column name="ReferenceNo" type="String" />
+  	<column name="EIAServiceProvider" type="String" />
+  	<column name="AadharCardNo" type="String" />
+  	<column name="WeddingAnniversary" type="Date" />
+  	<column name="Photograph" type="Blob" />
+  	<column name="CreatedBy" type="String" />
+  	<column name="CreatedDate" type="Date" />
+  	<column name="ModifiedBy" type="String" />
+  	<column name="ModifiedDate" type="Date" />
+  	<column name="IsActive" type="String" />
+  	
+	<finder return-type="String" name="ContactId">
+		<finder-column name="ContactId"/>
+	</finder>
+	
+  	</entity>
+  	
+  	
+  	<entity name="CRM_Trn_Address" table="CRM_Trn_Address" local-service="true" remote-service="false"  data-source="servicesDataSourceService" session-factory="servicesSessionFactoryService" tx-manager="servicesTransactionManagerService" >
+  	<column name="AddressId" type="int" primary="true"  id-type="identity"/>
+  	<column name="ContactId" type="int" />
+  	<column name="AddressTypeId" type="int"/>
+  	<column name="AddressLine1" type="String" />
+  	<column name="AddressLine2" type="String" />
+  	<column name="AddressLine3" type="String" />
+  	<column name="District" type="String" />
+  	<column name="StateId" type="int" />
+  	<column name="CityId" type="int" />
+  	<column name="Pincode" type="String" />
+  	<column name="CountryId" type="int" />
+  	<column name="IsActive" type="String" />
+  	<column name="CreatedBy" type="String" />
+  	<column name="CreatedDate" type="Date" />
+  	<column name="ModifiedBy" type="String" />
+  	<column name="ModifiedDate" type="Date" />
+  	
+  	<finder return-type="String" name="ContactIdAndAddressTypeId">
+		<finder-column name="ContactId"/>
+		<finder-column name="AddressTypeId"/>
+	</finder>
+	
+	<finder return-type="String" name="AddressIdAndContactId">
+		<finder-column name="AddressId"/>
+		<finder-column name="ContactId"/>
+	</finder>
+  	 	
+  	
+  	</entity>
+  	
+  	<entity name="CRM_Trn_Phone" table="CRM_Trn_Phone" local-service="true" remote-service="false"  data-source="servicesDataSourceService" session-factory="servicesSessionFactoryService" tx-manager="servicesTransactionManagerService" >
+  	<column name="PhoneId" type="int" primary="true" id-type="identity"/>
+  	<column name="ContactId" type="int"/>
+  	<column name="PhoneType" type="int"/>
+  	<column name="PhoneNumber" type="String"/>
+  	<column name="CreatedBy" type="String"/>
+  	<column name="CreatedDate" type="Date"/>
+  	<column name="ModifiedBy" type="String"/>
+  	<column name="ModifiedDate" type="Date"/>
+  	<column name="IsActive" type="String" />
+  	
+  	<finder return-type="String" name="ContactIdAndPhoneId">
+		<finder-column name="ContactId"/>
+		<finder-column name="PhoneId"/>
+	</finder>
+	
+	<finder return-type="String" name="ContactId">
+		<finder-column name="ContactId"/>
+	</finder>
+  	
+  	</entity>
+	
+
+	<entity name="QrcMstServices" table="Qrc_Mst_Services"
+		local-service="true" remote-service="false" data-source="servicesDataSourceService"
+		session-factory="servicesSessionFactoryService" tx-manager="servicesTransactionManagerService">
+
+		<column name="ServiceId" type="int" primary="true" />
+		<column name="ServiceName" type="String" />
+		<column name="Description" type="String" />
+		<column name="CreatedBy" type="String" />
+		<column name="CreatedDate" type="Date" />
+		<column name="ModifiedBy" type="String" />
+		<column name="ModifiedDate" type="Date" />
+		<column name="IsActive" type="String" />
+
+	</entity>
+	<entity name="QrcMstSubServices" table="Qrc_Mst_Sub_Services"
+		local-service="true" remote-service="false" data-source="servicesDataSourceService"
+		session-factory="servicesSessionFactoryService" tx-manager="servicesTransactionManagerService">
+
+		<column name="SubServiceId" type="int" primary="true" />
+		<column name="SubServiceName" type="String" />
+		<column name="SubServiceUrl" type="String" />
+		<column name="ServiceId" type="int" />
+		<column name="IsActive" type="String" />
+		<column name="CreatedBy" type="String" />
+		<column name="CreatedDate" type="Date" />
+		<column name="ModifiedBy" type="String" />
+		<column name="ModifiedDate" type="Date" />
+
+
+	</entity>
+
+	<entity name="ApplyTrnQuoteDetails" table="Apply_Trn_QuoteDetails"
+		local-service="true" remote-service="false" data-source="servicesDataSourceService"
+		session-factory="servicesSessionFactoryService" tx-manager="servicesTransactionManagerService">
+
+		<column name="QuoteId" type="String" primary="true" />
+		<column name="ContactId" type="int" />
+		<column name="ProductId" type="String" />
+		<column name="PremiumTypeId" type="String" />
+		<column name="PremiumFrequencyId" type="String" />
+		<column name="AssuredTerm" type="int" />
+		<column name="AssuredAge" type="int" />
+		<column name="DataXml" type="String" />
+		<column name="DeathBenefitOption" type="int" />
+		<column name="ExpiryDate" type="Date" />
+		<column name="IsStaff" type="String" />
+		<column name="IsActive" type="int" />
+		<column name="PolicyOption" type="int" />
+		<column name="PayingTerm" type="int" />
+		<column name="ProposalStartDate" type="String" />
+		<column name="RefNo" type="int" />
+		<column name="PlanTerm" type="int" />
+		<column name="PremiumTerm" type="int" />
+		<column name="PremiumAmount" type="double" />
+		<column name="SumAssured" type="double" />
+		<column name="SummaryXml" type="String" />
+		<column name="PdfLocation" type="String" />
+		<column name="CreatedBy" type="String" />
+		<column name="CreatedDate" type="Date" />
+		<column name="ModifiedDate" type="Date" />
+		<column name="ModifiedBy" type="String" />
+		<column name="pdfDataXml" type="String" />
+		<column name="IsSmoker" type="int" />
+		<column name="SignatureFilePath" type="String" />
+		<column name="BDMSignatureFilePath" type="String" />
+		<column name="BDMId" type="int" />
+		<column name="IsAssisted" type="int" />
+		<column name="InputXML" type="String" />
+		<column name="LeadId" type="String" />
+		
+		<finder return-type="String" name="ContactId">
+			<finder-column name="ContactId"/>
+		</finder>
+		
+		
+	</entity>
+
+<entity name="ApplyTrnApplicationForm" table="Apply_Trn_ApplicationForm"
+		local-service="true" remote-service="false" data-source="servicesDataSourceService"
+		session-factory="servicesSessionFactoryService" tx-manager="servicesTransactionManagerService">
+       <column name="ApplicationFormId" type="String" primary="true" />
+		<column name="QuoteId" type="String"  />
+        <column name="ApplicationRefNo" type="String" />
+        <column name="SeqGenerator" type="int" />
+        <column name="LTRFFormRefNo" type="String" />
+        <column name="PremiumAmount" type="double" />
+        <column name="IsMedicalRequired" type="int" />
+        <column name="ShortPremium" type="double" />
+        <column name="PremiumDueDate" type="Date" />
+        <column name="PolicyNo" type="String" />
+        <column name="PolicyElapsedDate" type="Date" />
+        <column name="PolicyIssueDate" type="Date" />
+        <column name="Status" type="String" />
+        <column name="Completion" type="int" />
+        <column name="IsLapsed" type="int" />
+        <column name="NextPremiumDueDate" type="Date" />
+        <column name="PolicyStatus" type="String" />
+		<column name="IsActive" type="int" />
+		<column name="CreatedBy" type="String" />
+		<column name="CreatedDate" type="Date" />
+		<column name="ModifiedDate" type="Date" />
+		<column name="ModifiedBy" type="String" />
+		
+		<finder return-type="String" name="QuoteId">
+			<finder-column name="QuoteId"/>
+		</finder>
+		
+	</entity>
+	
+	
+	
+	<entity name="PrdMstProduct" table="Prd_Mst_Product"
+		local-service="true" remote-service="false" data-source="servicesDataSourceService"
+		session-factory="servicesSessionFactoryService" tx-manager="servicesTransactionManagerService">
+     
+        <column name="ProductId" type="String" primary="true" />		
+		<column name="ProductKey" type="String" />
+		<!-- <column name="InvestmentCategoryId" type="String" /> -->
+		<column name="DisplayOrder" type="int" />
+		<!-- <column name="MostPopular" type="int" /> -->
+		<!-- <column name="ProductTypeId" type="String" /> -->
+		<column name="RenewalDuration" type="int" />
+		<column name="ShortTermDuration" type="int" />
+		<column name="MinPlanTerm" type="int" />
+		<column name="MaxPlanTerm" type="int" />
+		<!-- <column name="MinPremiumTerm" type="String" />
+		<column name="MaxPremiumTerm" type="int" />
+		<column name="MinAnnualPremium" type="int" />
+		<column name="MaxAnnualPremium" type="int" /> -->
+		<column name="MinSumAssured" type="int" />
+		<column name="MaxSumAssured" type="int" />
+	<!-- 	<column name="MinInstallmentPremium" type="int" />
+		<column name="MaxInstallmentPremium" type="int" /> -->
+		<!-- <column name="MinPremium" type="int" /> -->
+		<column name="IsRegularPremium" type="int" />
+		<column name="IsLimitedPremium" type="int" />
+		<column name="IsSinglePremium" type="int" />
+		<!-- <column name="PolicyTemplate" type="String" />	 -->	
+		<column name="IsActive" type="int" />
+		<column name="CreatedBy" type="String" />
+		<column name="CreatedDate" type="Date" />
+		<column name="ModifiedDate" type="Date" />
+		<column name="ModifiedBy" type="String" />
+		
+		
+	</entity>
+	
+	<entity name="CRMTrnContactCommunication" table="CRM_Trn_ContactCommunication"
+		local-service="true" remote-service="false" data-source="servicesDataSourceService"
+		session-factory="servicesSessionFactoryService" tx-manager="servicesTransactionManagerService">
+		
+		<column name="ContactCommunicationId" type="int" primary="true" id-type="identity"/>
+		<column name="ContactId" type="int" />
+		<column name="CommunicationMedium" type="int" />
+		<column name="CommunicationMediumId" type="String" />
+		<column name="CreatedBy" type="String" />
+		<column name="CreatedDate" type="Date" />
+		<column name="ModifiedBy" type="String" />
+		<column name="ModifiedDate" type="Date" />
+		<column name="IsActive" type="String" />
+		
+		<finder return-type="String" name="ContactIdAndCommunicationMedium">
+			<finder-column name="ContactId"/>
+			<finder-column name="CommunicationMedium"/>
+		</finder>
+		
+		<finder return-type="String" name="ContactId">
+			<finder-column name="ContactId"/>
+		</finder>
+		
+	</entity>
+	
+	
+	
+	<entity name="CRMTrnFamilyMember" table="CRM_Trn_FamilyMember"
+		local-service="true" remote-service="false" data-source="servicesDataSourceService"
+		session-factory="servicesSessionFactoryService" tx-manager="servicesTransactionManagerService">
+     
+        <column name="FamilyMemberId" type="int" primary="true"  id-type="identity"/>		
+		<column name="ContactId" type="int" />
+		<column name="MemberId" type="int" />
+		<column name="RelationshipId" type="int" />	
+		<column name="FinanciallyDependent" type="String" />	
+		<column name="IsActive" type="String" />		
+		<column name="CreatedBy" type="String" />
+		<column name="CreatedDate" type="Date" />
+		<column name="ModifiedBy" type="String" />
+		<column name="ModifiedDate" type="Date" />
+		
+		<finder return-type="String" name="ContactIdAndMemberId">
+			<finder-column name="ContactId"></finder-column>
+			<finder-column name="MemberId"></finder-column>
+		</finder>
+		
+		
+	</entity>
+	
+	<entity name="State" table="Loc_Mst_State"
+		local-service="true" remote-service="false" data-source="servicesDataSourceService"
+		session-factory="servicesSessionFactoryService" tx-manager="servicesTransactionManagerService">
+     
+        <column name="StateId" type="int" primary="true" />		
+		<column name="StateCode" type="String" />
+		<column name="StateName" type="String" />
+		<column name="IsActive" type="int" />		
+		<column name="CreatedBy" type="String" />
+		<column name="CreatedDate" type="Date" />
+		<column name="ModifiedDate" type="Date" />
+		<column name="ModifiedBy" type="String" />
+		
+	</entity>
+	
+	<entity name="City" table="Loc_Mst_City"
+		local-service="true" remote-service="false" data-source="servicesDataSourceService"
+		session-factory="servicesSessionFactoryService" tx-manager="servicesTransactionManagerService">
+     
+        <column name="CityId" type="int" primary="true" />		
+		<column name="CityCode" type="String" />
+		<column name="CityName" type="String" />
+		<column name="IsActive" type="int" />		
+		<column name="CreatedBy" type="String" />
+		<column name="CreatedDate" type="Date" />
+		<column name="ModifiedDate" type="Date" />
+		<column name="ModifiedBy" type="String" />
+		<column name="StateId" type="int" />	
+		
+	</entity>
+	
+	
+<entity name="QrcTrnHistory" table="Qrc_Trn_History"
+		local-service="true" remote-service="false" data-source="servicesDataSourceService"
+		session-factory="servicesSessionFactoryService" tx-manager="servicesTransactionManagerService">
+     
+        <column name="HistoryId" type="int" primary="true" id-type="identity"/>		
+		<column name="ContactId" type="int" />
+		<column name="CreatedContactId" type="int" />
+		<column name="RequestType" type="String" />	
+		<column name="ChangeRequestType" type="String" />	
+		<column name="PickupDate" type="Date" />	
+		<column name="PickupTime" type="String" />	
+		<column name="XMLData" type="String" />	
+		<column name="AddressTypeId" type="int" />	
+		<column name="BranchId" type="int" />	
+		<column name="IsActive" type="int" />	
+		<column name="CreatedBy" type="String" />
+		<column name="CreatedDate" type="Date" />
+		<column name="ModifiedDate" type="Date" />
+		<column name="ModifiedBy" type="String" />
+	</entity>
+	
+	
+	<entity name="QrcTrnServiceRequests" table="Qrc_Trn_ServiceRequests"
+		local-service="true" remote-service="false" data-source="servicesDataSourceService"
+		session-factory="servicesSessionFactoryService" tx-manager="servicesTransactionManagerService">
+     
+        <column name="ServiceRequestId" type="int" primary="true" id-type="identity"/>		
+		<column name="ContactId" type="int" />
+		<column name="SrId" type="String" />
+        <column name="ProcessId" type="String" />
+        <column name="Source" type="String" />
+        <column name="Channel" type="String" />
+        <column name="Priority" type="String" />
+        <column name="PolicyNo" type="String" />
+        <column name="CaseDetails" type="String" />
+        <column name="IsManual" type="String" />
+        <column name="IsLAUpdated" type="String" />
+        <column name="Comments" type="String" />
+        <column name="IsSignVerified" type="String" />
+		<column name="RequestId" type="int" />
+		<column name="AssignedTo" type="int" />
+		<column name="CreatedContactId" type="int" />
+		<column name="HistoryId" type="int" />
+		<column name="AddressTypeId" type="int" />
+		<column name="IsActive" type="int" />	
+		<column name="CreatedBy" type="String" />
+		<column name="CreatedDate" type="Date" />
+		<column name="ModifiedDate" type="Date" />
+		<column name="ModifiedBy" type="String" />
+	</entity>
+	
+	
+	<entity name="QrcMstRequests" table="Qrc_Mst_Requests"
+		local-service="true" remote-service="false" data-source="servicesDataSourceService"
+		session-factory="servicesSessionFactoryService" tx-manager="servicesTransactionManagerService">     
+        <column name="RequestId" type="int" primary="true" id-type="identity"/>		
+		<column name="Category" type="String" />		
+		<column name="CallType" type="String" />
+		<column name="CallSubType" type="String" />
+		<column name="Keyword" type="String" />
+		<column name="IsActive" type="int" />
+		<column name="CreatedBy" type="String" />
+		<column name="CreatedDate" type="Date" />
+		<column name="ModifiedDate" type="Date" />
+		<column name="ModifiedBy" type="String" />
+	</entity>
+	
+	<entity name="CRM_Trn_PolicyAddress" table="CRM_Trn_PolicyAddress"
+		local-service="true" remote-service="false" data-source="servicesDataSourceService"
+		session-factory="servicesSessionFactoryService" tx-manager="servicesTransactionManagerService">     
+        <column name="PolicyAddressId" type="int" primary="true"/>		
+		<column name="ContactId" type="int" />
+		<column name="PolicyNo" type="String" />		
+		<column name="AddressId" type="int" />
+		<column name="IsActive" type="String" />
+		<column name="CreatedBy" type="String" />
+		<column name="CreatedDate" type="Date" />
+		<column name="ModifiedBy" type="String" />
+		<column name="ModifiedDate" type="Date" />
+		
+		<finder return-type="String" name="PolicyNo">
+			<finder-column name="PolicyNo"/>
+		</finder>
+		
+	</entity>
+	
+	<entity name="LocMstBranchLocation" table="Loc_Mst_BranchLocation"
+		local-service="true" remote-service="false" data-source="servicesDataSourceService"
+		session-factory="servicesSessionFactoryService" tx-manager="servicesTransactionManagerService"> 
+		
+		<column name="BranchId" type="int" primary="true" id-type="identity"/>	
+		<column name="BranchName" type="String" />
+		<column name="BranchOpeningTime" type="String" />
+		<column name="BranchClosingTime" type="String" />
+		<column name="AddressFirstLine" type="String" />
+		<column name="AddressSecondLine" type="String" />
+		<column name="PrimaryContactNo" type="String" />
+		<column name="OtherContactNo" type="String" />
+		<column name="FaxNumber" type="String" />
+		<column name="LocationId" type="int" />
+		<column name="LocationId_old" type="String" />
+		<column name="Longitude" type="double" />
+		<column name="Latitude" type="double" />
+		<column name="BranchCode" type="String" />
+		<column name="CreatedBy" type="String" />
+		<column name="CreatedDate" type="Date" />
+		<column name="ModifiedBy" type="String" />
+		<column name="ModifiedDate" type="Date" />
+		<column name="IsActive" type="String" />
+		
+		
+		</entity>
+	
+	
+	 <entity name="LocMstLocation" table="Loc_Mst_Location"
+		local-service="true" remote-service="false" data-source="servicesDataSourceService"
+		session-factory="servicesSessionFactoryService" tx-manager="servicesTransactionManagerService">
+	
+	    <column name="LocationId" type="int" primary="true" id-type="identity"/>	
+	    <column name="StateId" type="int" />
+	    <column name="CityId" type="int" />
+	    <column name="PinCode" type="int" />
+	    <column name="AreaName" type="String" />
+	    <column name="Latitude" type="double" />
+	    <column name="Longitude" type="double" />
+	    <column name="CreatedBy" type="String" />
+		<column name="CreatedDate" type="Date" />
+		<column name="ModifiedBy" type="String" />
+		<column name="ModifiedDate" type="Date" />
+		<column name="IsActive" type="String" />
+	
+	 </entity>
+	 
+	 <entity name="QrcTrnOtp" table="Qrc_Trn_Otp"
+		local-service="true" remote-service="false" data-source="servicesDataSourceService"
+		session-factory="servicesSessionFactoryService" tx-manager="servicesTransactionManagerService">
+		
+		<column name="Otp_Id" type="int" primary="true" id-type="identity"/>
+		<column name="Otp" type="String" />
+		<column name="ContactId" type="int" />
+		<column name="CreatedBy" type="String" />
+		<column name="CreatedDate" type="Date" />
+		<column name="ModifiedBy" type="String" />
+		<column name="ModifiedDate" type="Date" />
+		<column name="IsActive" type="String" />
+		
+	 </entity>
+	 
+	 
+	
+
+	<!-- END NEW VERSION -->
+
+
+	<!-- <entity name="AddressType" table="address_type" local-service="true" 
+		remote-service="false" data-source="servicesDataSource" session-factory="servicesSessionFactory" 
+		tx-manager="servicesTransactionManager"> <column name="ADDRESS_TYPE_ID" type="int" 
+		primary="true" /> <column name="INSERTED_BY" type="String" /> <column name="INSERTED_DATE" 
+		type="Date" /> <column name="UPDATED_BY" type="String" /> <column name="UPDATED_DATE" 
+		type="Date" /> <column name="ACTIVE_FLAG" type="String" /> <column name="ADDRESS_TYPE_DESC" 
+		type="String" /> </entity> <entity name="BranchDetails" table="branch_details" 
+		local-service="true" remote-service="false" data-source="servicesDataSource" 
+		session-factory="servicesSessionFactory" tx-manager="servicesTransactionManager"> 
+		<column name="BRANCH_ID" type="int" primary="true"></column> <column name="LOCATION_ID" 
+		type="int" ></column> <column name="BRANCH_NAME" type="String"></column> 
+		<column name="BRANCH_OPENING_TIME" type="String"></column> <column name="BRANCH_CLOSING_TIME" 
+		type="String"></column> <column name="ADDRESS_FIRST_LINE" type="String"></column> 
+		<column name="ADDRESS_SECOND_LINE" type="String"></column> <column name="CITY" 
+		type="String"></column> <column name="STATE" type="String"></column> <column 
+		name="PIN" type="String"></column> <column name="PRIMARY_CONTACT_NO" type="String"></column> 
+		<column name="OTHER_CONTACT_NO" type="String"></column> <column name="FAX_NUMBER" 
+		type="String"></column> <column name="BRANCH_CODE" type="String"></column> 
+		<column name="WORK_TIMINGS" type="String"></column> </entity> <entity name="CityDetails" 
+		table="city_details" local-service="true" remote-service="false" data-source="servicesDataSource" 
+		session-factory="servicesSessionFactory" tx-manager="servicesTransactionManager"> 
+		<column name="CITY_ID" type="int" primary="true"></column> <column name="CITY_CODE" 
+		type="String" /> <column name="CITY_NAME" type="String" /> <column name="STATE_ID" 
+		type="int" /> <column name="IS_ACTIVE" type="String" /> </entity> <entity 
+		name="Customer" table="customer" local-service="true" remote-service="false" 
+		data-source="servicesDataSource" session-factory="servicesSessionFactory" 
+		tx-manager="servicesTransactionManager"> <column name="CUSTOMER_ID" type="int" 
+		primary="true" /> <column name="CUSTOMER_SALUTATION" type="String" /> <column 
+		name="CUSTOMER_FIRST_NAME" type="String" /> <column name="CUSTOMER_LAST_NAME" 
+		type="String" /> <column name="CUSTOMER_MIDDLE_NAME" type="String" /> <column 
+		name="CUSTOMER_DATE_OF_BIRTH" type="String" /> <column name="CUSTOMER_EMAIL_ADDR" 
+		type="String" /> <column name="OFFICE_NAME" type="String" /> <column name="DESIGNATION" 
+		type="String" /> <column name="DEPARTMENT" type="String" /> <column name="PRIMARY_ADDRESS_LINE_1" 
+		type="String" /> <column name="PRIMARY_ADDRESS_LINE_2" type="String" /> <column 
+		name="PRIMARY_ADDRESS_LINE_3" type="String" /> <column name="PRIMARY_ADDRESS_CITY" 
+		type="String" /> <column name="PRIMARY_ADDRESS_STATE" type="String" /> <column 
+		name="PRIMARY_ADDRESS_PINCODE" type="String" /> <column name="PHONE_NUMBER_1" 
+		type="String" /> <column name="PHONE_NUMBER_2" type="String" /> <column name="PHONE_NUMBER_3" 
+		type="String" /> <column name="LOGIN_NAME" type="String" /> <column name="GENDER" 
+		type="String" /> <column name="MARITAL_STATUS" type="String" /> <column name="COUNTRY" 
+		type="String" /> <column name="PRIMARY_ADDRESS_STATE_ID" type="int" /> <column 
+		name="PRIMARY_ADDRESS_CITY_ID" type="int" /> <column name="ADDED_BY" type="String" 
+		/> <column name="ADDED_DATE" type="Date" /> <column name="UPDATED_BY" type="String" 
+		/> <column name="UPDATED_DATE" type="Date" /> <column name="PANCARD" type="String" 
+		/> </entity> <entity name="customerAddress" table="customer_address" local-service="true" 
+		remote-service="false" data-source="servicesDataSource" session-factory="servicesSessionFactory" 
+		tx-manager="servicesTransactionManager"> <column name="CUSTOMER_ADDRESS_ID" 
+		type="int" primary="true" /> <column name="CUSTOMER_ID" type="int" /> <column 
+		name="ADDRESS_LINE_1" type="String" /> <column name="ADDRESS_LINE_2" type="String" 
+		/> <column name="ADDRESS_LINE_3" type="String" /> <column name="CHANGE_REQUEST_TYPE" 
+		type="String" /> <column name="CITY" type="String" /> <column name="STATE" 
+		type="String" /> <column name="CITY_ID" type="int" /> <column name="STATE_ID" 
+		type="int" /> <column name="PIN_CODE" type="String" /> <column name="CHANGE_REQUEST_FOR" 
+		type="int" /> <column name="ADDRESS_TYPE_ID" type="int" /> <column name="ADDR_STATUS" 
+		type="String" /> <column name="INSERTED_BY" type="String" /> <column name="INSERTED_DATE" 
+		type="Date" /> <column name="UPDATED_BY" type="String" /> <column name="UPDATED_DATE" 
+		type="Date" /> </entity> <entity name="CustomerFamilyDetails" table="customer_family" 
+		local-service="true" remote-service="false" data-source="servicesDataSource" 
+		session-factory="servicesSessionFactory" tx-manager="servicesTransactionManager"> 
+		<column name="CUSTOMER_FAMILY_ID" type="int" primary="true" /> <column name="PERSON_NAME" 
+		type="String" /> <column name="RELATION" type="String" /> <column name="DEPENDENT" 
+		type="String" /> <column name="AGE" type="int" /> <column name="CUSTOMER_ID" 
+		type="int" /> <column name="ADDED_BY" type="String" /> <column name="ADDED_DATE" 
+		type="Date" /> <column name="UPDATED_BY" type="String" /> <column name="UPDATED_DATE" 
+		type="Date" /> </entity> <entity name="CustomerOtp" table="customer_otp" 
+		local-service="true" remote-service="false" data-source="servicesDataSource" 
+		session-factory="servicesSessionFactory" tx-manager="servicesTransactionManager"> 
+		<column name="CUSTOMER_ID" type="int" primary="true"/> <column name="EMAIL_OTP" 
+		type="String" /> <column name="PHONE_OTP" type="String" /> <column name="STATUS" 
+		type="String" /> <column name="ADDED_DATE" type="Date" /> <column name="UPDATED_DATE" 
+		type="Date" /> </entity> <entity name="FundMaster" table="fund_master" local-service="true" 
+		remote-service="false" data-source="servicesDataSource" session-factory="servicesSessionFactory" 
+		tx-manager="servicesTransactionManager"> <column name="FUND_ID" type="int" 
+		primary="true" id-type="identity" /> <column name="FUND_NAME" type="String" 
+		/> <column name="FUND_CODE" type="String" /> <column name="INSERTED_DATE" 
+		type="Date" /> <column name="INSERTED_BY" type="String" /> <column name="UPDATED_DATE" 
+		type="Date" /> <column name="UPDATED_BY" type="String" /> <finder return-type="String" 
+		name="FUND_CODE" unique="true"> <finder-column name="FUND_CODE" /> </finder> 
+		</entity> <entity name="RENEWAL_PREMIUM" local-service="true" remote-service="false" 
+		table="HPRMRCP1" data-source="servicesDataSource" session-factory="servicesSessionFactory" 
+		tx-manager="servicesTransactionManager"> <column name="ID_old" type="long" 
+		primary="true"/> <column name="LETTERCT" type="String" /> <column name="LOCPATH" 
+		type="String" /> <column name="DOCIDNUM" type="String" /> <column name="CLNTNUM" 
+		type="String" /> <column name="OwnerName" type="String" /> <column name="Addrs5" 
+		type="String" /> <column name="Postcode" type="String" /> <column name="Document_Number" 
+		type="String" /> <column name="ContrNo" type="String" /> <column name="Next_Premium_due_Date" 
+		type="String" /> <column name="Total_Premium" type="String" /> <column name="MainCovr_Risk_Cess_Term" 
+		type="String" /> <column name="MainCovr_Prem_Cess_Term" type="String" /> 
+		<column name="Contract_Commencement_Date" type="String" /> <column name="Billing_Date" 
+		type="String" /> <column name="Payment_Desc" type="String" /> <column name="Receipt_Date" 
+		type="String" /> <column name="Payment_Mode" type="String" /> <column name="Payment_Description" 
+		type="String" /> <column name="Receipt_Amount" type="String" /> <column name="Contract_Type" 
+		type="String" /> <column name="Contract_Type_Desc" type="String" /> <column 
+		name="Current_Bill_Frequency" type="String" /> <column name="Suspense_Amount" 
+		type="String" /> <column name="Footer_Details" type="String" /> <column name="Addrs1" 
+		type="String" /> <column name="Addrs2" type="String" /> <column name="Addrs3" 
+		type="String" /> <column name="Addrs4" type="String" /> <column name="Temp_Rcptno" 
+		type="String" /> <column name="Life_Name" type="String" /> <column name="CAMPAIGN" 
+		type="String" /> <column name="Agent_Bank_Branch_Code" type="String" /> <column 
+		name="Agent_Branch_name" type="String" /> <column name="Agent_Bank_name" 
+		type="String" /> <column name="Mobile_phone" type="String" /> <column name="Email_id" 
+		type="String" /> <column name="CreateDate" type="String" /> <column name="BatchMode" 
+		type="String" /> <column name="Status" type="String" /> <column name="LastProcessedDate" 
+		type="String" /> <column name="MobilePhoneNo" type="String" /> <column name="Cheque_Number" 
+		type="String" /> <column name="Bank_Name" type="String" /> <column name="EmailAddr" 
+		type="String"/> <column name="ID" type="int"/> <column name="BDM" type="String" 
+		/> <column name="Term" type="String" /> <column name="Campaign_Code" type="String"/> 
+		<finder name="PolicyAndReceipt_Date" return-type="Collection" > <finder-column 
+		name="ContrNo"/> <finder-column name="Receipt_Date" comparator="LIKE" /> 
+		</finder> </entity> <entity name="LocationDetails" table="location_details" 
+		local-service="true" remote-service="false" data-source="servicesDataSource" 
+		session-factory="servicesSessionFactory" tx-manager="servicesTransactionManager"> 
+		<column name="LOCATION_ID" type="int" primary="true"></column> <column name="LOCATION_NAME" 
+		type="String"></column> <column name="CITY_ID" type="int"></column> <column 
+		name="STATE_ID" type="int"></column> <column name="LATITUDE" type="String"></column> 
+		<column name="LONGITUDE" type="String"></column> <column name="BRANCH_FLAG" 
+		type="String"></column> <column name="MEDICAL_CENTER_FLAG" type="String"></column> 
+		<column name="DROP_BOX_FLAG" type="String"></column> </entity> <entity name="PincodeDetails" 
+		table="pincode_details" local-service="true" remote-service="false" data-source="servicesDataSource" 
+		session-factory="servicesSessionFactory" tx-manager="servicesTransactionManager"> 
+		<column name="PIN_ID" type="int" primary="true"></column> <column name="CITY_ID" 
+		type="int"></column> <column name="STATE_ID" type="int" /> <column name="PIN_CODE" 
+		type="String" /> </entity> <entity name="POLICY_DOC_TYPES" local-service="true" 
+		remote-service="false" table="POLICY_DOC_TYPES" data-source="servicesDataSource" 
+		session-factory="servicesSessionFactory" tx-manager="servicesTransactionManager"> 
+		<column name="ID" type="int" primary="true" /> <column name="DOC_NAME" type="String" 
+		/> </entity> <entity name="ProductFundMapping" table="product_fund_mapping" 
+		local-service="true" remote-service="false" data-source="servicesDataSource" 
+		session-factory="servicesSessionFactory" tx-manager="servicesTransactionManager"> 
+		<column name="ID" type="int" primary="true" /> <column name="PRODUCT_CODE" 
+		type="String" /> <column name="FUND_CODE" type="String" /> </entity> <entity 
+		name="PolicyFund" table="policy_fund" local-service="true" remote-service="false" 
+		data-source="servicesDataSource" session-factory="servicesSessionFactory" 
+		tx-manager="servicesTransactionManager"> <column name="POLICY_FUND_ID" type="int" 
+		primary="true" id-type="identity" /> <column name="POLICY_ID" type="String" 
+		/> <column name="FUND_ID" type="int" /> <column name="FUND_UNITS" type="double" 
+		/> <column name="NAV" type="double" /> <column name="TOTAL_FUND" type="double" 
+		/> </entity> <entity name="PolicyFundSwitchCounter" table="policy_fund_switch_counter" 
+		local-service="true" remote-service="false" data-source="servicesDataSource" 
+		session-factory="servicesSessionFactory" tx-manager="servicesTransactionManager"> 
+		<column name="POLICY_ID" type="String" primary="true" /> <column name="FUND_SWITCH_COUNTER" 
+		type="int" /> <column name="FUND_SWITCH_YEAR" type="Date" /> </entity> <entity 
+		name="PolicyFundSwitchDetails" table="policy_fund_switch_details" local-service="true" 
+		remote-service="false" data-source="servicesDataSource" session-factory="servicesSessionFactory" 
+		tx-manager="servicesTransactionManager"> <column name="FUND_SWITCH_ID" type="int" 
+		primary="true" id-type="identity" /> <column name="POLICY_ID" type="String" 
+		/> <column name="QRC_ASR_ID" type="int" /> <column name="FUND_FROM" type="String" 
+		/> <column name="FUND_TO" type="String" /> <column name="PRECENTAGE_OF_UNITS" 
+		type="double" /> <column name="INSERTED_DATE" type="Date" /> <column name="INSERTED_BY" 
+		type="String" /> <column name="UPDATED_DATE" type="Date" /> <column name="UPDATED_BY" 
+		type="String" /> </entity> <entity name="PolicyInfo" table="policy_info" 
+		local-service="true" remote-service="false" data-source="servicesDataSource" 
+		session-factory="servicesSessionFactory" tx-manager="servicesTransactionManager" 
+		> <column name="POLICY_ID" type="String" primary="true" /> <column name="CUSTOMER_ID" 
+		type="int" /> <column name="PRODUCT_ID" type="int" /> <column name="POLICY_DATE" 
+		type="String" /> <column name="NEXT_PREMIUM_DUEDATE" type="String" /> <column 
+		name="POLICY_HOLDER1_FIRST_NAME" type="String" /> <column name="POLICY_HOLDER1_MIDDLE_NAME" 
+		type="String" /> <column name="POLICY_HOLDER1_LAST_NAME" type="String" /> 
+		<column name="SUM_ASSURED" type="double" /> <column name="POLICY_HOLDER2_FIRST_NAME" 
+		type="String" /> <column name="POLICY_HOLDER2_MIDDLE_NAME" type="String" 
+		/> <column name="POLICY_HOLDER2_LAST_NAME" type="String" /> <column name="CHILD_FIRST_NAME" 
+		type="String" /> <column name="CHILD_DOB" type="String" /> <column name="CHILD_LAST_NAME" 
+		type="String" /> <column name="CURRENT_STATUS" type="String" /> <column name="PREMIUM_AMOUNT" 
+		type="int" /> <column name="FREQUENCY" type="String" /> <column name="BRANCH_CODE" 
+		type="String" /> <column name="LG_CODE" type="String" /> <column name="APPLICATION_NUMBER" 
+		type="String" /> <column name="APPLICATION_DATE" type="String" /> <column 
+		name="POLICY_HOLDER1_TITLE" type="String" /> <column name="CRO_NAME" type="String" 
+		/> <column name="CRO_NUMBER" type="String" /> <column name="BRANCH_NAME" 
+		type="String" /> <column name="PRODUCT_NAME" type="String" /> <column name="REQUIREMENT_FLAG" 
+		type="String" /> <column name="TERM" type="int" /> <column name="MATURITY_DATE" 
+		type="Date" /> <column name="AMOUNT_DEPOSITED" type="double" /> <column name="TOTAL_DUE_AMT" 
+		type="double" /> <column name="CHANNEL_TYPE" type="String" /> <column name="LIFE_ASSURED_NAME" 
+		type="String" /> <column name="LIFE_ASSURED_DOB" type="Date" /> <column name="POLICY_HOLDER1_EMAIL" 
+		type="String" /> <column name="POLICY_HOLDER1_ADD1" type="String" /> <column 
+		name="POLICY_HOLDER1_ADD2" type="String" /> <column name="POLICY_HOLDER1_CONTACT1" 
+		type="String" /> <column name="POLICY_HOLDER1_CONTACT2" type="String" /> 
+		<column name="POLICY_HOLDER1_DOB" type="String" /> <column name="RISK_COMMENCEMENT_DATE" 
+		type="Date" /> </entity> <entity name="PolicyPremRedirectionDetails" table="policy_prem_redirection_details" 
+		local-service="true" remote-service="false" data-source="servicesDataSource" 
+		session-factory="servicesSessionFactory" tx-manager="servicesTransactionManager"> 
+		<column name="PREM_REDIRECTION_ID" type="int" primary="true" id-type="identity" 
+		/> <column name="POLICY_ID" type="String" /> <column name="TRANSACTION_AUDIT_ID" 
+		type="int" /> <column name="FUND_CODE" type="String" /> <column name="ALLOCATION_PERCENTAGE" 
+		type="double" /> <column name="SENT_TO_ODS_FLAG" type="String" /> <column 
+		name="INSERTED_DATE" type="Date" /> <column name="INSERTED_BY" type="String" 
+		/> <column name="UPDATED_DATE" type="Date" /> <column name="UPDATED_BY" type="String" 
+		/> </entity> <entity name="PolicyPremPercentage" table="policy_prem_percentage" 
+		local-service="true" remote-service="false" data-source="servicesDataSource" 
+		session-factory="servicesSessionFactory" tx-manager="servicesTransactionManager"> 
+		<column name="PREM_PERCENTAGE_ID" type="int" primary="true" id-type="identity" 
+		/> <column name="POLICY_ID" type="String" /> <column name="FUND_ID" type="int" 
+		/> <column name="FUND_PERCENTAGE" type="int" /> </entity> <entity name="PREMIUM_PAID_CERTIFICATE" 
+		local-service="true" remote-service="false" table="PREMIUM_PAID_CERTIFICATE" 
+		data-source="servicesDataSource" session-factory="servicesSessionFactory" 
+		tx-manager="servicesTransactionManager"> <column name="ID" type="long" primary="true"/> 
+		<column name="Financial_Year" type="String" /> <column name="Generation_Date" 
+		type="String" /> <column name="OwnerName" type="String" /> <column name="Addrs1" 
+		type="String" /> <column name="Addrs2" type="String" /> <column name="Addrs3" 
+		type="String" /> <column name="Addrs4" type="String" /> <column name="Addrs5" 
+		type="String" /> <column name="Postcode" type="String" /> <column name="MobilePhoneNo" 
+		type="String" /> <column name="Email_ID" type="String" /> <column name="Client_ID" 
+		type="String" /> <column name="Contract_Type_Desc" type="String" /> <column 
+		name="ContrNo" type="String" /> <column name="Installment_Prem" type="String" 
+		/> <column name="Billing_Frequency" type="String" /> <column name="SumAssured" 
+		type="String" /> <column name="Total_Pre_Paid" type="String" /> <column name="Total_Pre_Due" 
+		type="String" /> <column name="Coverage" type="String" /> <column name="Fin_Year" 
+		type="int" /> <column name="LETTERCTL" type="String" /> <column name="LOCPATH" 
+		type="String" /> <column name="DOCIDNUM" type="String" /> <column name="status" 
+		type="String" /> <column name="lastProcessedDate" type="String" /> <column 
+		name="createDate" type="String" /> <column name="GLCODE" type="String" /> 
+		<column name="BRANCH_CODE" type="String" /> <finder name="PolicyAndYear" 
+		return-type="Collection" > <finder-column name="ContrNo"/> <finder-column 
+		name="Financial_Year" /> </finder> </entity> <entity name="ActiveServiceRequests" 
+		table="QRC_ACTIVE_SERVICE_REQS" local-service="true" remote-service="true" 
+		data-source="servicesDataSource" session-factory="servicesSessionFactory" 
+		tx-manager="servicesTransactionManager"> <column name="QRC_ASR_ID" type="int" 
+		primary="true" id-type="identity" /> <column name="TYPE_ID" type="int" /> 
+		<column name="SUB_TYPE_ID" type="int" /> <column name="ASSIGNED_TO" type="int" 
+		/> <column name="HANDLED_BY" type="int" /> <column name="STATUS_ID" type="int" 
+		/> <column name="CUSTOMER_ID" type="int" /> <column name="CUST_SR_NUMBER" 
+		type="String" /> <column name="ADDITIONAL_DATA_XML" type="String" /> <column 
+		name="INSERTED_DATE" type="Date" /> <column name="INSERTED_BY" type="String" 
+		/> <column name="UPDATED_DATE" type="Date" /> <column name="UPDATED_BY" type="String" 
+		/> </entity> <entity name="QRCStatus" table="QRC_Status" local-service="true" 
+		remote-service="false" data-source="servicesDataSource" session-factory="servicesSessionFactory" 
+		tx-manager="servicesTransactionManager"> <column name="QRC_STATUS_ID" type="int" 
+		primary="true" id-type="identity" /> <column name="STATUS_DESC" type="String" 
+		/> <column name="ACTIVE_FLAG" type="String" /> <column name="INSERTED_DATE" 
+		type="Date" /> <column name="INSERTED_BY" type="String" /> <column name="UPDATED_DATE" 
+		type="Date" /> <column name="UPDATED_BY" type="String" /> <column name="DELETED_DATE" 
+		type="Date" /> <column name="DELETED_BY" type="String" /> <column name="QRC_ASR_ID" 
+		type="int" /> <finder name="SR_ID" return-type="Collection" > <finder-column 
+		name="QRC_ASR_ID"/> </finder> </entity> <entity name="QRCSubTypeMaster" table="QRC_SUBTYPE_MASTER" 
+		local-service="true" remote-service="false" data-source="servicesDataSource" 
+		session-factory="servicesSessionFactory" tx-manager="servicesTransactionManager"> 
+		<column name="QRC_SUB_TYPE_ID" type="int" primary="true" id-type="identity" 
+		/> <column name="QRC_TYPE_ID" type="int" /> <column name="SUB_TYPE_DESC" 
+		type="String" /> <column name="ACTIVE_FLAG" type="String" /> <column name="INSERTED_DATE" 
+		type="Date" /> <column name="INSERTED_BY" type="String" /> <column name="UPDATED_DATE" 
+		type="Date" /> <column name="UPDATED_BY" type="String" /> <column name="DELETED_DATE" 
+		type="Date" /> <column name="DELETED_BY" type="String" /> </entity> <entity 
+		name="QRCTeamMaster" table="QRC_TEAM_MASTER" local-service="true" remote-service="false" 
+		data-source="servicesDataSource" session-factory="servicesSessionFactory" 
+		tx-manager="servicesTransactionManager"> <column name="QRC_TM_ID" type="int" 
+		primary="true" id-type="identity" /> <column name="TM_DESC" type="String" 
+		/> <column name="ACTIVE_FLAG" type="String" /> <column name="INSERTED_DATE" 
+		type="Date" /> <column name="INSERTED_BY" type="String" /> <column name="UPDATED_DATE" 
+		type="Date" /> <column name="UPDATED_BY" type="String" /> <column name="DELETED_DATE" 
+		type="Date" /> <column name="DELETED_BY" type="String" /> </entity> <entity 
+		name="QRCTypeMaster" table="QRC_TYPE_MASTER" local-service="true" remote-service="false" 
+		data-source="servicesDataSource" session-factory="servicesSessionFactory" 
+		tx-manager="servicesTransactionManager"> <column name="QRC_TYPE_ID" type="int" 
+		primary="true" id-type="identity" /> <column name="TYPE_DESC" type="String" 
+		/> <column name="ACTIVE_FLAG" type="String" /> <column name="INSERTED_DATE" 
+		type="Date" /> <column name="INSERTED_BY" type="String" /> <column name="UPDATED_DATE" 
+		type="Date" /> <column name="UPDATED_BY" type="String" /> <column name="DELETED_DATE" 
+		type="Date" /> <column name="DELETED_BY" type="String" /> </entity> <entity 
+		name="QRCUser" table="QRC_USER" local-service="true" remote-service="false" 
+		data-source="servicesDataSource" session-factory="servicesSessionFactory" 
+		tx-manager="servicesTransactionManager"> <column name="QRC_USER_ID" type="int" 
+		primary="true" id-type="identity" /> <column name="USER_NAME" type="String" 
+		/> <column name="TEAM_ID" type="int" /> <column name="USER_DETAILS" type="int" 
+		/> <column name="ACTIVE_FLAG" type="String" /> <column name="INSERTED_DATE" 
+		type="Date" /> <column name="INSERTED_BY" type="String" /> <column name="UPDATED_DATE" 
+		type="Date" /> <column name="UPDATED_BY" type="String" /> <column name="DELETED_DATE" 
+		type="Date" /> <column name="DELETED_BY" type="String" /> </entity> <entity 
+		name="StateDetails" table="state_details" local-service="true" remote-service="false" 
+		data-source="servicesDataSource" session-factory="servicesSessionFactory" 
+		tx-manager="servicesTransactionManager"> <column name="STATE_ID" type="int" 
+		primary="true" /> <column name="STATE_NAME" type="String" /> <column name="STATE_CODE" 
+		type="String" /> <column name="BRANCH_FLAG" type="String" /> <column name="MEDICAL_CENTER_FLAG" 
+		type="String" /> <column name="DROP_BOX_FLAG" type="String" /> </entity> 
+		<entity name="ClosedServiceRequests" table="QRC_CLOSED_SERVICE_REQS" local-service="true" 
+		remote-service="false" data-source="servicesDataSource" session-factory="servicesSessionFactory" 
+		tx-manager="servicesTransactionManager"> <column name="QRC_CSR_ID" type="int" 
+		primary="true" id-type="identity" /> <column name="TYPE_ID" type="int" /> 
+		<column name="ASSIGNED_TO" type="int" /> <column name="HANDLED_BY" type="int" 
+		/> <column name="STATUS_ID" type="int" /> <column name="CUSTOMER_ID" type="String" 
+		/> <column name="customerSRNumber" type="String" /> <column name="ADDITIONAL_DATA_XML" 
+		type="String" /> <column name="INSERTED_DATE" type="Date" /> <column name="INSERTED_BY" 
+		type="String" /> <column name="UPDATED_DATE" type="Date" /> <column name="UPDATED_BY" 
+		type="String" /> </entity> <entity name="TempCustomer" table="temp_customer" 
+		local-service="true" remote-service="false" data-source="servicesDataSource" 
+		session-factory="servicesSessionFactory" tx-manager="servicesTransactionManager"> 
+		<column name="CUSTOMER_ID" type="int" primary="true" /> <column name="CUSTOMER_SALUTATION" 
+		type="String" /> <column name="CUSTOMER_FIRST_NAME" type="String" /> <column 
+		name="CUSTOMER_LAST_NAME" type="String" /> <column name="CUSTOMER_MIDDLE_NAME" 
+		type="String" /> <column name="CUSTOMER_DATE_OF_BIRTH" type="String" /> <column 
+		name="CUSTOMER_EMAIL_ADDR" type="String" /> <column name="OFFICE_NAME" type="String" 
+		/> <column name="DESIGNATION" type="String" /> <column name="DEPARTMENT" 
+		type="String" /> <column name="PRIMARY_ADDRESS_LINE_1" type="String" /> <column 
+		name="PRIMARY_ADDRESS_LINE_2" type="String" /> <column name="PRIMARY_ADDRESS_LINE_3" 
+		type="String" /> <column name="PRIMARY_ADDRESS_CITY" type="String" /> <column 
+		name="PRIMARY_ADDRESS_STATE" type="String" /> <column name="PRIMARY_ADDRESS_PINCODE" 
+		type="String" /> <column name="PHONE_NUMBER_1" type="String" /> <column name="PHONE_NUMBER_2" 
+		type="String" /> <column name="PHONE_NUMBER_3" type="String" /> <column name="LOGIN_NAME" 
+		type="String" /> <column name="GENDER" type="String" /> <column name="MARITAL_STATUS" 
+		type="String" /> <column name="COUNTRY" type="String" /> <column name="PRIMARY_ADDRESS_STATE_ID" 
+		type="int" /> <column name="PRIMARY_ADDRESS_CITY_ID" type="int" /> <column 
+		name="QRC_ASR_ID" type="int" /> <column name="PANCARD" type="String" /> </entity> 
+		<entity name="TempCustomerAddress" table="temp_customer_address" local-service="true" 
+		remote-service="false" data-source="servicesDataSource" session-factory="servicesSessionFactory" 
+		tx-manager="servicesTransactionManager"> <column name="CUSTOMER_ADDRESS_ID" 
+		type="int" primary="true" /> <column name="CUSTOMER_ID" type="int" /> <column 
+		name="ADDRESS_LINE_1" type="String" /> <column name="ADDRESS_LINE_2" type="String" 
+		/> <column name="ADDRESS_LINE_3" type="String" /> <column name="CHANGE_REQUEST_TYPE" 
+		type="String" /> <column name="CITY" type="String" /> <column name="STATE" 
+		type="String" /> <column name="CITY_ID" type="int" /> <column name="STATE_ID" 
+		type="int" /> <column name="PIN_CODE" type="String" /> <column name="CHANGE_REQUEST_FOR" 
+		type="int" /> <column name="ADDRESS_TYPE_ID" type="int" /> <column name="ADDR_STATUS" 
+		type="String" /> <column name="INSERTED_BY" type="String" /> <column name="INSERTED_DATE" 
+		type="Date" /> <column name="UPDATED_BY" type="String" /> <column name="UPDATED_DATE" 
+		type="Date" /> <column name="QRC_ASR_ID" type="int" /> </entity> <entity 
+		name="ProofDocs" table="proof_docs" local-service="true" remote-service="false" 
+		data-source="servicesDataSource" session-factory="servicesSessionFactory" 
+		tx-manager="servicesTransactionManager"> <column name="ID" type="long" primary="true" 
+		/> <column name="DOC_TYPE" type="String" /> <column name="DOC_NAME" type="String" 
+		/> </entity> <entity name="AddressChangeReqDetails" table="addr_change_req_details" 
+		local-service="true" remote-service="false" data-source="servicesDataSource" 
+		session-factory="servicesSessionFactory" tx-manager="servicesTransactionManager"> 
+		<column name="ADDR_CHANGE_DETAILS_ID" type="int" primary="true" id-type="identity"/> 
+		<column name="REQUEST_SUBMIT_TYPE" type="String" /> <column name="SERVICE_REQUEST_ID" 
+		type="int" /> <column name="SUB_TYPE" type="int" /> <column name="ADDRESS_TYPE_ID" 
+		type="int" /> <column name="CUSTOMER_ID" type="int" /> <column name="SUBMIT_AT_BRANCH" 
+		type="int" /> <column name="PICKUP_DATE" type="Date" /> <column name="PICKUP_TIME" 
+		type="String" /> <column name="INSERTED_DATE" type="Date" /> <column name="INSERTED_BY" 
+		type="String" /> <column name="UPDATED_DATE" type="Date" /> <column name="UPDATED_BY" 
+		type="String" /> </entity> <entity name="PaymentDetails" table="PaymentDetails" 
+		local-service="true" remote-service="false" data-source="servicesDataSource" 
+		session-factory="servicesSessionFactory" tx-manager="servicesTransactionManager"> 
+		<column name="PaymentId" type="int" primary="true" id-type="identity"/> <column 
+		name="PremiumFrequencyID" type="String" /> <column name="TransactionStatusID" 
+		type="int" /> <column name="RequestTypeID" type="String" /> <column name="PaymentOptionId" 
+		type="String" /> <column name="PaymentMethodID" type="String" /> <column 
+		name="ProductID" type="String" /> <column name="ProposalId" type="String" 
+		/> <column name="PremiumAmount" type="double" /> <column name="BankName" 
+		type="String" /> <column name="CreditCardNo" type="long" /> <column name="CardType" 
+		type="String" /> <column name="NameAsCard" type="String" /> <column name="CVVNo" 
+		type="int" /> <column name="CardExpiryDate" type="Date" /> <column name="CreatedBy" 
+		type="String" /> <column name="CreatedDate" type="Date" /> <column name="ModifiedBy" 
+		type="String" /> <column name="ModifiedDate" type="Date" /> <column name="ChequePickupRequestId" 
+		type="String" /> <column name="TransactionReferenceNo" type="String" /> <column 
+		name="BillDeskMerchantId" type="String" /> <column name="BobMerchantTxnId" 
+		type="String" /> <column name="PaymentReceiptNo" type="long" /> </entity> 
+		<entity name="PremiumFrequencyMaster" table="PremiumFrequencyMaster" local-service="true" 
+		remote-service="false" data-source="servicesDataSource" session-factory="servicesSessionFactory" 
+		tx-manager="servicesTransactionManager"> <column name="PremiumFrequencyId" 
+		type="String" primary="true" id-type="identity"/> <column name="PremiumFrequencyDescription" 
+		type="String" /> <column name="IsActive" type="boolean" /> <column name="CreatedBy" 
+		type="String" /> <column name="CreatedDate" type="Date" /> <column name="ModifiedBy" 
+		type="String" /> <column name="ModifiedDate" type="Date" /> <column name="Priority" 
+		type="int" /> </entity> <entity name="PremiumFrequencyMaster" table="PremiumFrequencyMaster" 
+		local-service="true" remote-service="false" data-source="servicesDataSource" 
+		session-factory="servicesSessionFactory" tx-manager="servicesTransactionManager"> 
+		<column name="PremiumFrequencyId" type="String" primary="true" id-type="identity"/> 
+		<column name="PremiumFrequencyDescription" type="String" /> <column name="IsActive" 
+		type="boolean" /> <column name="CreatedBy" type="String" /> <column name="CreatedDate" 
+		type="Date" /> <column name="ModifiedBy" type="String" /> <column name="ModifiedDate" 
+		type="Date" /> <column name="Priority" type="int" /> </entity> <entity name="PaymentTransactionStatusMaster" 
+		table="PaymentTransactionStatusMaster" local-service="true" remote-service="false" 
+		data-source="servicesDataSource" session-factory="servicesSessionFactory" 
+		tx-manager="servicesTransactionManager"> <column name="TransactionStatusID" 
+		type="int" primary="true" id-type="identity"/> <column name="StatusCode" 
+		type="int" /> <column name="StatusName" type="String" /> <column name="StatusDesc" 
+		type="String" /> <column name="IsActive" type="boolean" /> <column name="CreatedBy" 
+		type="String" /> <column name="CreatedDate" type="Date" /> <column name="ModifiedBy" 
+		type="String" /> <column name="ModifiedDate" type="Date" /> </entity> <entity 
+		name="PaymentMethodMaster" table="PaymentMethodMaster" local-service="true" 
+		remote-service="false" data-source="servicesDataSource" session-factory="servicesSessionFactory" 
+		tx-manager="servicesTransactionManager"> <column name="PaymentMethodID" type="String" 
+		primary="true" id-type="identity"/> <column name="PaymentMethodKey" type="String" 
+		/> <column name="IsActive" type="boolean" /> <column name="CreatedBy" type="String" 
+		/> <column name="CreatedDate" type="Date" /> <column name="ModifiedBy" type="String" 
+		/> <column name="ModifiedDate" type="Date" /> <column name="Priority" type="int" 
+		/> <order by="asc"> <order-column name="Priority" /></order> </entity> <entity 
+		name="ChequePaymentRequest" table="ChequePaymentRequest" local-service="true" 
+		remote-service="false" data-source="servicesDataSource" session-factory="servicesSessionFactory" 
+		tx-manager="servicesTransactionManager"> <column name="ServiceRequestID" 
+		type="String" primary="true" /> <column name="ServiceRequestMasterId" type="String" 
+		/> <column name="description" type="String" /> <column name="contactId" type="String" 
+		/> <column name="startPreferedTime" type="Date" /> <column name="endPreferedTime" 
+		type="Date" /> <column name="PreferedDate" type="Date" /> </entity> <entity 
+		name="PaymentOptionTypes" table="PaymentOptionTypes" local-service="true" 
+		remote-service="false" data-source="servicesDataSource" session-factory="servicesSessionFactory" 
+		tx-manager="servicesTransactionManager"> <column name="PaymentOptionTypesId" 
+		type="String" primary="true" id-type="identity"/> <column name="PaymentOptionId" 
+		type="String" /> <column name="OptionTypesKey" type="String" /> <column name="IsActive" 
+		type="boolean" /> <column name="CreatedBy" type="String" /> <column name="CreatedDate" 
+		type="Date" /> <column name="ModifiedBy" type="String" /> <column name="ModifiedDate" 
+		type="Date" /> <column name="Priority" type="int" /> <column name="PaymentOptionTypeDesc" 
+		type="String" /> <order by="asc"> <order-column name="Priority" /></order> 
+		</entity> <entity name="PaymentMethodType" table="PaymentMethodType" local-service="true" 
+		remote-service="false" data-source="servicesDataSource" session-factory="servicesSessionFactory" 
+		tx-manager="servicesTransactionManager"> <column name="Id" type="String" 
+		primary="true" id-type="identity"/> <column name="PaymentMethodID" type="String" 
+		/> <column name="GatewayID" type="String" /> <column name="TypeKey" type="String" 
+		/> <column name="Description" type="String" /> <column name="BankId" type="String" 
+		/> <column name="Active" type="boolean" /> <column name="CreatedBy" type="String" 
+		/> <column name="CreatedDate" type="Date" /> <column name="ModifiedBy" type="String" 
+		/> <column name="ModifiedDate" type="Date" /> <column name="Type" type="String" 
+		/> </entity> <entity name="ServiceRequestMaster" table="ServiceRequestMaster" 
+		local-service="true" remote-service="false" data-source="servicesDataSource" 
+		session-factory="servicesSessionFactory" tx-manager="servicesTransactionManager"> 
+		<column name="Id" type="String" primary="true" id-type="identity"/> <column 
+		name="Type" type="String" /> <column name="ContactId" type="String" /> <column 
+		name="addressTypeId" type="String" /> <column name="address" type="String" 
+		/> <column name="PolicyNo" type="int" /> <column name="MobileNo" type="String" 
+		/> <column name="description" type="String" /> <column name="startPreferedTime" 
+		type="Date" /> <column name="endPreferedTime" type="Date" /> <column name="PreferedDate" 
+		type="Date" /> </entity> <entity name="NavHistory" table="nav_history" local-service="true" 
+		remote-service="false" data-source="servicesDataSource" session-factory="servicesSessionFactory" 
+		tx-manager="servicesTransactionManager"> <column name="NAV_HISTORY_ID" type="long" 
+		primary="true" id-type="identity"/> <column name="DATE" type="Date" /> <column 
+		name="NAV" type="double" /> <column name="SALE_PRICE" type="double" /> <column 
+		name="PURCHASE_PRICE" type="double" /> <column name="FUND_CODE" type="String" 
+		/> <column name="FUND_NAME" type="String" /> </entity> <entity name="PremiumType" 
+		table="PremiumType" local-service="true" remote-service="false" data-source="servicesDataSource" 
+		session-factory="servicesSessionFactory" tx-manager="servicesTransactionManager"> 
+		<column name="Id" type="String" primary="true" id-type="identity"/> <column 
+		name="Name" type="String" /> <column name="Active" type="boolean" /> <column 
+		name="CreatedBy" type="String" /> <column name="CreatedDate" type="Date" 
+		/> <column name="ModifiedBy" type="String" /> <column name="ModifiedDate" 
+		type="Date" /> <column name="Priority" type="int" /> <order by="asc"> <order-column 
+		name="Priority" /></order> </entity> <entity name="PaymentOptionMaster" table="PaymentOptionMaster" 
+		local-service="true" remote-service="false" data-source="servicesDataSource" 
+		session-factory="servicesSessionFactory" tx-manager="servicesTransactionManager"> 
+		<column name="PaymentOptionId" type="String" primary="true" id-type="identity"/> 
+		<column name="PaymentOptionKey" type="String" /> <column name="IsActive" 
+		type="boolean" /> <column name="CreatedBy" type="String" /> <column name="CreatedDate" 
+		type="Date" /> <column name="ModifiedBy" type="String" /> <column name="ModifiedDate" 
+		type="Date" /> <column name="Priority" type="int" /> <column name="PaymentOptionDesc" 
+		type="String" /> <column name="isProcessPayment" type="boolean" /> <order 
+		by="asc"> <order-column name="Priority" /></order> </entity> <entity name="PaymentGatewayMaster" 
+		table="PaymentGatewayMaster" local-service="true" remote-service="false" 
+		data-source="servicesDataSource" session-factory="servicesSessionFactory" 
+		tx-manager="servicesTransactionManager"> <column name="GatewayID" type="String" 
+		primary="true" id-type="identity"/> <column name="GatewayDescription" type="String" 
+		/> <column name="GatewayKey" type="String" /> <column name="IsActive" type="boolean" 
+		/> <column name="CreatedBy" type="String" /> <column name="CreatedDate" type="Date" 
+		/> <column name="ModifiedBy" type="String" /> <column name="ModifiedDate" 
+		type="Date" /> <column name="Priority" type="int" /> <column name="ItemCode" 
+		type="String" /> <order by="asc"> <order-column name="Priority" /></order> 
+		</entity> <entity name="PolicyTopupDetails" table="policy_topup_details" 
+		local-service="true" remote-service="false" data-source="servicesDataSource" 
+		session-factory="servicesSessionFactory" tx-manager="servicesTransactionManager"> 
+		<column name="TOPUP_ID" type="int" primary="true" id-type="identity"/> <column 
+		name="POLICY_ID" type="String" /> <column name="QRC_ASR_ID" type="int" /> 
+		<column name="FUND_ID" type="int" /> <column name="FUND_VALUE" type="double" 
+		/> <column name="TOPUP_VALUE" type="double" /> <column name="TOT_VALUE" type="double" 
+		/> <column name="TOPUP_PERCENTAGE" type="double" /> <column name="CreatedBy" 
+		type="String" /> <column name="CreatedDate" type="Date" /> <column name="ModifiedBy" 
+		type="String" /> <column name="ModifiedDate" type="Date" /> </entity> <entity 
+		name="ConfirmDetails" table="confirm_details" local-service="true" remote-service="false" 
+		data-source="servicesDataSource" session-factory="servicesSessionFactory" 
+		tx-manager="servicesTransactionManager"> <column name="ID" type="int" primary="true" 
+		id-type="identity" /> <column name="QRC_ASR_ID" type="int" /> <column name="Approval_Status" 
+		type="String" /> <column name="Comments" type="String" /> <column name="Sign_Flag" 
+		type="String" /> <column name="CreatedBy" type="String" /> <column name="CreatedDate" 
+		type="Date" /> </entity> <entity name="ServiceMaster" table="service_master" 
+		local-service="true" remote-service="false" data-source="servicesDataSource" 
+		session-factory="servicesSessionFactory" tx-manager="servicesTransactionManager"> 
+		<column name="SERVICE_MASTER_ID" type="int" primary="true"/> <column name="SERVICE_MASTER_NAME" 
+		type="String" /> <column name="SERVICE_MASTER_DESC" type="String" /> <column 
+		name="ACTIVE_FLAG" type="String" /> </entity> <entity name="ServiceSubMaster" 
+		table="service_submaster" local-service="true" remote-service="false" data-source="servicesDataSource" 
+		session-factory="servicesSessionFactory" tx-manager="servicesTransactionManager"> 
+		<column name="SUBMASTER_ID" type="int" primary="true"/> <column name="SUBMASTER_NAME" 
+		type="String" /> <column name="SUBMASTER_URL" type="String" /> <column name="SERVICE_MASTER_ID" 
+		type="int" /> <column name="ACTIVE_FLAG" type="String" /> </entity> <entity 
+		name="Recommended_Products" table="recommended_products" local-service="true" 
+		remote-service="false" data-source="servicesDataSource" session-factory="servicesSessionFactory" 
+		tx-manager="servicesTransactionManager"> <column name="PRODUCT_ID" type="int" 
+		primary="true"/> <column name="PRODUCT_NAME" type="String" /> <column name="IMG_URL" 
+		type="String" /> </entity> <entity name="FamilyRelations" table="family_relations" 
+		local-service="true" remote-service="false" data-source="servicesDataSource" 
+		session-factory="servicesSessionFactory" tx-manager="servicesTransactionManager"> 
+		<column name="RELATION_ID" type="int" primary="true"/> <column name="RELATION_NAME" 
+		type="String" /> </entity> <entity name="customerMailIds" table="customer_mailids" 
+		local-service="true" remote-service="false" data-source="servicesDataSource" 
+		session-factory="servicesSessionFactory" tx-manager="servicesTransactionManager"> 
+		<column name="ID" type="int" primary="true" /> <column name="CUSTOMER_ID" 
+		type="int" /> <column name="EMAIL_ID" type="String" /> <column name="INSERTED_BY" 
+		type="String" /> <column name="INSERTED_DATE" type="Date" /> <column name="UPDATED_BY" 
+		type="String" /> <column name="UPDATED_DATE" type="Date" /> </entity> <entity 
+		name="PolicyAddress" table="policy_address" local-service="true" remote-service="false" 
+		data-source="servicesDataSource" session-factory="servicesSessionFactory" 
+		tx-manager="servicesTransactionManager"> <column name="ID" type="int" primary="true"/> 
+		<column name="POLICY_ID" type="String"/> <column name="CUSTOMER_ID" type="String"/> 
+		<column name="CUSTOMER_ADDRESS_ID" type="int"/> <column name="PINCODE" type="String"/> 
+		<column name="CITY" type="String"/> <column name="STATE" type="String"/> 
+		<column name="ADDRESS_LINE_1" type="String"/> <column name="ADDRESS_LINE_2" 
+		type="String"/> <column name="ADDRESS_LINE_3" type="String"/> <finder return-type="String" 
+		name="PolicyId"> <finder-column name="POLICY_ID"></finder-column> </finder> 
+		</entity> <entity name="CustomerMobileNumbers" table="customer_mobile_numbers" 
+		local-service="true" remote-service="false" data-source="servicesDataSource" 
+		session-factory="servicesSessionFactory" tx-manager="servicesTransactionManager"> 
+		<column name="ID" type="int" primary="true" /> <column name="CUSTOMER_ID" 
+		type="int" /> <column name="MOBILE_NUMBER" type="String" /> <column name="INSERTED_BY" 
+		type="String" /> <column name="INSERTED_DATE" type="Date" /> <column name="UPDATED_BY" 
+		type="String" /> <column name="UPDATED_DATE" type="Date" /> </entity> -->
+
+
+
+</service-builder>

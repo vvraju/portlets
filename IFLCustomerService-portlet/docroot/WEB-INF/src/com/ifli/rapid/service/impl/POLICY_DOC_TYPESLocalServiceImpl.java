@@ -1,0 +1,40 @@
+/**
+ * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
+ *
+ * The contents of this file are subject to the terms of the Liferay Enterprise
+ * Subscription License ("License"). You may not use this file except in
+ * compliance with the License. You can obtain a copy of the License by
+ * contacting Liferay, Inc. See the License for the specific language governing
+ * permissions and limitations under the License, including but not limited to
+ * distribution rights of the Software.
+ *
+ *
+ *
+ */
+
+package com.ifli.rapid.service.impl;
+
+import com.ifli.rapid.service.base.POLICY_DOC_TYPESLocalServiceBaseImpl;
+
+/**
+ * The implementation of the p o l i c y_ d o c_ t y p e s local service.
+ *
+ * <p>
+ * All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link com.ifli.rapid.service.POLICY_DOC_TYPESLocalService} interface.
+ *
+ * <p>
+ * This is a local service. Methods of this service will not have security checks based on the propagated JAAS credentials because this service can only be accessed from within the same VM.
+ * </p>
+ *
+ * @author Satya Kola
+ * @see com.ifli.rapid.service.base.POLICY_DOC_TYPESLocalServiceBaseImpl
+ * @see com.ifli.rapid.service.POLICY_DOC_TYPESLocalServiceUtil
+ */
+public class POLICY_DOC_TYPESLocalServiceImpl
+	extends POLICY_DOC_TYPESLocalServiceBaseImpl {
+	/*
+	 * NOTE FOR DEVELOPERS:
+	 *
+	 * Never reference this interface directly. Always use {@link com.ifli.rapid.service.POLICY_DOC_TYPESLocalServiceUtil} to access the p o l i c y_ d o c_ t y p e s local service.
+	 */
+}

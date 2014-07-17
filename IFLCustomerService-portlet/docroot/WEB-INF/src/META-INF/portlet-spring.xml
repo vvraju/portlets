@@ -1,0 +1,371 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.ifli.rapid.service.ActiveServiceRequestsLocalService" class="com.ifli.rapid.service.impl.ActiveServiceRequestsLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.ActiveServiceRequestsService" class="com.ifli.rapid.service.impl.ActiveServiceRequestsServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.ActiveServiceRequestsPersistence" class="com.ifli.rapid.service.persistence.ActiveServiceRequestsPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.AddressChangeReqDetailsLocalService" class="com.ifli.rapid.service.impl.AddressChangeReqDetailsLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.AddressChangeReqDetailsPersistence" class="com.ifli.rapid.service.persistence.AddressChangeReqDetailsPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.AddressTypeLocalService" class="com.ifli.rapid.service.impl.AddressTypeLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.AddressTypePersistence" class="com.ifli.rapid.service.persistence.AddressTypePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.BranchDetailsLocalService" class="com.ifli.rapid.service.impl.BranchDetailsLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.BranchDetailsPersistence" class="com.ifli.rapid.service.persistence.BranchDetailsPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.ChequePaymentRequestLocalService" class="com.ifli.rapid.service.impl.ChequePaymentRequestLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.ChequePaymentRequestPersistence" class="com.ifli.rapid.service.persistence.ChequePaymentRequestPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.CityDetailsLocalService" class="com.ifli.rapid.service.impl.CityDetailsLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.CityDetailsPersistence" class="com.ifli.rapid.service.persistence.CityDetailsPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.ClosedServiceRequestsLocalService" class="com.ifli.rapid.service.impl.ClosedServiceRequestsLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.ClosedServiceRequestsPersistence" class="com.ifli.rapid.service.persistence.ClosedServiceRequestsPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.ConfirmDetailsLocalService" class="com.ifli.rapid.service.impl.ConfirmDetailsLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.ConfirmDetailsPersistence" class="com.ifli.rapid.service.persistence.ConfirmDetailsPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.CustomerLocalService" class="com.ifli.rapid.service.impl.CustomerLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.CustomerPersistence" class="com.ifli.rapid.service.persistence.CustomerPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.customerAddressLocalService" class="com.ifli.rapid.service.impl.customerAddressLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.customerAddressPersistence" class="com.ifli.rapid.service.persistence.customerAddressPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.CustomerFamilyDetailsLocalService" class="com.ifli.rapid.service.impl.CustomerFamilyDetailsLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.CustomerFamilyDetailsPersistence" class="com.ifli.rapid.service.persistence.CustomerFamilyDetailsPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.customerMailIdsLocalService" class="com.ifli.rapid.service.impl.customerMailIdsLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.customerMailIdsPersistence" class="com.ifli.rapid.service.persistence.customerMailIdsPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.CustomerMobileNumbersLocalService" class="com.ifli.rapid.service.impl.CustomerMobileNumbersLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.CustomerMobileNumbersPersistence" class="com.ifli.rapid.service.persistence.CustomerMobileNumbersPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.CustomerOtpLocalService" class="com.ifli.rapid.service.impl.CustomerOtpLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.CustomerOtpPersistence" class="com.ifli.rapid.service.persistence.CustomerOtpPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.FamilyRelationsLocalService" class="com.ifli.rapid.service.impl.FamilyRelationsLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.FamilyRelationsPersistence" class="com.ifli.rapid.service.persistence.FamilyRelationsPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.FundMasterLocalService" class="com.ifli.rapid.service.impl.FundMasterLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.FundMasterPersistence" class="com.ifli.rapid.service.persistence.FundMasterPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.LocationDetailsLocalService" class="com.ifli.rapid.service.impl.LocationDetailsLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.LocationDetailsPersistence" class="com.ifli.rapid.service.persistence.LocationDetailsPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.NavHistoryLocalService" class="com.ifli.rapid.service.impl.NavHistoryLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.NavHistoryPersistence" class="com.ifli.rapid.service.persistence.NavHistoryPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.PaymentDetailsLocalService" class="com.ifli.rapid.service.impl.PaymentDetailsLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.PaymentDetailsPersistence" class="com.ifli.rapid.service.persistence.PaymentDetailsPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.PaymentGatewayMasterLocalService" class="com.ifli.rapid.service.impl.PaymentGatewayMasterLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.PaymentGatewayMasterPersistence" class="com.ifli.rapid.service.persistence.PaymentGatewayMasterPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.PaymentMethodMasterLocalService" class="com.ifli.rapid.service.impl.PaymentMethodMasterLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.PaymentMethodMasterPersistence" class="com.ifli.rapid.service.persistence.PaymentMethodMasterPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.PaymentMethodTypeLocalService" class="com.ifli.rapid.service.impl.PaymentMethodTypeLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.PaymentMethodTypePersistence" class="com.ifli.rapid.service.persistence.PaymentMethodTypePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.PaymentOptionMasterLocalService" class="com.ifli.rapid.service.impl.PaymentOptionMasterLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.PaymentOptionMasterPersistence" class="com.ifli.rapid.service.persistence.PaymentOptionMasterPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.PaymentOptionTypesLocalService" class="com.ifli.rapid.service.impl.PaymentOptionTypesLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.PaymentOptionTypesPersistence" class="com.ifli.rapid.service.persistence.PaymentOptionTypesPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.PaymentTransactionStatusMasterLocalService" class="com.ifli.rapid.service.impl.PaymentTransactionStatusMasterLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.PaymentTransactionStatusMasterPersistence" class="com.ifli.rapid.service.persistence.PaymentTransactionStatusMasterPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.PincodeDetailsLocalService" class="com.ifli.rapid.service.impl.PincodeDetailsLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.PincodeDetailsPersistence" class="com.ifli.rapid.service.persistence.PincodeDetailsPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.POLICY_DOC_TYPESLocalService" class="com.ifli.rapid.service.impl.POLICY_DOC_TYPESLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.POLICY_DOC_TYPESPersistence" class="com.ifli.rapid.service.persistence.POLICY_DOC_TYPESPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.PolicyAddressLocalService" class="com.ifli.rapid.service.impl.PolicyAddressLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.PolicyAddressPersistence" class="com.ifli.rapid.service.persistence.PolicyAddressPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.PolicyFundLocalService" class="com.ifli.rapid.service.impl.PolicyFundLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.PolicyFundPersistence" class="com.ifli.rapid.service.persistence.PolicyFundPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.PolicyFundSwitchCounterLocalService" class="com.ifli.rapid.service.impl.PolicyFundSwitchCounterLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.PolicyFundSwitchCounterPersistence" class="com.ifli.rapid.service.persistence.PolicyFundSwitchCounterPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.PolicyFundSwitchDetailsLocalService" class="com.ifli.rapid.service.impl.PolicyFundSwitchDetailsLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.PolicyFundSwitchDetailsPersistence" class="com.ifli.rapid.service.persistence.PolicyFundSwitchDetailsPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.PolicyInfoLocalService" class="com.ifli.rapid.service.impl.PolicyInfoLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.PolicyInfoPersistence" class="com.ifli.rapid.service.persistence.PolicyInfoPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.PolicyPremPercentageLocalService" class="com.ifli.rapid.service.impl.PolicyPremPercentageLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.PolicyPremPercentagePersistence" class="com.ifli.rapid.service.persistence.PolicyPremPercentagePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.PolicyPremRedirectionDetailsLocalService" class="com.ifli.rapid.service.impl.PolicyPremRedirectionDetailsLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.PolicyPremRedirectionDetailsPersistence" class="com.ifli.rapid.service.persistence.PolicyPremRedirectionDetailsPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.PolicyTopupDetailsLocalService" class="com.ifli.rapid.service.impl.PolicyTopupDetailsLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.PolicyTopupDetailsPersistence" class="com.ifli.rapid.service.persistence.PolicyTopupDetailsPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.PREMIUM_PAID_CERTIFICATELocalService" class="com.ifli.rapid.service.impl.PREMIUM_PAID_CERTIFICATELocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.PREMIUM_PAID_CERTIFICATEPersistence" class="com.ifli.rapid.service.persistence.PREMIUM_PAID_CERTIFICATEPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.PremiumFrequencyMasterLocalService" class="com.ifli.rapid.service.impl.PremiumFrequencyMasterLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.PremiumFrequencyMasterPersistence" class="com.ifli.rapid.service.persistence.PremiumFrequencyMasterPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.PremiumTypeLocalService" class="com.ifli.rapid.service.impl.PremiumTypeLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.PremiumTypePersistence" class="com.ifli.rapid.service.persistence.PremiumTypePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.ProductFundMappingLocalService" class="com.ifli.rapid.service.impl.ProductFundMappingLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.ProductFundMappingPersistence" class="com.ifli.rapid.service.persistence.ProductFundMappingPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.ProofDocsLocalService" class="com.ifli.rapid.service.impl.ProofDocsLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.ProofDocsPersistence" class="com.ifli.rapid.service.persistence.ProofDocsPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.QRCStatusLocalService" class="com.ifli.rapid.service.impl.QRCStatusLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.QRCStatusPersistence" class="com.ifli.rapid.service.persistence.QRCStatusPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.QRCSubTypeMasterLocalService" class="com.ifli.rapid.service.impl.QRCSubTypeMasterLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.QRCSubTypeMasterPersistence" class="com.ifli.rapid.service.persistence.QRCSubTypeMasterPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.QRCTeamMasterLocalService" class="com.ifli.rapid.service.impl.QRCTeamMasterLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.QRCTeamMasterPersistence" class="com.ifli.rapid.service.persistence.QRCTeamMasterPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.QRCTypeMasterLocalService" class="com.ifli.rapid.service.impl.QRCTypeMasterLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.QRCTypeMasterPersistence" class="com.ifli.rapid.service.persistence.QRCTypeMasterPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.QRCUserLocalService" class="com.ifli.rapid.service.impl.QRCUserLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.QRCUserPersistence" class="com.ifli.rapid.service.persistence.QRCUserPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.Recommended_ProductsLocalService" class="com.ifli.rapid.service.impl.Recommended_ProductsLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.Recommended_ProductsPersistence" class="com.ifli.rapid.service.persistence.Recommended_ProductsPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.RENEWAL_PREMIUMLocalService" class="com.ifli.rapid.service.impl.RENEWAL_PREMIUMLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.RENEWAL_PREMIUMPersistence" class="com.ifli.rapid.service.persistence.RENEWAL_PREMIUMPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.ServiceMasterLocalService" class="com.ifli.rapid.service.impl.ServiceMasterLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.ServiceMasterPersistence" class="com.ifli.rapid.service.persistence.ServiceMasterPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.ServiceRequestMasterLocalService" class="com.ifli.rapid.service.impl.ServiceRequestMasterLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.ServiceRequestMasterPersistence" class="com.ifli.rapid.service.persistence.ServiceRequestMasterPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.ServiceSubMasterLocalService" class="com.ifli.rapid.service.impl.ServiceSubMasterLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.ServiceSubMasterPersistence" class="com.ifli.rapid.service.persistence.ServiceSubMasterPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.StateDetailsLocalService" class="com.ifli.rapid.service.impl.StateDetailsLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.StateDetailsPersistence" class="com.ifli.rapid.service.persistence.StateDetailsPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.TempCustomerLocalService" class="com.ifli.rapid.service.impl.TempCustomerLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.TempCustomerPersistence" class="com.ifli.rapid.service.persistence.TempCustomerPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifli.rapid.service.TempCustomerAddressLocalService" class="com.ifli.rapid.service.impl.TempCustomerAddressLocalServiceImpl" />
+	<bean id="com.ifli.rapid.service.persistence.TempCustomerAddressPersistence" class="com.ifli.rapid.service.persistence.TempCustomerAddressPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSource" />
+		<property name="sessionFactory" ref="servicesSessionFactory" />
+	</bean>
+	<bean id="com.ifl.rapid.customer.service.ApplyTrnApplicationFormLocalService" class="com.ifl.rapid.customer.service.impl.ApplyTrnApplicationFormLocalServiceImpl" />
+	<bean id="com.ifl.rapid.customer.service.persistence.ApplyTrnApplicationFormPersistence" class="com.ifl.rapid.customer.service.persistence.ApplyTrnApplicationFormPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSourceService" />
+		<property name="sessionFactory" ref="servicesSessionFactoryService" />
+	</bean>
+	<bean id="com.ifl.rapid.customer.service.ApplyTrnQuoteDetailsLocalService" class="com.ifl.rapid.customer.service.impl.ApplyTrnQuoteDetailsLocalServiceImpl" />
+	<bean id="com.ifl.rapid.customer.service.persistence.ApplyTrnQuoteDetailsPersistence" class="com.ifl.rapid.customer.service.persistence.ApplyTrnQuoteDetailsPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSourceService" />
+		<property name="sessionFactory" ref="servicesSessionFactoryService" />
+	</bean>
+	<bean id="com.ifl.rapid.customer.service.CityLocalService" class="com.ifl.rapid.customer.service.impl.CityLocalServiceImpl" />
+	<bean id="com.ifl.rapid.customer.service.persistence.CityPersistence" class="com.ifl.rapid.customer.service.persistence.CityPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSourceService" />
+		<property name="sessionFactory" ref="servicesSessionFactoryService" />
+	</bean>
+	<bean id="com.ifl.rapid.customer.service.Config_Mst_GenericMasterLocalService" class="com.ifl.rapid.customer.service.impl.Config_Mst_GenericMasterLocalServiceImpl" />
+	<bean id="com.ifl.rapid.customer.service.persistence.Config_Mst_GenericMasterPersistence" class="com.ifl.rapid.customer.service.persistence.Config_Mst_GenericMasterPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSourceService" />
+		<property name="sessionFactory" ref="servicesSessionFactoryService" />
+	</bean>
+	<bean id="com.ifl.rapid.customer.service.CRM_Trn_AddressLocalService" class="com.ifl.rapid.customer.service.impl.CRM_Trn_AddressLocalServiceImpl" />
+	<bean id="com.ifl.rapid.customer.service.persistence.CRM_Trn_AddressPersistence" class="com.ifl.rapid.customer.service.persistence.CRM_Trn_AddressPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSourceService" />
+		<property name="sessionFactory" ref="servicesSessionFactoryService" />
+	</bean>
+	<bean id="com.ifl.rapid.customer.service.CRM_Trn_ContactLocalService" class="com.ifl.rapid.customer.service.impl.CRM_Trn_ContactLocalServiceImpl" />
+	<bean id="com.ifl.rapid.customer.service.CRM_Trn_ContactService" class="com.ifl.rapid.customer.service.impl.CRM_Trn_ContactServiceImpl" />
+	<bean id="com.ifl.rapid.customer.service.persistence.CRM_Trn_ContactPersistence" class="com.ifl.rapid.customer.service.persistence.CRM_Trn_ContactPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSourceService" />
+		<property name="sessionFactory" ref="servicesSessionFactoryService" />
+	</bean>
+	<bean id="com.ifl.rapid.customer.service.CRM_Trn_PhoneLocalService" class="com.ifl.rapid.customer.service.impl.CRM_Trn_PhoneLocalServiceImpl" />
+	<bean id="com.ifl.rapid.customer.service.persistence.CRM_Trn_PhonePersistence" class="com.ifl.rapid.customer.service.persistence.CRM_Trn_PhonePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSourceService" />
+		<property name="sessionFactory" ref="servicesSessionFactoryService" />
+	</bean>
+	<bean id="com.ifl.rapid.customer.service.CRM_Trn_PolicyAddressLocalService" class="com.ifl.rapid.customer.service.impl.CRM_Trn_PolicyAddressLocalServiceImpl" />
+	<bean id="com.ifl.rapid.customer.service.persistence.CRM_Trn_PolicyAddressPersistence" class="com.ifl.rapid.customer.service.persistence.CRM_Trn_PolicyAddressPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSourceService" />
+		<property name="sessionFactory" ref="servicesSessionFactoryService" />
+	</bean>
+	<bean id="com.ifl.rapid.customer.service.CRMTrnContactCommunicationLocalService" class="com.ifl.rapid.customer.service.impl.CRMTrnContactCommunicationLocalServiceImpl" />
+	<bean id="com.ifl.rapid.customer.service.persistence.CRMTrnContactCommunicationPersistence" class="com.ifl.rapid.customer.service.persistence.CRMTrnContactCommunicationPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSourceService" />
+		<property name="sessionFactory" ref="servicesSessionFactoryService" />
+	</bean>
+	<bean id="com.ifl.rapid.customer.service.CRMTrnFamilyMemberLocalService" class="com.ifl.rapid.customer.service.impl.CRMTrnFamilyMemberLocalServiceImpl" />
+	<bean id="com.ifl.rapid.customer.service.persistence.CRMTrnFamilyMemberPersistence" class="com.ifl.rapid.customer.service.persistence.CRMTrnFamilyMemberPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSourceService" />
+		<property name="sessionFactory" ref="servicesSessionFactoryService" />
+	</bean>
+	<bean id="com.ifl.rapid.customer.service.LocMstBranchLocationLocalService" class="com.ifl.rapid.customer.service.impl.LocMstBranchLocationLocalServiceImpl" />
+	<bean id="com.ifl.rapid.customer.service.persistence.LocMstBranchLocationPersistence" class="com.ifl.rapid.customer.service.persistence.LocMstBranchLocationPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSourceService" />
+		<property name="sessionFactory" ref="servicesSessionFactoryService" />
+	</bean>
+	<bean id="com.ifl.rapid.customer.service.LocMstLocationLocalService" class="com.ifl.rapid.customer.service.impl.LocMstLocationLocalServiceImpl" />
+	<bean id="com.ifl.rapid.customer.service.persistence.LocMstLocationPersistence" class="com.ifl.rapid.customer.service.persistence.LocMstLocationPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSourceService" />
+		<property name="sessionFactory" ref="servicesSessionFactoryService" />
+	</bean>
+	<bean id="com.ifl.rapid.customer.service.PrdMstProductLocalService" class="com.ifl.rapid.customer.service.impl.PrdMstProductLocalServiceImpl" />
+	<bean id="com.ifl.rapid.customer.service.persistence.PrdMstProductPersistence" class="com.ifl.rapid.customer.service.persistence.PrdMstProductPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSourceService" />
+		<property name="sessionFactory" ref="servicesSessionFactoryService" />
+	</bean>
+	<bean id="com.ifl.rapid.customer.service.QrcMstRequestsLocalService" class="com.ifl.rapid.customer.service.impl.QrcMstRequestsLocalServiceImpl" />
+	<bean id="com.ifl.rapid.customer.service.persistence.QrcMstRequestsPersistence" class="com.ifl.rapid.customer.service.persistence.QrcMstRequestsPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSourceService" />
+		<property name="sessionFactory" ref="servicesSessionFactoryService" />
+	</bean>
+	<bean id="com.ifl.rapid.customer.service.QrcMstServicesLocalService" class="com.ifl.rapid.customer.service.impl.QrcMstServicesLocalServiceImpl" />
+	<bean id="com.ifl.rapid.customer.service.persistence.QrcMstServicesPersistence" class="com.ifl.rapid.customer.service.persistence.QrcMstServicesPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSourceService" />
+		<property name="sessionFactory" ref="servicesSessionFactoryService" />
+	</bean>
+	<bean id="com.ifl.rapid.customer.service.QrcMstSubServicesLocalService" class="com.ifl.rapid.customer.service.impl.QrcMstSubServicesLocalServiceImpl" />
+	<bean id="com.ifl.rapid.customer.service.persistence.QrcMstSubServicesPersistence" class="com.ifl.rapid.customer.service.persistence.QrcMstSubServicesPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSourceService" />
+		<property name="sessionFactory" ref="servicesSessionFactoryService" />
+	</bean>
+	<bean id="com.ifl.rapid.customer.service.QrcTrnHistoryLocalService" class="com.ifl.rapid.customer.service.impl.QrcTrnHistoryLocalServiceImpl" />
+	<bean id="com.ifl.rapid.customer.service.persistence.QrcTrnHistoryPersistence" class="com.ifl.rapid.customer.service.persistence.QrcTrnHistoryPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSourceService" />
+		<property name="sessionFactory" ref="servicesSessionFactoryService" />
+	</bean>
+	<bean id="com.ifl.rapid.customer.service.QrcTrnOtpLocalService" class="com.ifl.rapid.customer.service.impl.QrcTrnOtpLocalServiceImpl" />
+	<bean id="com.ifl.rapid.customer.service.persistence.QrcTrnOtpPersistence" class="com.ifl.rapid.customer.service.persistence.QrcTrnOtpPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSourceService" />
+		<property name="sessionFactory" ref="servicesSessionFactoryService" />
+	</bean>
+	<bean id="com.ifl.rapid.customer.service.QrcTrnServiceRequestsLocalService" class="com.ifl.rapid.customer.service.impl.QrcTrnServiceRequestsLocalServiceImpl" />
+	<bean id="com.ifl.rapid.customer.service.persistence.QrcTrnServiceRequestsPersistence" class="com.ifl.rapid.customer.service.persistence.QrcTrnServiceRequestsPersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSourceService" />
+		<property name="sessionFactory" ref="servicesSessionFactoryService" />
+	</bean>
+	<bean id="com.ifl.rapid.customer.service.StateLocalService" class="com.ifl.rapid.customer.service.impl.StateLocalServiceImpl" />
+	<bean id="com.ifl.rapid.customer.service.persistence.StatePersistence" class="com.ifl.rapid.customer.service.persistence.StatePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="servicesDataSourceService" />
+		<property name="sessionFactory" ref="servicesSessionFactoryService" />
+	</bean>
+</beans>

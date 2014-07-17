@@ -1,0 +1,1031 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.ifli.rapid.model.ActiveServiceRequests">
+		<field name="QRC_ASR_ID" type="int" />
+		<field name="TYPE_ID" type="int" />
+		<field name="SUB_TYPE_ID" type="int" />
+		<field name="ASSIGNED_TO" type="int" />
+		<field name="HANDLED_BY" type="int" />
+		<field name="STATUS_ID" type="int" />
+		<field name="CUSTOMER_ID" type="int" />
+		<field name="CUST_SR_NUMBER" type="String" />
+		<field name="ADDITIONAL_DATA_XML" type="String" />
+		<field name="INSERTED_DATE" type="Date" />
+		<field name="INSERTED_BY" type="String" />
+		<field name="UPDATED_DATE" type="Date" />
+		<field name="UPDATED_BY" type="String" />
+	</model>
+	<model name="com.ifli.rapid.model.AddressChangeReqDetails">
+		<field name="ADDR_CHANGE_DETAILS_ID" type="int" />
+		<field name="REQUEST_SUBMIT_TYPE" type="String" />
+		<field name="SERVICE_REQUEST_ID" type="int" />
+		<field name="SUB_TYPE" type="int" />
+		<field name="ADDRESS_TYPE_ID" type="int" />
+		<field name="CUSTOMER_ID" type="int" />
+		<field name="SUBMIT_AT_BRANCH" type="int" />
+		<field name="PICKUP_DATE" type="Date" />
+		<field name="PICKUP_TIME" type="String" />
+		<field name="INSERTED_DATE" type="Date" />
+		<field name="INSERTED_BY" type="String" />
+		<field name="UPDATED_DATE" type="Date" />
+		<field name="UPDATED_BY" type="String" />
+	</model>
+	<model name="com.ifli.rapid.model.AddressType">
+		<field name="ADDRESS_TYPE_ID" type="int" />
+		<field name="INSERTED_BY" type="String" />
+		<field name="INSERTED_DATE" type="Date" />
+		<field name="UPDATED_BY" type="String" />
+		<field name="UPDATED_DATE" type="Date" />
+		<field name="ACTIVE_FLAG" type="String" />
+		<field name="ADDRESS_TYPE_DESC" type="String" />
+	</model>
+	<model name="com.ifli.rapid.model.BranchDetails">
+		<field name="BRANCH_ID" type="int" />
+		<field name="LOCATION_ID" type="int" />
+		<field name="BRANCH_NAME" type="String" />
+		<field name="BRANCH_OPENING_TIME" type="String" />
+		<field name="BRANCH_CLOSING_TIME" type="String" />
+		<field name="ADDRESS_FIRST_LINE" type="String" />
+		<field name="ADDRESS_SECOND_LINE" type="String" />
+		<field name="CITY" type="String" />
+		<field name="STATE" type="String" />
+		<field name="PIN" type="String" />
+		<field name="PRIMARY_CONTACT_NO" type="String" />
+		<field name="OTHER_CONTACT_NO" type="String" />
+		<field name="FAX_NUMBER" type="String" />
+		<field name="BRANCH_CODE" type="String" />
+		<field name="WORK_TIMINGS" type="String" />
+	</model>
+	<model name="com.ifli.rapid.model.ChequePaymentRequest">
+		<field name="ServiceRequestID" type="String" />
+		<field name="ServiceRequestMasterId" type="String" />
+		<field name="description" type="String" />
+		<field name="contactId" type="String" />
+		<field name="startPreferedTime" type="Date" />
+		<field name="endPreferedTime" type="Date" />
+		<field name="PreferedDate" type="Date" />
+	</model>
+	<model name="com.ifli.rapid.model.CityDetails">
+		<field name="CITY_ID" type="int" />
+		<field name="CITY_CODE" type="String" />
+		<field name="CITY_NAME" type="String" />
+		<field name="STATE_ID" type="int" />
+		<field name="IS_ACTIVE" type="String" />
+	</model>
+	<model name="com.ifli.rapid.model.ClosedServiceRequests">
+		<field name="QRC_CSR_ID" type="int" />
+		<field name="TYPE_ID" type="int" />
+		<field name="ASSIGNED_TO" type="int" />
+		<field name="HANDLED_BY" type="int" />
+		<field name="STATUS_ID" type="int" />
+		<field name="CUSTOMER_ID" type="String" />
+		<field name="customerSRNumber" type="String" />
+		<field name="ADDITIONAL_DATA_XML" type="String" />
+		<field name="INSERTED_DATE" type="Date" />
+		<field name="INSERTED_BY" type="String" />
+		<field name="UPDATED_DATE" type="Date" />
+		<field name="UPDATED_BY" type="String" />
+	</model>
+	<model name="com.ifli.rapid.model.ConfirmDetails">
+		<field name="ID" type="int" />
+		<field name="QRC_ASR_ID" type="int" />
+		<field name="Approval_Status" type="String" />
+		<field name="Comments" type="String" />
+		<field name="Sign_Flag" type="String" />
+		<field name="CreatedBy" type="String" />
+		<field name="CreatedDate" type="Date" />
+	</model>
+	<model name="com.ifli.rapid.model.Customer">
+		<field name="CUSTOMER_ID" type="int" />
+		<field name="CUSTOMER_SALUTATION" type="String" />
+		<field name="CUSTOMER_FIRST_NAME" type="String" />
+		<field name="CUSTOMER_LAST_NAME" type="String" />
+		<field name="CUSTOMER_MIDDLE_NAME" type="String" />
+		<field name="CUSTOMER_DATE_OF_BIRTH" type="String" />
+		<field name="CUSTOMER_EMAIL_ADDR" type="String" />
+		<field name="OFFICE_NAME" type="String" />
+		<field name="DESIGNATION" type="String" />
+		<field name="DEPARTMENT" type="String" />
+		<field name="PRIMARY_ADDRESS_LINE_1" type="String" />
+		<field name="PRIMARY_ADDRESS_LINE_2" type="String" />
+		<field name="PRIMARY_ADDRESS_LINE_3" type="String" />
+		<field name="PRIMARY_ADDRESS_CITY" type="String" />
+		<field name="PRIMARY_ADDRESS_STATE" type="String" />
+		<field name="PRIMARY_ADDRESS_PINCODE" type="String" />
+		<field name="PHONE_NUMBER_1" type="String" />
+		<field name="PHONE_NUMBER_2" type="String" />
+		<field name="PHONE_NUMBER_3" type="String" />
+		<field name="LOGIN_NAME" type="String" />
+		<field name="GENDER" type="String" />
+		<field name="MARITAL_STATUS" type="String" />
+		<field name="COUNTRY" type="String" />
+		<field name="PRIMARY_ADDRESS_STATE_ID" type="int" />
+		<field name="PRIMARY_ADDRESS_CITY_ID" type="int" />
+		<field name="ADDED_BY" type="String" />
+		<field name="ADDED_DATE" type="Date" />
+		<field name="UPDATED_BY" type="String" />
+		<field name="UPDATED_DATE" type="Date" />
+		<field name="PANCARD" type="String" />
+	</model>
+	<model name="com.ifli.rapid.model.customerAddress">
+		<field name="CUSTOMER_ADDRESS_ID" type="int" />
+		<field name="CUSTOMER_ID" type="int" />
+		<field name="ADDRESS_LINE_1" type="String" />
+		<field name="ADDRESS_LINE_2" type="String" />
+		<field name="ADDRESS_LINE_3" type="String" />
+		<field name="CHANGE_REQUEST_TYPE" type="String" />
+		<field name="CITY" type="String" />
+		<field name="STATE" type="String" />
+		<field name="CITY_ID" type="int" />
+		<field name="STATE_ID" type="int" />
+		<field name="PIN_CODE" type="String" />
+		<field name="CHANGE_REQUEST_FOR" type="int" />
+		<field name="ADDRESS_TYPE_ID" type="int" />
+		<field name="ADDR_STATUS" type="String" />
+		<field name="INSERTED_BY" type="String" />
+		<field name="INSERTED_DATE" type="Date" />
+		<field name="UPDATED_BY" type="String" />
+		<field name="UPDATED_DATE" type="Date" />
+	</model>
+	<model name="com.ifli.rapid.model.CustomerFamilyDetails">
+		<field name="CUSTOMER_FAMILY_ID" type="int" />
+		<field name="PERSON_NAME" type="String" />
+		<field name="RELATION" type="String" />
+		<field name="DEPENDENT" type="String" />
+		<field name="AGE" type="int" />
+		<field name="CUSTOMER_ID" type="int" />
+		<field name="ADDED_BY" type="String" />
+		<field name="ADDED_DATE" type="Date" />
+		<field name="UPDATED_BY" type="String" />
+		<field name="UPDATED_DATE" type="Date" />
+	</model>
+	<model name="com.ifli.rapid.model.customerMailIds">
+		<field name="ID" type="int" />
+		<field name="CUSTOMER_ID" type="int" />
+		<field name="EMAIL_ID" type="String" />
+		<field name="INSERTED_BY" type="String" />
+		<field name="INSERTED_DATE" type="Date" />
+		<field name="UPDATED_BY" type="String" />
+		<field name="UPDATED_DATE" type="Date" />
+	</model>
+	<model name="com.ifli.rapid.model.CustomerMobileNumbers">
+		<field name="ID" type="int" />
+		<field name="CUSTOMER_ID" type="int" />
+		<field name="MOBILE_NUMBER" type="String" />
+		<field name="INSERTED_BY" type="String" />
+		<field name="INSERTED_DATE" type="Date" />
+		<field name="UPDATED_BY" type="String" />
+		<field name="UPDATED_DATE" type="Date" />
+	</model>
+	<model name="com.ifli.rapid.model.CustomerOtp">
+		<field name="CUSTOMER_ID" type="int" />
+		<field name="EMAIL_OTP" type="String" />
+		<field name="PHONE_OTP" type="String" />
+		<field name="STATUS" type="String" />
+		<field name="ADDED_DATE" type="Date" />
+		<field name="UPDATED_DATE" type="Date" />
+	</model>
+	<model name="com.ifli.rapid.model.FamilyRelations">
+		<field name="RELATION_ID" type="int" />
+		<field name="RELATION_NAME" type="String" />
+	</model>
+	<model name="com.ifli.rapid.model.FundMaster">
+		<field name="FUND_ID" type="int" />
+		<field name="FUND_NAME" type="String" />
+		<field name="FUND_CODE" type="String" />
+		<field name="INSERTED_DATE" type="Date" />
+		<field name="INSERTED_BY" type="String" />
+		<field name="UPDATED_DATE" type="Date" />
+		<field name="UPDATED_BY" type="String" />
+	</model>
+	<model name="com.ifli.rapid.model.LocationDetails">
+		<field name="LOCATION_ID" type="int" />
+		<field name="LOCATION_NAME" type="String" />
+		<field name="CITY_ID" type="int" />
+		<field name="STATE_ID" type="int" />
+		<field name="LATITUDE" type="String" />
+		<field name="LONGITUDE" type="String" />
+		<field name="BRANCH_FLAG" type="String" />
+		<field name="MEDICAL_CENTER_FLAG" type="String" />
+		<field name="DROP_BOX_FLAG" type="String" />
+	</model>
+	<model name="com.ifli.rapid.model.NavHistory">
+		<field name="NAV_HISTORY_ID" type="long" />
+		<field name="DATE" type="Date" />
+		<field name="NAV" type="double" />
+		<field name="SALE_PRICE" type="double" />
+		<field name="PURCHASE_PRICE" type="double" />
+		<field name="FUND_CODE" type="String" />
+		<field name="FUND_NAME" type="String" />
+	</model>
+	<model name="com.ifli.rapid.model.PaymentDetails">
+		<field name="PaymentId" type="int" />
+		<field name="PremiumFrequencyID" type="String" />
+		<field name="TransactionStatusID" type="int" />
+		<field name="RequestTypeID" type="String" />
+		<field name="PaymentOptionId" type="String" />
+		<field name="PaymentMethodID" type="String" />
+		<field name="ProductID" type="String" />
+		<field name="ProposalId" type="String" />
+		<field name="PremiumAmount" type="double" />
+		<field name="BankName" type="String" />
+		<field name="CreditCardNo" type="long" />
+		<field name="CardType" type="String" />
+		<field name="NameAsCard" type="String" />
+		<field name="CVVNo" type="int" />
+		<field name="CardExpiryDate" type="Date" />
+		<field name="CreatedBy" type="String" />
+		<field name="CreatedDate" type="Date" />
+		<field name="ModifiedBy" type="String" />
+		<field name="ModifiedDate" type="Date" />
+		<field name="ChequePickupRequestId" type="String" />
+		<field name="TransactionReferenceNo" type="String" />
+		<field name="BillDeskMerchantId" type="String" />
+		<field name="BobMerchantTxnId" type="String" />
+		<field name="PaymentReceiptNo" type="long" />
+	</model>
+	<model name="com.ifli.rapid.model.PaymentGatewayMaster">
+		<field name="GatewayID" type="String" />
+		<field name="GatewayDescription" type="String" />
+		<field name="GatewayKey" type="String" />
+		<field name="IsActive" type="boolean" />
+		<field name="CreatedBy" type="String" />
+		<field name="CreatedDate" type="Date" />
+		<field name="ModifiedBy" type="String" />
+		<field name="ModifiedDate" type="Date" />
+		<field name="Priority" type="int" />
+		<field name="ItemCode" type="String" />
+	</model>
+	<model name="com.ifli.rapid.model.PaymentMethodMaster">
+		<field name="PaymentMethodID" type="String" />
+		<field name="PaymentMethodKey" type="String" />
+		<field name="IsActive" type="boolean" />
+		<field name="CreatedBy" type="String" />
+		<field name="CreatedDate" type="Date" />
+		<field name="ModifiedBy" type="String" />
+		<field name="ModifiedDate" type="Date" />
+		<field name="Priority" type="int" />
+	</model>
+	<model name="com.ifli.rapid.model.PaymentMethodType">
+		<field name="Id" type="String" />
+		<field name="PaymentMethodID" type="String" />
+		<field name="GatewayID" type="String" />
+		<field name="TypeKey" type="String" />
+		<field name="Description" type="String" />
+		<field name="BankId" type="String" />
+		<field name="Active" type="boolean" />
+		<field name="CreatedBy" type="String" />
+		<field name="CreatedDate" type="Date" />
+		<field name="ModifiedBy" type="String" />
+		<field name="ModifiedDate" type="Date" />
+		<field name="Type" type="String" />
+	</model>
+	<model name="com.ifli.rapid.model.PaymentOptionMaster">
+		<field name="PaymentOptionId" type="String" />
+		<field name="PaymentOptionKey" type="String" />
+		<field name="IsActive" type="boolean" />
+		<field name="CreatedBy" type="String" />
+		<field name="CreatedDate" type="Date" />
+		<field name="ModifiedBy" type="String" />
+		<field name="ModifiedDate" type="Date" />
+		<field name="Priority" type="int" />
+		<field name="PaymentOptionDesc" type="String" />
+		<field name="isProcessPayment" type="boolean" />
+	</model>
+	<model name="com.ifli.rapid.model.PaymentOptionTypes">
+		<field name="PaymentOptionTypesId" type="String" />
+		<field name="PaymentOptionId" type="String" />
+		<field name="OptionTypesKey" type="String" />
+		<field name="IsActive" type="boolean" />
+		<field name="CreatedBy" type="String" />
+		<field name="CreatedDate" type="Date" />
+		<field name="ModifiedBy" type="String" />
+		<field name="ModifiedDate" type="Date" />
+		<field name="Priority" type="int" />
+		<field name="PaymentOptionTypeDesc" type="String" />
+	</model>
+	<model name="com.ifli.rapid.model.PaymentTransactionStatusMaster">
+		<field name="TransactionStatusID" type="int" />
+		<field name="StatusCode" type="int" />
+		<field name="StatusName" type="String" />
+		<field name="StatusDesc" type="String" />
+		<field name="IsActive" type="boolean" />
+		<field name="CreatedBy" type="String" />
+		<field name="CreatedDate" type="Date" />
+		<field name="ModifiedBy" type="String" />
+		<field name="ModifiedDate" type="Date" />
+	</model>
+	<model name="com.ifli.rapid.model.PincodeDetails">
+		<field name="PIN_ID" type="int" />
+		<field name="CITY_ID" type="int" />
+		<field name="STATE_ID" type="int" />
+		<field name="PIN_CODE" type="String" />
+	</model>
+	<model name="com.ifli.rapid.model.POLICY_DOC_TYPES">
+		<field name="ID" type="int" />
+		<field name="DOC_NAME" type="String" />
+	</model>
+	<model name="com.ifli.rapid.model.PolicyAddress">
+		<field name="ID" type="int" />
+		<field name="POLICY_ID" type="String" />
+		<field name="CUSTOMER_ID" type="String" />
+		<field name="CUSTOMER_ADDRESS_ID" type="int" />
+		<field name="PINCODE" type="String" />
+		<field name="CITY" type="String" />
+		<field name="STATE" type="String" />
+		<field name="ADDRESS_LINE_1" type="String" />
+		<field name="ADDRESS_LINE_2" type="String" />
+		<field name="ADDRESS_LINE_3" type="String" />
+	</model>
+	<model name="com.ifli.rapid.model.PolicyFund">
+		<field name="POLICY_FUND_ID" type="int" />
+		<field name="POLICY_ID" type="String" />
+		<field name="FUND_ID" type="int" />
+		<field name="FUND_UNITS" type="double" />
+		<field name="NAV" type="double" />
+		<field name="TOTAL_FUND" type="double" />
+	</model>
+	<model name="com.ifli.rapid.model.PolicyFundSwitchCounter">
+		<field name="POLICY_ID" type="String" />
+		<field name="FUND_SWITCH_COUNTER" type="int" />
+		<field name="FUND_SWITCH_YEAR" type="Date" />
+	</model>
+	<model name="com.ifli.rapid.model.PolicyFundSwitchDetails">
+		<field name="FUND_SWITCH_ID" type="int" />
+		<field name="POLICY_ID" type="String" />
+		<field name="QRC_ASR_ID" type="int" />
+		<field name="FUND_FROM" type="String" />
+		<field name="FUND_TO" type="String" />
+		<field name="PRECENTAGE_OF_UNITS" type="double" />
+		<field name="INSERTED_DATE" type="Date" />
+		<field name="INSERTED_BY" type="String" />
+		<field name="UPDATED_DATE" type="Date" />
+		<field name="UPDATED_BY" type="String" />
+	</model>
+	<model name="com.ifli.rapid.model.PolicyInfo">
+		<field name="POLICY_ID" type="String" />
+		<field name="CUSTOMER_ID" type="int" />
+		<field name="PRODUCT_ID" type="int" />
+		<field name="POLICY_DATE" type="String" />
+		<field name="NEXT_PREMIUM_DUEDATE" type="String" />
+		<field name="POLICY_HOLDER1_FIRST_NAME" type="String" />
+		<field name="POLICY_HOLDER1_MIDDLE_NAME" type="String" />
+		<field name="POLICY_HOLDER1_LAST_NAME" type="String" />
+		<field name="SUM_ASSURED" type="double" />
+		<field name="POLICY_HOLDER2_FIRST_NAME" type="String" />
+		<field name="POLICY_HOLDER2_MIDDLE_NAME" type="String" />
+		<field name="POLICY_HOLDER2_LAST_NAME" type="String" />
+		<field name="CHILD_FIRST_NAME" type="String" />
+		<field name="CHILD_DOB" type="String" />
+		<field name="CHILD_LAST_NAME" type="String" />
+		<field name="CURRENT_STATUS" type="String" />
+		<field name="PREMIUM_AMOUNT" type="int" />
+		<field name="FREQUENCY" type="String" />
+		<field name="BRANCH_CODE" type="String" />
+		<field name="LG_CODE" type="String" />
+		<field name="APPLICATION_NUMBER" type="String" />
+		<field name="APPLICATION_DATE" type="String" />
+		<field name="POLICY_HOLDER1_TITLE" type="String" />
+		<field name="CRO_NAME" type="String" />
+		<field name="CRO_NUMBER" type="String" />
+		<field name="BRANCH_NAME" type="String" />
+		<field name="PRODUCT_NAME" type="String" />
+		<field name="REQUIREMENT_FLAG" type="String" />
+		<field name="TERM" type="int" />
+		<field name="MATURITY_DATE" type="Date" />
+		<field name="AMOUNT_DEPOSITED" type="double" />
+		<field name="TOTAL_DUE_AMT" type="double" />
+		<field name="CHANNEL_TYPE" type="String" />
+		<field name="LIFE_ASSURED_NAME" type="String" />
+		<field name="LIFE_ASSURED_DOB" type="Date" />
+		<field name="POLICY_HOLDER1_EMAIL" type="String" />
+		<field name="POLICY_HOLDER1_ADD1" type="String" />
+		<field name="POLICY_HOLDER1_ADD2" type="String" />
+		<field name="POLICY_HOLDER1_CONTACT1" type="String" />
+		<field name="POLICY_HOLDER1_CONTACT2" type="String" />
+		<field name="POLICY_HOLDER1_DOB" type="String" />
+		<field name="RISK_COMMENCEMENT_DATE" type="Date" />
+	</model>
+	<model name="com.ifli.rapid.model.PolicyPremPercentage">
+		<field name="PREM_PERCENTAGE_ID" type="int" />
+		<field name="POLICY_ID" type="String" />
+		<field name="FUND_ID" type="int" />
+		<field name="FUND_PERCENTAGE" type="int" />
+	</model>
+	<model name="com.ifli.rapid.model.PolicyPremRedirectionDetails">
+		<field name="PREM_REDIRECTION_ID" type="int" />
+		<field name="POLICY_ID" type="String" />
+		<field name="TRANSACTION_AUDIT_ID" type="int" />
+		<field name="FUND_CODE" type="String" />
+		<field name="ALLOCATION_PERCENTAGE" type="double" />
+		<field name="SENT_TO_ODS_FLAG" type="String" />
+		<field name="INSERTED_DATE" type="Date" />
+		<field name="INSERTED_BY" type="String" />
+		<field name="UPDATED_DATE" type="Date" />
+		<field name="UPDATED_BY" type="String" />
+	</model>
+	<model name="com.ifli.rapid.model.PolicyTopupDetails">
+		<field name="TOPUP_ID" type="int" />
+		<field name="POLICY_ID" type="String" />
+		<field name="QRC_ASR_ID" type="int" />
+		<field name="FUND_ID" type="int" />
+		<field name="FUND_VALUE" type="double" />
+		<field name="TOPUP_VALUE" type="double" />
+		<field name="TOT_VALUE" type="double" />
+		<field name="TOPUP_PERCENTAGE" type="double" />
+		<field name="CreatedBy" type="String" />
+		<field name="CreatedDate" type="Date" />
+		<field name="ModifiedBy" type="String" />
+		<field name="ModifiedDate" type="Date" />
+	</model>
+	<model name="com.ifli.rapid.model.PREMIUM_PAID_CERTIFICATE">
+		<field name="ID" type="long" />
+		<field name="Financial_Year" type="String" />
+		<field name="Generation_Date" type="String" />
+		<field name="OwnerName" type="String" />
+		<field name="Addrs1" type="String" />
+		<field name="Addrs2" type="String" />
+		<field name="Addrs3" type="String" />
+		<field name="Addrs4" type="String" />
+		<field name="Addrs5" type="String" />
+		<field name="Postcode" type="String" />
+		<field name="MobilePhoneNo" type="String" />
+		<field name="Email_ID" type="String" />
+		<field name="Client_ID" type="String" />
+		<field name="Contract_Type_Desc" type="String" />
+		<field name="ContrNo" type="String" />
+		<field name="Installment_Prem" type="String" />
+		<field name="Billing_Frequency" type="String" />
+		<field name="SumAssured" type="String" />
+		<field name="Total_Pre_Paid" type="String" />
+		<field name="Total_Pre_Due" type="String" />
+		<field name="Coverage" type="String" />
+		<field name="Fin_Year" type="int" />
+		<field name="LETTERCTL" type="String" />
+		<field name="LOCPATH" type="String" />
+		<field name="DOCIDNUM" type="String" />
+		<field name="status" type="String" />
+		<field name="lastProcessedDate" type="String" />
+		<field name="createDate" type="String" />
+		<field name="GLCODE" type="String" />
+		<field name="BRANCH_CODE" type="String" />
+	</model>
+	<model name="com.ifli.rapid.model.PremiumFrequencyMaster">
+		<field name="PremiumFrequencyId" type="String" />
+		<field name="PremiumFrequencyDescription" type="String" />
+		<field name="IsActive" type="boolean" />
+		<field name="CreatedBy" type="String" />
+		<field name="CreatedDate" type="Date" />
+		<field name="ModifiedBy" type="String" />
+		<field name="ModifiedDate" type="Date" />
+		<field name="Priority" type="int" />
+	</model>
+	<model name="com.ifli.rapid.model.PremiumType">
+		<field name="Id" type="String" />
+		<field name="Name" type="String" />
+		<field name="Active" type="boolean" />
+		<field name="CreatedBy" type="String" />
+		<field name="CreatedDate" type="Date" />
+		<field name="ModifiedBy" type="String" />
+		<field name="ModifiedDate" type="Date" />
+		<field name="Priority" type="int" />
+	</model>
+	<model name="com.ifli.rapid.model.ProductFundMapping">
+		<field name="ID" type="int" />
+		<field name="PRODUCT_CODE" type="String" />
+		<field name="FUND_CODE" type="String" />
+	</model>
+	<model name="com.ifli.rapid.model.ProofDocs">
+		<field name="ID" type="long" />
+		<field name="DOC_TYPE" type="String" />
+		<field name="DOC_NAME" type="String" />
+	</model>
+	<model name="com.ifli.rapid.model.QRCStatus">
+		<field name="QRC_STATUS_ID" type="int" />
+		<field name="STATUS_DESC" type="String" />
+		<field name="ACTIVE_FLAG" type="String" />
+		<field name="INSERTED_DATE" type="Date" />
+		<field name="INSERTED_BY" type="String" />
+		<field name="UPDATED_DATE" type="Date" />
+		<field name="UPDATED_BY" type="String" />
+		<field name="DELETED_DATE" type="Date" />
+		<field name="DELETED_BY" type="String" />
+		<field name="QRC_ASR_ID" type="int" />
+	</model>
+	<model name="com.ifli.rapid.model.QRCSubTypeMaster">
+		<field name="QRC_SUB_TYPE_ID" type="int" />
+		<field name="QRC_TYPE_ID" type="int" />
+		<field name="SUB_TYPE_DESC" type="String" />
+		<field name="ACTIVE_FLAG" type="String" />
+		<field name="INSERTED_DATE" type="Date" />
+		<field name="INSERTED_BY" type="String" />
+		<field name="UPDATED_DATE" type="Date" />
+		<field name="UPDATED_BY" type="String" />
+		<field name="DELETED_DATE" type="Date" />
+		<field name="DELETED_BY" type="String" />
+	</model>
+	<model name="com.ifli.rapid.model.QRCTeamMaster">
+		<field name="QRC_TM_ID" type="int" />
+		<field name="TM_DESC" type="String" />
+		<field name="ACTIVE_FLAG" type="String" />
+		<field name="INSERTED_DATE" type="Date" />
+		<field name="INSERTED_BY" type="String" />
+		<field name="UPDATED_DATE" type="Date" />
+		<field name="UPDATED_BY" type="String" />
+		<field name="DELETED_DATE" type="Date" />
+		<field name="DELETED_BY" type="String" />
+	</model>
+	<model name="com.ifli.rapid.model.QRCTypeMaster">
+		<field name="QRC_TYPE_ID" type="int" />
+		<field name="TYPE_DESC" type="String" />
+		<field name="ACTIVE_FLAG" type="String" />
+		<field name="INSERTED_DATE" type="Date" />
+		<field name="INSERTED_BY" type="String" />
+		<field name="UPDATED_DATE" type="Date" />
+		<field name="UPDATED_BY" type="String" />
+		<field name="DELETED_DATE" type="Date" />
+		<field name="DELETED_BY" type="String" />
+	</model>
+	<model name="com.ifli.rapid.model.QRCUser">
+		<field name="QRC_USER_ID" type="int" />
+		<field name="USER_NAME" type="String" />
+		<field name="TEAM_ID" type="int" />
+		<field name="USER_DETAILS" type="int" />
+		<field name="ACTIVE_FLAG" type="String" />
+		<field name="INSERTED_DATE" type="Date" />
+		<field name="INSERTED_BY" type="String" />
+		<field name="UPDATED_DATE" type="Date" />
+		<field name="UPDATED_BY" type="String" />
+		<field name="DELETED_DATE" type="Date" />
+		<field name="DELETED_BY" type="String" />
+	</model>
+	<model name="com.ifli.rapid.model.Recommended_Products">
+		<field name="PRODUCT_ID" type="int" />
+		<field name="PRODUCT_NAME" type="String" />
+		<field name="IMG_URL" type="String" />
+	</model>
+	<model name="com.ifli.rapid.model.RENEWAL_PREMIUM">
+		<field name="ID_old" type="long" />
+		<field name="LETTERCT" type="String" />
+		<field name="LOCPATH" type="String" />
+		<field name="DOCIDNUM" type="String" />
+		<field name="CLNTNUM" type="String" />
+		<field name="OwnerName" type="String" />
+		<field name="Addrs5" type="String" />
+		<field name="Postcode" type="String" />
+		<field name="Document_Number" type="String" />
+		<field name="ContrNo" type="String" />
+		<field name="Next_Premium_due_Date" type="String" />
+		<field name="Total_Premium" type="String" />
+		<field name="MainCovr_Risk_Cess_Term" type="String" />
+		<field name="MainCovr_Prem_Cess_Term" type="String" />
+		<field name="Contract_Commencement_Date" type="String" />
+		<field name="Billing_Date" type="String" />
+		<field name="Payment_Desc" type="String" />
+		<field name="Receipt_Date" type="String" />
+		<field name="Payment_Mode" type="String" />
+		<field name="Payment_Description" type="String" />
+		<field name="Receipt_Amount" type="String" />
+		<field name="Contract_Type" type="String" />
+		<field name="Contract_Type_Desc" type="String" />
+		<field name="Current_Bill_Frequency" type="String" />
+		<field name="Suspense_Amount" type="String" />
+		<field name="Footer_Details" type="String" />
+		<field name="Addrs1" type="String" />
+		<field name="Addrs2" type="String" />
+		<field name="Addrs3" type="String" />
+		<field name="Addrs4" type="String" />
+		<field name="Temp_Rcptno" type="String" />
+		<field name="Life_Name" type="String" />
+		<field name="CAMPAIGN" type="String" />
+		<field name="Agent_Bank_Branch_Code" type="String" />
+		<field name="Agent_Branch_name" type="String" />
+		<field name="Agent_Bank_name" type="String" />
+		<field name="Mobile_phone" type="String" />
+		<field name="Email_id" type="String" />
+		<field name="CreateDate" type="String" />
+		<field name="BatchMode" type="String" />
+		<field name="Status" type="String" />
+		<field name="LastProcessedDate" type="String" />
+		<field name="MobilePhoneNo" type="String" />
+		<field name="Cheque_Number" type="String" />
+		<field name="Bank_Name" type="String" />
+		<field name="EmailAddr" type="String" />
+		<field name="ID" type="int" />
+		<field name="BDM" type="String" />
+		<field name="Term" type="String" />
+		<field name="Campaign_Code" type="String" />
+	</model>
+	<model name="com.ifli.rapid.model.ServiceMaster">
+		<field name="SERVICE_MASTER_ID" type="int" />
+		<field name="SERVICE_MASTER_NAME" type="String" />
+		<field name="SERVICE_MASTER_DESC" type="String" />
+		<field name="ACTIVE_FLAG" type="String" />
+	</model>
+	<model name="com.ifli.rapid.model.ServiceRequestMaster">
+		<field name="Id" type="String" />
+		<field name="Type" type="String" />
+		<field name="ContactId" type="String" />
+		<field name="addressTypeId" type="String" />
+		<field name="address" type="String" />
+		<field name="PolicyNo" type="int" />
+		<field name="MobileNo" type="String" />
+		<field name="description" type="String" />
+		<field name="startPreferedTime" type="Date" />
+		<field name="endPreferedTime" type="Date" />
+		<field name="PreferedDate" type="Date" />
+	</model>
+	<model name="com.ifli.rapid.model.ServiceSubMaster">
+		<field name="SUBMASTER_ID" type="int" />
+		<field name="SUBMASTER_NAME" type="String" />
+		<field name="SUBMASTER_URL" type="String" />
+		<field name="SERVICE_MASTER_ID" type="int" />
+		<field name="ACTIVE_FLAG" type="String" />
+	</model>
+	<model name="com.ifli.rapid.model.StateDetails">
+		<field name="STATE_ID" type="int" />
+		<field name="STATE_NAME" type="String" />
+		<field name="STATE_CODE" type="String" />
+		<field name="BRANCH_FLAG" type="String" />
+		<field name="MEDICAL_CENTER_FLAG" type="String" />
+		<field name="DROP_BOX_FLAG" type="String" />
+	</model>
+	<model name="com.ifli.rapid.model.TempCustomer">
+		<field name="CUSTOMER_ID" type="int" />
+		<field name="CUSTOMER_SALUTATION" type="String" />
+		<field name="CUSTOMER_FIRST_NAME" type="String" />
+		<field name="CUSTOMER_LAST_NAME" type="String" />
+		<field name="CUSTOMER_MIDDLE_NAME" type="String" />
+		<field name="CUSTOMER_DATE_OF_BIRTH" type="String" />
+		<field name="CUSTOMER_EMAIL_ADDR" type="String" />
+		<field name="OFFICE_NAME" type="String" />
+		<field name="DESIGNATION" type="String" />
+		<field name="DEPARTMENT" type="String" />
+		<field name="PRIMARY_ADDRESS_LINE_1" type="String" />
+		<field name="PRIMARY_ADDRESS_LINE_2" type="String" />
+		<field name="PRIMARY_ADDRESS_LINE_3" type="String" />
+		<field name="PRIMARY_ADDRESS_CITY" type="String" />
+		<field name="PRIMARY_ADDRESS_STATE" type="String" />
+		<field name="PRIMARY_ADDRESS_PINCODE" type="String" />
+		<field name="PHONE_NUMBER_1" type="String" />
+		<field name="PHONE_NUMBER_2" type="String" />
+		<field name="PHONE_NUMBER_3" type="String" />
+		<field name="LOGIN_NAME" type="String" />
+		<field name="GENDER" type="String" />
+		<field name="MARITAL_STATUS" type="String" />
+		<field name="COUNTRY" type="String" />
+		<field name="PRIMARY_ADDRESS_STATE_ID" type="int" />
+		<field name="PRIMARY_ADDRESS_CITY_ID" type="int" />
+		<field name="QRC_ASR_ID" type="int" />
+		<field name="PANCARD" type="String" />
+	</model>
+	<model name="com.ifli.rapid.model.TempCustomerAddress">
+		<field name="CUSTOMER_ADDRESS_ID" type="int" />
+		<field name="CUSTOMER_ID" type="int" />
+		<field name="ADDRESS_LINE_1" type="String" />
+		<field name="ADDRESS_LINE_2" type="String" />
+		<field name="ADDRESS_LINE_3" type="String" />
+		<field name="CHANGE_REQUEST_TYPE" type="String" />
+		<field name="CITY" type="String" />
+		<field name="STATE" type="String" />
+		<field name="CITY_ID" type="int" />
+		<field name="STATE_ID" type="int" />
+		<field name="PIN_CODE" type="String" />
+		<field name="CHANGE_REQUEST_FOR" type="int" />
+		<field name="ADDRESS_TYPE_ID" type="int" />
+		<field name="ADDR_STATUS" type="String" />
+		<field name="INSERTED_BY" type="String" />
+		<field name="INSERTED_DATE" type="Date" />
+		<field name="UPDATED_BY" type="String" />
+		<field name="UPDATED_DATE" type="Date" />
+		<field name="QRC_ASR_ID" type="int" />
+	</model>
+	<model name="com.ifl.rapid.customer.model.ApplyTrnApplicationForm">
+		<field name="ApplicationFormId" type="String" />
+		<field name="QuoteId" type="String" />
+		<field name="ApplicationRefNo" type="String" />
+		<field name="SeqGenerator" type="int" />
+		<field name="LTRFFormRefNo" type="String" />
+		<field name="PremiumAmount" type="double" />
+		<field name="IsMedicalRequired" type="int" />
+		<field name="ShortPremium" type="double" />
+		<field name="PremiumDueDate" type="Date" />
+		<field name="PolicyNo" type="String" />
+		<field name="PolicyElapsedDate" type="Date" />
+		<field name="PolicyIssueDate" type="Date" />
+		<field name="Status" type="String" />
+		<field name="Completion" type="int" />
+		<field name="IsLapsed" type="int" />
+		<field name="NextPremiumDueDate" type="Date" />
+		<field name="PolicyStatus" type="String" />
+		<field name="IsActive" type="int" />
+		<field name="CreatedBy" type="String" />
+		<field name="CreatedDate" type="Date" />
+		<field name="ModifiedDate" type="Date" />
+		<field name="ModifiedBy" type="String" />
+	</model>
+	<model name="com.ifl.rapid.customer.model.ApplyTrnQuoteDetails">
+		<field name="QuoteId" type="String" />
+		<field name="ContactId" type="int" />
+		<field name="ProductId" type="String" />
+		<field name="PremiumTypeId" type="String" />
+		<field name="PremiumFrequencyId" type="String" />
+		<field name="AssuredTerm" type="int" />
+		<field name="AssuredAge" type="int" />
+		<field name="DataXml" type="String" />
+		<field name="DeathBenefitOption" type="int" />
+		<field name="ExpiryDate" type="Date" />
+		<field name="IsStaff" type="String" />
+		<field name="IsActive" type="int" />
+		<field name="PolicyOption" type="int" />
+		<field name="PayingTerm" type="int" />
+		<field name="ProposalStartDate" type="String" />
+		<field name="RefNo" type="int" />
+		<field name="PlanTerm" type="int" />
+		<field name="PremiumTerm" type="int" />
+		<field name="PremiumAmount" type="double" />
+		<field name="SumAssured" type="double" />
+		<field name="SummaryXml" type="String" />
+		<field name="PdfLocation" type="String" />
+		<field name="CreatedBy" type="String" />
+		<field name="CreatedDate" type="Date" />
+		<field name="ModifiedDate" type="Date" />
+		<field name="ModifiedBy" type="String" />
+		<field name="pdfDataXml" type="String" />
+		<field name="IsSmoker" type="int" />
+		<field name="SignatureFilePath" type="String" />
+		<field name="BDMSignatureFilePath" type="String" />
+		<field name="BDMId" type="int" />
+		<field name="IsAssisted" type="int" />
+		<field name="InputXML" type="String" />
+		<field name="LeadId" type="String" />
+	</model>
+	<model name="com.ifl.rapid.customer.model.City">
+		<field name="CityId" type="int" />
+		<field name="CityCode" type="String" />
+		<field name="CityName" type="String" />
+		<field name="IsActive" type="int" />
+		<field name="CreatedBy" type="String" />
+		<field name="CreatedDate" type="Date" />
+		<field name="ModifiedDate" type="Date" />
+		<field name="ModifiedBy" type="String" />
+		<field name="StateId" type="int" />
+	</model>
+	<model name="com.ifl.rapid.customer.model.Config_Mst_GenericMaster">
+		<field name="GenericMasterId" type="int" />
+		<field name="MasterType" type="String" />
+		<field name="MasterId" type="int" />
+		<field name="MasterKey" type="String" />
+		<field name="IsActive" type="String" />
+		<field name="CreatedBy" type="String" />
+		<field name="CreatedDate" type="Date" />
+		<field name="ModifiedBy" type="String" />
+		<field name="ModifiedDate" type="Date" />
+		<field name="Description" type="String" />
+	</model>
+	<model name="com.ifl.rapid.customer.model.CRM_Trn_Address">
+		<field name="AddressId" type="int" />
+		<field name="ContactId" type="int" />
+		<field name="AddressTypeId" type="int" />
+		<field name="AddressLine1" type="String" />
+		<field name="AddressLine2" type="String" />
+		<field name="AddressLine3" type="String" />
+		<field name="District" type="String" />
+		<field name="StateId" type="int" />
+		<field name="CityId" type="int" />
+		<field name="Pincode" type="String" />
+		<field name="CountryId" type="int" />
+		<field name="IsActive" type="String" />
+		<field name="CreatedBy" type="String" />
+		<field name="CreatedDate" type="Date" />
+		<field name="ModifiedBy" type="String" />
+		<field name="ModifiedDate" type="Date" />
+	</model>
+	<model name="com.ifl.rapid.customer.model.CRM_Trn_Contact">
+		<field name="ContactId" type="int" />
+		<field name="Salutation" type="String" />
+		<field name="FirstName" type="String" />
+		<field name="MiddleName" type="String" />
+		<field name="LastName" type="String" />
+		<field name="PANNo" type="String" />
+		<field name="Gender" type="String" />
+		<field name="BloodGroup" type="String" />
+		<field name="DateOfBirth" type="Date" />
+		<field name="MaritalStatus" type="String" />
+		<field name="QualificationId" type="int" />
+		<field name="OccupationId" type="int" />
+		<field name="SourceId" type="int" />
+		<field name="CategoryId" type="int" />
+		<field name="ReferredBy" type="int" />
+		<field name="ContactTypeId" type="int" />
+		<field name="DNDActivated" type="boolean" />
+		<field name="PoliticallyExposed" type="boolean" />
+		<field name="EIANumber" type="String" />
+		<field name="SeqGenerator" type="int" />
+		<field name="ReferenceNo" type="String" />
+		<field name="EIAServiceProvider" type="String" />
+		<field name="AadharCardNo" type="String" />
+		<field name="WeddingAnniversary" type="Date" />
+		<field name="Photograph" type="Blob" />
+		<field name="CreatedBy" type="String" />
+		<field name="CreatedDate" type="Date" />
+		<field name="ModifiedBy" type="String" />
+		<field name="ModifiedDate" type="Date" />
+		<field name="IsActive" type="String" />
+	</model>
+	<model name="com.ifl.rapid.customer.model.CRM_Trn_Phone">
+		<field name="PhoneId" type="int" />
+		<field name="ContactId" type="int" />
+		<field name="PhoneType" type="int" />
+		<field name="PhoneNumber" type="String" />
+		<field name="CreatedBy" type="String" />
+		<field name="CreatedDate" type="Date" />
+		<field name="ModifiedBy" type="String" />
+		<field name="ModifiedDate" type="Date" />
+		<field name="IsActive" type="String" />
+	</model>
+	<model name="com.ifl.rapid.customer.model.CRM_Trn_PolicyAddress">
+		<field name="PolicyAddressId" type="int" />
+		<field name="ContactId" type="int" />
+		<field name="PolicyNo" type="String" />
+		<field name="AddressId" type="int" />
+		<field name="IsActive" type="String" />
+		<field name="CreatedBy" type="String" />
+		<field name="CreatedDate" type="Date" />
+		<field name="ModifiedBy" type="String" />
+		<field name="ModifiedDate" type="Date" />
+	</model>
+	<model name="com.ifl.rapid.customer.model.CRMTrnContactCommunication">
+		<field name="ContactCommunicationId" type="int" />
+		<field name="ContactId" type="int" />
+		<field name="CommunicationMedium" type="int" />
+		<field name="CommunicationMediumId" type="String" />
+		<field name="CreatedBy" type="String" />
+		<field name="CreatedDate" type="Date" />
+		<field name="ModifiedBy" type="String" />
+		<field name="ModifiedDate" type="Date" />
+		<field name="IsActive" type="String" />
+	</model>
+	<model name="com.ifl.rapid.customer.model.CRMTrnFamilyMember">
+		<field name="FamilyMemberId" type="int" />
+		<field name="ContactId" type="int" />
+		<field name="MemberId" type="int" />
+		<field name="RelationshipId" type="int" />
+		<field name="FinanciallyDependent" type="String" />
+		<field name="IsActive" type="String" />
+		<field name="CreatedBy" type="String" />
+		<field name="CreatedDate" type="Date" />
+		<field name="ModifiedBy" type="String" />
+		<field name="ModifiedDate" type="Date" />
+	</model>
+	<model name="com.ifl.rapid.customer.model.LocMstBranchLocation">
+		<field name="BranchId" type="int" />
+		<field name="BranchName" type="String" />
+		<field name="BranchOpeningTime" type="String" />
+		<field name="BranchClosingTime" type="String" />
+		<field name="AddressFirstLine" type="String" />
+		<field name="AddressSecondLine" type="String" />
+		<field name="PrimaryContactNo" type="String" />
+		<field name="OtherContactNo" type="String" />
+		<field name="FaxNumber" type="String" />
+		<field name="LocationId" type="int" />
+		<field name="LocationId_old" type="String" />
+		<field name="Longitude" type="double" />
+		<field name="Latitude" type="double" />
+		<field name="BranchCode" type="String" />
+		<field name="CreatedBy" type="String" />
+		<field name="CreatedDate" type="Date" />
+		<field name="ModifiedBy" type="String" />
+		<field name="ModifiedDate" type="Date" />
+		<field name="IsActive" type="String" />
+	</model>
+	<model name="com.ifl.rapid.customer.model.LocMstLocation">
+		<field name="LocationId" type="int" />
+		<field name="StateId" type="int" />
+		<field name="CityId" type="int" />
+		<field name="PinCode" type="int" />
+		<field name="AreaName" type="String" />
+		<field name="Latitude" type="double" />
+		<field name="Longitude" type="double" />
+		<field name="CreatedBy" type="String" />
+		<field name="CreatedDate" type="Date" />
+		<field name="ModifiedBy" type="String" />
+		<field name="ModifiedDate" type="Date" />
+		<field name="IsActive" type="String" />
+	</model>
+	<model name="com.ifl.rapid.customer.model.PrdMstProduct">
+		<field name="ProductId" type="String" />
+		<field name="ProductKey" type="String" />
+		<field name="DisplayOrder" type="int" />
+		<field name="RenewalDuration" type="int" />
+		<field name="ShortTermDuration" type="int" />
+		<field name="MinPlanTerm" type="int" />
+		<field name="MaxPlanTerm" type="int" />
+		<field name="MinSumAssured" type="int" />
+		<field name="MaxSumAssured" type="int" />
+		<field name="IsRegularPremium" type="int" />
+		<field name="IsLimitedPremium" type="int" />
+		<field name="IsSinglePremium" type="int" />
+		<field name="IsActive" type="int" />
+		<field name="CreatedBy" type="String" />
+		<field name="CreatedDate" type="Date" />
+		<field name="ModifiedDate" type="Date" />
+		<field name="ModifiedBy" type="String" />
+	</model>
+	<model name="com.ifl.rapid.customer.model.QrcMstRequests">
+		<field name="RequestId" type="int" />
+		<field name="Category" type="String" />
+		<field name="CallType" type="String" />
+		<field name="CallSubType" type="String" />
+		<field name="Keyword" type="String" />
+		<field name="IsActive" type="int" />
+		<field name="CreatedBy" type="String" />
+		<field name="CreatedDate" type="Date" />
+		<field name="ModifiedDate" type="Date" />
+		<field name="ModifiedBy" type="String" />
+	</model>
+	<model name="com.ifl.rapid.customer.model.QrcMstServices">
+		<field name="ServiceId" type="int" />
+		<field name="ServiceName" type="String" />
+		<field name="Description" type="String" />
+		<field name="CreatedBy" type="String" />
+		<field name="CreatedDate" type="Date" />
+		<field name="ModifiedBy" type="String" />
+		<field name="ModifiedDate" type="Date" />
+		<field name="IsActive" type="String" />
+	</model>
+	<model name="com.ifl.rapid.customer.model.QrcMstSubServices">
+		<field name="SubServiceId" type="int" />
+		<field name="SubServiceName" type="String" />
+		<field name="SubServiceUrl" type="String" />
+		<field name="ServiceId" type="int" />
+		<field name="IsActive" type="String" />
+		<field name="CreatedBy" type="String" />
+		<field name="CreatedDate" type="Date" />
+		<field name="ModifiedBy" type="String" />
+		<field name="ModifiedDate" type="Date" />
+	</model>
+	<model name="com.ifl.rapid.customer.model.QrcTrnHistory">
+		<field name="HistoryId" type="int" />
+		<field name="ContactId" type="int" />
+		<field name="CreatedContactId" type="int" />
+		<field name="RequestType" type="String" />
+		<field name="ChangeRequestType" type="String" />
+		<field name="PickupDate" type="Date" />
+		<field name="PickupTime" type="String" />
+		<field name="XMLData" type="String" />
+		<field name="AddressTypeId" type="int" />
+		<field name="BranchId" type="int" />
+		<field name="IsActive" type="int" />
+		<field name="CreatedBy" type="String" />
+		<field name="CreatedDate" type="Date" />
+		<field name="ModifiedDate" type="Date" />
+		<field name="ModifiedBy" type="String" />
+	</model>
+	<model name="com.ifl.rapid.customer.model.QrcTrnOtp">
+		<field name="Otp_Id" type="int" />
+		<field name="Otp" type="String" />
+		<field name="ContactId" type="int" />
+		<field name="CreatedBy" type="String" />
+		<field name="CreatedDate" type="Date" />
+		<field name="ModifiedBy" type="String" />
+		<field name="ModifiedDate" type="Date" />
+		<field name="IsActive" type="String" />
+	</model>
+	<model name="com.ifl.rapid.customer.model.QrcTrnServiceRequests">
+		<field name="ServiceRequestId" type="int" />
+		<field name="ContactId" type="int" />
+		<field name="SrId" type="String" />
+		<field name="ProcessId" type="String" />
+		<field name="Source" type="String" />
+		<field name="Channel" type="String" />
+		<field name="Priority" type="String" />
+		<field name="PolicyNo" type="String" />
+		<field name="CaseDetails" type="String" />
+		<field name="IsManual" type="String" />
+		<field name="IsLAUpdated" type="String" />
+		<field name="Comments" type="String" />
+		<field name="IsSignVerified" type="String" />
+		<field name="RequestId" type="int" />
+		<field name="AssignedTo" type="int" />
+		<field name="CreatedContactId" type="int" />
+		<field name="HistoryId" type="int" />
+		<field name="AddressTypeId" type="int" />
+		<field name="IsActive" type="int" />
+		<field name="CreatedBy" type="String" />
+		<field name="CreatedDate" type="Date" />
+		<field name="ModifiedDate" type="Date" />
+		<field name="ModifiedBy" type="String" />
+	</model>
+	<model name="com.ifl.rapid.customer.model.State">
+		<field name="StateId" type="int" />
+		<field name="StateCode" type="String" />
+		<field name="StateName" type="String" />
+		<field name="IsActive" type="int" />
+		<field name="CreatedBy" type="String" />
+		<field name="CreatedDate" type="Date" />
+		<field name="ModifiedDate" type="Date" />
+		<field name="ModifiedBy" type="String" />
+	</model>
+</model-hints>

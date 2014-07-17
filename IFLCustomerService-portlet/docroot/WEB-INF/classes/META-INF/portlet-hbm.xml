@@ -1,0 +1,1332 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.ifli.rapid.model.ActiveServiceRequests" />
+	<import class="com.ifli.rapid.model.AddressChangeReqDetails" />
+	<import class="com.ifli.rapid.model.AddressType" />
+	<import class="com.ifli.rapid.model.BranchDetails" />
+	<import class="com.ifli.rapid.model.ChequePaymentRequest" />
+	<import class="com.ifli.rapid.model.CityDetails" />
+	<import class="com.ifli.rapid.model.ClosedServiceRequests" />
+	<import class="com.ifli.rapid.model.ConfirmDetails" />
+	<import class="com.ifli.rapid.model.Customer" />
+	<import class="com.ifli.rapid.model.customerAddress" />
+	<import class="com.ifli.rapid.model.CustomerFamilyDetails" />
+	<import class="com.ifli.rapid.model.customerMailIds" />
+	<import class="com.ifli.rapid.model.CustomerMobileNumbers" />
+	<import class="com.ifli.rapid.model.CustomerOtp" />
+	<import class="com.ifli.rapid.model.FamilyRelations" />
+	<import class="com.ifli.rapid.model.FundMaster" />
+	<import class="com.ifli.rapid.model.LocationDetails" />
+	<import class="com.ifli.rapid.model.NavHistory" />
+	<import class="com.ifli.rapid.model.PaymentDetails" />
+	<import class="com.ifli.rapid.model.PaymentGatewayMaster" />
+	<import class="com.ifli.rapid.model.PaymentMethodMaster" />
+	<import class="com.ifli.rapid.model.PaymentMethodType" />
+	<import class="com.ifli.rapid.model.PaymentOptionMaster" />
+	<import class="com.ifli.rapid.model.PaymentOptionTypes" />
+	<import class="com.ifli.rapid.model.PaymentTransactionStatusMaster" />
+	<import class="com.ifli.rapid.model.PincodeDetails" />
+	<import class="com.ifli.rapid.model.POLICY_DOC_TYPES" />
+	<import class="com.ifli.rapid.model.PolicyAddress" />
+	<import class="com.ifli.rapid.model.PolicyFund" />
+	<import class="com.ifli.rapid.model.PolicyFundSwitchCounter" />
+	<import class="com.ifli.rapid.model.PolicyFundSwitchDetails" />
+	<import class="com.ifli.rapid.model.PolicyInfo" />
+	<import class="com.ifli.rapid.model.PolicyPremPercentage" />
+	<import class="com.ifli.rapid.model.PolicyPremRedirectionDetails" />
+	<import class="com.ifli.rapid.model.PolicyTopupDetails" />
+	<import class="com.ifli.rapid.model.PREMIUM_PAID_CERTIFICATE" />
+	<import class="com.ifli.rapid.model.PremiumFrequencyMaster" />
+	<import class="com.ifli.rapid.model.PremiumType" />
+	<import class="com.ifli.rapid.model.ProductFundMapping" />
+	<import class="com.ifli.rapid.model.ProofDocs" />
+	<import class="com.ifli.rapid.model.QRCStatus" />
+	<import class="com.ifli.rapid.model.QRCSubTypeMaster" />
+	<import class="com.ifli.rapid.model.QRCTeamMaster" />
+	<import class="com.ifli.rapid.model.QRCTypeMaster" />
+	<import class="com.ifli.rapid.model.QRCUser" />
+	<import class="com.ifli.rapid.model.Recommended_Products" />
+	<import class="com.ifli.rapid.model.RENEWAL_PREMIUM" />
+	<import class="com.ifli.rapid.model.ServiceMaster" />
+	<import class="com.ifli.rapid.model.ServiceRequestMaster" />
+	<import class="com.ifli.rapid.model.ServiceSubMaster" />
+	<import class="com.ifli.rapid.model.StateDetails" />
+	<import class="com.ifli.rapid.model.TempCustomer" />
+	<import class="com.ifli.rapid.model.TempCustomerAddress" />
+	<import class="com.ifl.rapid.customer.model.ApplyTrnApplicationForm" />
+	<import class="com.ifl.rapid.customer.model.ApplyTrnQuoteDetails" />
+	<import class="com.ifl.rapid.customer.model.City" />
+	<import class="com.ifl.rapid.customer.model.Config_Mst_GenericMaster" />
+	<import class="com.ifl.rapid.customer.model.CRM_Trn_Address" />
+	<import class="com.ifl.rapid.customer.model.CRM_Trn_Contact" />
+	<import class="com.ifl.rapid.customer.model.CRM_Trn_Phone" />
+	<import class="com.ifl.rapid.customer.model.CRM_Trn_PolicyAddress" />
+	<import class="com.ifl.rapid.customer.model.CRMTrnContactCommunication" />
+	<import class="com.ifl.rapid.customer.model.CRMTrnFamilyMember" />
+	<import class="com.ifl.rapid.customer.model.LocMstBranchLocation" />
+	<import class="com.ifl.rapid.customer.model.LocMstLocation" />
+	<import class="com.ifl.rapid.customer.model.PrdMstProduct" />
+	<import class="com.ifl.rapid.customer.model.QrcMstRequests" />
+	<import class="com.ifl.rapid.customer.model.QrcMstServices" />
+	<import class="com.ifl.rapid.customer.model.QrcMstSubServices" />
+	<import class="com.ifl.rapid.customer.model.QrcTrnHistory" />
+	<import class="com.ifl.rapid.customer.model.QrcTrnOtp" />
+	<import class="com.ifl.rapid.customer.model.QrcTrnServiceRequests" />
+	<import class="com.ifl.rapid.customer.model.State" />
+	<class name="com.ifli.rapid.model.impl.ActiveServiceRequestsImpl" table="QRC_ACTIVE_SERVICE_REQS">
+		<cache usage="read-write" />
+		<id name="QRC_ASR_ID" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="TYPE_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="SUB_TYPE_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ASSIGNED_TO" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="HANDLED_BY" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="STATUS_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="CUSTOMER_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="CUST_SR_NUMBER" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ADDITIONAL_DATA_XML" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="INSERTED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="INSERTED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="UPDATED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="UPDATED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.AddressChangeReqDetailsImpl" table="addr_change_req_details">
+		<cache usage="read-write" />
+		<id name="ADDR_CHANGE_DETAILS_ID" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="REQUEST_SUBMIT_TYPE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="SERVICE_REQUEST_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="SUB_TYPE" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ADDRESS_TYPE_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="CUSTOMER_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="SUBMIT_AT_BRANCH" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="PICKUP_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="PICKUP_TIME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="INSERTED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="INSERTED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="UPDATED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="UPDATED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.AddressTypeImpl" table="address_type">
+		<cache usage="read-write" />
+		<id name="ADDRESS_TYPE_ID" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="INSERTED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="INSERTED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="UPDATED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="UPDATED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="ACTIVE_FLAG" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ADDRESS_TYPE_DESC" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.BranchDetailsImpl" table="branch_details">
+		<cache usage="read-write" />
+		<id name="BRANCH_ID" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="LOCATION_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="BRANCH_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="BRANCH_OPENING_TIME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="BRANCH_CLOSING_TIME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ADDRESS_FIRST_LINE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ADDRESS_SECOND_LINE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CITY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="STATE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PIN" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PRIMARY_CONTACT_NO" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="OTHER_CONTACT_NO" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="FAX_NUMBER" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="BRANCH_CODE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="WORK_TIMINGS" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.ChequePaymentRequestImpl" table="ChequePaymentRequest">
+		<cache usage="read-write" />
+		<id name="ServiceRequestID" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+		<property name="ServiceRequestMasterId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="contactId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="startPreferedTime" type="org.hibernate.type.TimestampType" />
+		<property name="endPreferedTime" type="org.hibernate.type.TimestampType" />
+		<property name="PreferedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.CityDetailsImpl" table="city_details">
+		<cache usage="read-write" />
+		<id name="CITY_ID" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="CITY_CODE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CITY_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="STATE_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="IS_ACTIVE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.ClosedServiceRequestsImpl" table="QRC_CLOSED_SERVICE_REQS">
+		<cache usage="read-write" />
+		<id name="QRC_CSR_ID" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="TYPE_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ASSIGNED_TO" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="HANDLED_BY" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="STATUS_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="CUSTOMER_ID" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="customerSRNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ADDITIONAL_DATA_XML" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="INSERTED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="INSERTED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="UPDATED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="UPDATED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.ConfirmDetailsImpl" table="confirm_details">
+		<cache usage="read-write" />
+		<id name="ID" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="QRC_ASR_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="Approval_Status" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Comments" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Sign_Flag" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.CustomerImpl" table="customer">
+		<cache usage="read-write" />
+		<id name="CUSTOMER_ID" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="CUSTOMER_SALUTATION" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CUSTOMER_FIRST_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CUSTOMER_LAST_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CUSTOMER_MIDDLE_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CUSTOMER_DATE_OF_BIRTH" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CUSTOMER_EMAIL_ADDR" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="OFFICE_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="DESIGNATION" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="DEPARTMENT" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PRIMARY_ADDRESS_LINE_1" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PRIMARY_ADDRESS_LINE_2" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PRIMARY_ADDRESS_LINE_3" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PRIMARY_ADDRESS_CITY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PRIMARY_ADDRESS_STATE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PRIMARY_ADDRESS_PINCODE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PHONE_NUMBER_1" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PHONE_NUMBER_2" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PHONE_NUMBER_3" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="LOGIN_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="GENDER" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="MARITAL_STATUS" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="COUNTRY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PRIMARY_ADDRESS_STATE_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="PRIMARY_ADDRESS_CITY_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ADDED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ADDED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="UPDATED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="UPDATED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="PANCARD" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.customerAddressImpl" table="customer_address">
+		<cache usage="read-write" />
+		<id name="CUSTOMER_ADDRESS_ID" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="CUSTOMER_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ADDRESS_LINE_1" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ADDRESS_LINE_2" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ADDRESS_LINE_3" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CHANGE_REQUEST_TYPE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CITY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="STATE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CITY_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="STATE_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="PIN_CODE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CHANGE_REQUEST_FOR" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ADDRESS_TYPE_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ADDR_STATUS" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="INSERTED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="INSERTED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="UPDATED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="UPDATED_DATE" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.CustomerFamilyDetailsImpl" table="customer_family">
+		<cache usage="read-write" />
+		<id name="CUSTOMER_FAMILY_ID" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="PERSON_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="RELATION" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="DEPENDENT" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="AGE" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="CUSTOMER_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ADDED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ADDED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="UPDATED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="UPDATED_DATE" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.customerMailIdsImpl" table="customer_mailids">
+		<cache usage="read-write" />
+		<id name="ID" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="CUSTOMER_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="EMAIL_ID" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="INSERTED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="INSERTED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="UPDATED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="UPDATED_DATE" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.CustomerMobileNumbersImpl" table="customer_mobile_numbers">
+		<cache usage="read-write" />
+		<id name="ID" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="CUSTOMER_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="MOBILE_NUMBER" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="INSERTED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="INSERTED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="UPDATED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="UPDATED_DATE" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.CustomerOtpImpl" table="customer_otp">
+		<cache usage="read-write" />
+		<id name="CUSTOMER_ID" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="EMAIL_OTP" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PHONE_OTP" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="STATUS" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ADDED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="UPDATED_DATE" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.FamilyRelationsImpl" table="family_relations">
+		<cache usage="read-write" />
+		<id name="RELATION_ID" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="RELATION_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.FundMasterImpl" table="fund_master">
+		<cache usage="read-write" />
+		<id name="FUND_ID" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="FUND_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="FUND_CODE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="INSERTED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="INSERTED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="UPDATED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="UPDATED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.LocationDetailsImpl" table="location_details">
+		<cache usage="read-write" />
+		<id name="LOCATION_ID" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="LOCATION_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CITY_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="STATE_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="LATITUDE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="LONGITUDE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="BRANCH_FLAG" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="MEDICAL_CENTER_FLAG" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="DROP_BOX_FLAG" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.NavHistoryImpl" table="nav_history">
+		<cache usage="read-write" />
+		<id name="NAV_HISTORY_ID" type="long">
+			<generator class="identity" />
+		</id>
+		<property name="DATE" type="org.hibernate.type.TimestampType" />
+		<property name="NAV" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="SALE_PRICE" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="PURCHASE_PRICE" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="FUND_CODE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="FUND_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.PaymentDetailsImpl" table="PaymentDetails">
+		<cache usage="read-write" />
+		<id name="PaymentId" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="PremiumFrequencyID" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="TransactionStatusID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="RequestTypeID" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PaymentOptionId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PaymentMethodID" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ProductID" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ProposalId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PremiumAmount" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="BankName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreditCardNo" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="CardType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="NameAsCard" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CVVNo" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="CardExpiryDate" type="org.hibernate.type.TimestampType" />
+		<property name="CreatedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ChequePickupRequestId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="TransactionReferenceNo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="BillDeskMerchantId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="BobMerchantTxnId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PaymentReceiptNo" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.PaymentGatewayMasterImpl" table="PaymentGatewayMaster">
+		<cache usage="read-write" />
+		<id name="GatewayID" type="java.lang.String">
+			<generator class="identity" />
+		</id>
+		<property name="GatewayDescription" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="GatewayKey" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="IsActive" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="CreatedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="Priority" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ItemCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.PaymentMethodMasterImpl" table="PaymentMethodMaster">
+		<cache usage="read-write" />
+		<id name="PaymentMethodID" type="java.lang.String">
+			<generator class="identity" />
+		</id>
+		<property name="PaymentMethodKey" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="IsActive" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="CreatedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="Priority" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.PaymentMethodTypeImpl" table="PaymentMethodType">
+		<cache usage="read-write" />
+		<id name="Id" type="java.lang.String">
+			<generator class="identity" />
+		</id>
+		<property name="PaymentMethodID" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="GatewayID" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="TypeKey" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="BankId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Active" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="CreatedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="Type" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.PaymentOptionMasterImpl" table="PaymentOptionMaster">
+		<cache usage="read-write" />
+		<id name="PaymentOptionId" type="java.lang.String">
+			<generator class="identity" />
+		</id>
+		<property name="PaymentOptionKey" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="IsActive" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="CreatedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="Priority" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="PaymentOptionDesc" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="isProcessPayment" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.PaymentOptionTypesImpl" table="PaymentOptionTypes">
+		<cache usage="read-write" />
+		<id name="PaymentOptionTypesId" type="java.lang.String">
+			<generator class="identity" />
+		</id>
+		<property name="PaymentOptionId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="OptionTypesKey" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="IsActive" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="CreatedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="Priority" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="PaymentOptionTypeDesc" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.PaymentTransactionStatusMasterImpl" table="PaymentTransactionStatusMaster">
+		<cache usage="read-write" />
+		<id name="TransactionStatusID" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="StatusCode" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="StatusName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="StatusDesc" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="IsActive" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="CreatedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.PincodeDetailsImpl" table="pincode_details">
+		<cache usage="read-write" />
+		<id name="PIN_ID" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="CITY_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="STATE_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="PIN_CODE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.POLICY_DOC_TYPESImpl" table="POLICY_DOC_TYPES">
+		<cache usage="read-write" />
+		<id name="ID" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="DOC_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.PolicyAddressImpl" table="policy_address">
+		<cache usage="read-write" />
+		<id name="ID" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="POLICY_ID" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CUSTOMER_ID" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CUSTOMER_ADDRESS_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="PINCODE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CITY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="STATE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ADDRESS_LINE_1" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ADDRESS_LINE_2" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ADDRESS_LINE_3" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.PolicyFundImpl" table="policy_fund">
+		<cache usage="read-write" />
+		<id name="POLICY_FUND_ID" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="POLICY_ID" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="FUND_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="FUND_UNITS" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="NAV" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="TOTAL_FUND" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.PolicyFundSwitchCounterImpl" table="policy_fund_switch_counter">
+		<cache usage="read-write" />
+		<id name="POLICY_ID" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+		<property name="FUND_SWITCH_COUNTER" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="FUND_SWITCH_YEAR" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.PolicyFundSwitchDetailsImpl" table="policy_fund_switch_details">
+		<cache usage="read-write" />
+		<id name="FUND_SWITCH_ID" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="POLICY_ID" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="QRC_ASR_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="FUND_FROM" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="FUND_TO" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PRECENTAGE_OF_UNITS" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="INSERTED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="INSERTED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="UPDATED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="UPDATED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.PolicyInfoImpl" table="policy_info">
+		<cache usage="read-write" />
+		<id name="POLICY_ID" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+		<property name="CUSTOMER_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="PRODUCT_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="POLICY_DATE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="NEXT_PREMIUM_DUEDATE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="POLICY_HOLDER1_FIRST_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="POLICY_HOLDER1_MIDDLE_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="POLICY_HOLDER1_LAST_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="SUM_ASSURED" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="POLICY_HOLDER2_FIRST_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="POLICY_HOLDER2_MIDDLE_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="POLICY_HOLDER2_LAST_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CHILD_FIRST_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CHILD_DOB" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CHILD_LAST_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CURRENT_STATUS" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PREMIUM_AMOUNT" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="FREQUENCY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="BRANCH_CODE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="LG_CODE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="APPLICATION_NUMBER" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="APPLICATION_DATE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="POLICY_HOLDER1_TITLE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CRO_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CRO_NUMBER" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="BRANCH_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PRODUCT_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="REQUIREMENT_FLAG" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="TERM" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="MATURITY_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="AMOUNT_DEPOSITED" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="TOTAL_DUE_AMT" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="CHANNEL_TYPE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="LIFE_ASSURED_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="LIFE_ASSURED_DOB" type="org.hibernate.type.TimestampType" />
+		<property name="POLICY_HOLDER1_EMAIL" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="POLICY_HOLDER1_ADD1" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="POLICY_HOLDER1_ADD2" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="POLICY_HOLDER1_CONTACT1" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="POLICY_HOLDER1_CONTACT2" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="POLICY_HOLDER1_DOB" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="RISK_COMMENCEMENT_DATE" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.PolicyPremPercentageImpl" table="policy_prem_percentage">
+		<cache usage="read-write" />
+		<id name="PREM_PERCENTAGE_ID" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="POLICY_ID" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="FUND_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="FUND_PERCENTAGE" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.PolicyPremRedirectionDetailsImpl" table="policy_prem_redirection_details">
+		<cache usage="read-write" />
+		<id name="PREM_REDIRECTION_ID" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="POLICY_ID" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="TRANSACTION_AUDIT_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="FUND_CODE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ALLOCATION_PERCENTAGE" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="SENT_TO_ODS_FLAG" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="INSERTED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="INSERTED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="UPDATED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="UPDATED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.PolicyTopupDetailsImpl" table="policy_topup_details">
+		<cache usage="read-write" />
+		<id name="TOPUP_ID" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="POLICY_ID" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="QRC_ASR_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="FUND_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="FUND_VALUE" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="TOPUP_VALUE" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="TOT_VALUE" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="TOPUP_PERCENTAGE" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="CreatedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.PREMIUM_PAID_CERTIFICATEImpl" table="PREMIUM_PAID_CERTIFICATE">
+		<cache usage="read-write" />
+		<id name="ID" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="Financial_Year" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Generation_Date" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="OwnerName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Addrs1" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Addrs2" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Addrs3" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Addrs4" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Addrs5" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Postcode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="MobilePhoneNo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Email_ID" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Client_ID" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Contract_Type_Desc" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ContrNo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Installment_Prem" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Billing_Frequency" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="SumAssured" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Total_Pre_Paid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Total_Pre_Due" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Coverage" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Fin_Year" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="LETTERCTL" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="LOCPATH" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="DOCIDNUM" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="lastProcessedDate" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="GLCODE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="BRANCH_CODE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.PremiumFrequencyMasterImpl" table="PremiumFrequencyMaster">
+		<cache usage="read-write" />
+		<id name="PremiumFrequencyId" type="java.lang.String">
+			<generator class="identity" />
+		</id>
+		<property name="PremiumFrequencyDescription" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="IsActive" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="CreatedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="Priority" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.PremiumTypeImpl" table="PremiumType">
+		<cache usage="read-write" />
+		<id name="Id" type="java.lang.String">
+			<generator class="identity" />
+		</id>
+		<property name="Name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Active" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="CreatedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="Priority" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.ProductFundMappingImpl" table="product_fund_mapping">
+		<cache usage="read-write" />
+		<id name="ID" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="PRODUCT_CODE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="FUND_CODE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.ProofDocsImpl" table="proof_docs">
+		<cache usage="read-write" />
+		<id name="ID" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="DOC_TYPE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="DOC_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.QRCStatusImpl" table="QRC_Status">
+		<cache usage="read-write" />
+		<id name="QRC_STATUS_ID" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="STATUS_DESC" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ACTIVE_FLAG" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="INSERTED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="INSERTED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="UPDATED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="UPDATED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="DELETED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="DELETED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="QRC_ASR_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.QRCSubTypeMasterImpl" table="QRC_SUBTYPE_MASTER">
+		<cache usage="read-write" />
+		<id name="QRC_SUB_TYPE_ID" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="QRC_TYPE_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="SUB_TYPE_DESC" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ACTIVE_FLAG" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="INSERTED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="INSERTED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="UPDATED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="UPDATED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="DELETED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="DELETED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.QRCTeamMasterImpl" table="QRC_TEAM_MASTER">
+		<cache usage="read-write" />
+		<id name="QRC_TM_ID" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="TM_DESC" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ACTIVE_FLAG" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="INSERTED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="INSERTED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="UPDATED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="UPDATED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="DELETED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="DELETED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.QRCTypeMasterImpl" table="QRC_TYPE_MASTER">
+		<cache usage="read-write" />
+		<id name="QRC_TYPE_ID" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="TYPE_DESC" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ACTIVE_FLAG" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="INSERTED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="INSERTED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="UPDATED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="UPDATED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="DELETED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="DELETED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.QRCUserImpl" table="QRC_USER">
+		<cache usage="read-write" />
+		<id name="QRC_USER_ID" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="USER_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="TEAM_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="USER_DETAILS" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ACTIVE_FLAG" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="INSERTED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="INSERTED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="UPDATED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="UPDATED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="DELETED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="DELETED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.Recommended_ProductsImpl" table="recommended_products">
+		<cache usage="read-write" />
+		<id name="PRODUCT_ID" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="PRODUCT_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="IMG_URL" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.RENEWAL_PREMIUMImpl" table="HPRMRCP1">
+		<cache usage="read-write" />
+		<id name="ID_old" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="LETTERCT" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="LOCPATH" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="DOCIDNUM" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CLNTNUM" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="OwnerName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Addrs5" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Postcode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Document_Number" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ContrNo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Next_Premium_due_Date" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Total_Premium" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="MainCovr_Risk_Cess_Term" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="MainCovr_Prem_Cess_Term" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Contract_Commencement_Date" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Billing_Date" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Payment_Desc" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Receipt_Date" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Payment_Mode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Payment_Description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Receipt_Amount" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Contract_Type" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Contract_Type_Desc" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Current_Bill_Frequency" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Suspense_Amount" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Footer_Details" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Addrs1" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Addrs2" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Addrs3" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Addrs4" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Temp_Rcptno" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Life_Name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CAMPAIGN" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Agent_Bank_Branch_Code" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Agent_Branch_name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Agent_Bank_name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Mobile_phone" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Email_id" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreateDate" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="BatchMode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Status" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="LastProcessedDate" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="MobilePhoneNo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Cheque_Number" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Bank_Name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="EmailAddr" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="BDM" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Term" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Campaign_Code" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.ServiceMasterImpl" table="service_master">
+		<cache usage="read-write" />
+		<id name="SERVICE_MASTER_ID" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="SERVICE_MASTER_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="SERVICE_MASTER_DESC" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ACTIVE_FLAG" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.ServiceRequestMasterImpl" table="ServiceRequestMaster">
+		<cache usage="read-write" />
+		<id name="Id" type="java.lang.String">
+			<generator class="identity" />
+		</id>
+		<property name="Type" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ContactId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="addressTypeId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="address" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PolicyNo" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="MobileNo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="startPreferedTime" type="org.hibernate.type.TimestampType" />
+		<property name="endPreferedTime" type="org.hibernate.type.TimestampType" />
+		<property name="PreferedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.ServiceSubMasterImpl" table="service_submaster">
+		<cache usage="read-write" />
+		<id name="SUBMASTER_ID" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="SUBMASTER_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="SUBMASTER_URL" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="SERVICE_MASTER_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ACTIVE_FLAG" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.StateDetailsImpl" table="state_details">
+		<cache usage="read-write" />
+		<id name="STATE_ID" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="STATE_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="STATE_CODE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="BRANCH_FLAG" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="MEDICAL_CENTER_FLAG" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="DROP_BOX_FLAG" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.TempCustomerImpl" table="temp_customer">
+		<cache usage="read-write" />
+		<id name="CUSTOMER_ID" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="CUSTOMER_SALUTATION" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CUSTOMER_FIRST_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CUSTOMER_LAST_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CUSTOMER_MIDDLE_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CUSTOMER_DATE_OF_BIRTH" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CUSTOMER_EMAIL_ADDR" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="OFFICE_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="DESIGNATION" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="DEPARTMENT" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PRIMARY_ADDRESS_LINE_1" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PRIMARY_ADDRESS_LINE_2" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PRIMARY_ADDRESS_LINE_3" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PRIMARY_ADDRESS_CITY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PRIMARY_ADDRESS_STATE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PRIMARY_ADDRESS_PINCODE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PHONE_NUMBER_1" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PHONE_NUMBER_2" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PHONE_NUMBER_3" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="LOGIN_NAME" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="GENDER" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="MARITAL_STATUS" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="COUNTRY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PRIMARY_ADDRESS_STATE_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="PRIMARY_ADDRESS_CITY_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="QRC_ASR_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="PANCARD" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifli.rapid.model.impl.TempCustomerAddressImpl" table="temp_customer_address">
+		<cache usage="read-write" />
+		<id name="CUSTOMER_ADDRESS_ID" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="CUSTOMER_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ADDRESS_LINE_1" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ADDRESS_LINE_2" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ADDRESS_LINE_3" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CHANGE_REQUEST_TYPE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CITY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="STATE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CITY_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="STATE_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="PIN_CODE" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CHANGE_REQUEST_FOR" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ADDRESS_TYPE_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ADDR_STATUS" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="INSERTED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="INSERTED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="UPDATED_BY" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="UPDATED_DATE" type="org.hibernate.type.TimestampType" />
+		<property name="QRC_ASR_ID" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="com.ifl.rapid.customer.model.impl.ApplyTrnApplicationFormImpl" table="Apply_Trn_ApplicationForm">
+		<cache usage="read-write" />
+		<id name="ApplicationFormId" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+		<property name="QuoteId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ApplicationRefNo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="SeqGenerator" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="LTRFFormRefNo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PremiumAmount" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="IsMedicalRequired" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ShortPremium" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="PremiumDueDate" type="org.hibernate.type.TimestampType" />
+		<property name="PolicyNo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PolicyElapsedDate" type="org.hibernate.type.TimestampType" />
+		<property name="PolicyIssueDate" type="org.hibernate.type.TimestampType" />
+		<property name="Status" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Completion" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="IsLapsed" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="NextPremiumDueDate" type="org.hibernate.type.TimestampType" />
+		<property name="PolicyStatus" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="IsActive" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="CreatedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifl.rapid.customer.model.impl.ApplyTrnQuoteDetailsImpl" table="Apply_Trn_QuoteDetails">
+		<cache usage="read-write" />
+		<id name="QuoteId" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+		<property name="ContactId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ProductId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PremiumTypeId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PremiumFrequencyId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="AssuredTerm" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="AssuredAge" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="DataXml" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="DeathBenefitOption" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ExpiryDate" type="org.hibernate.type.TimestampType" />
+		<property name="IsStaff" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="IsActive" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="PolicyOption" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="PayingTerm" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ProposalStartDate" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="RefNo" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="PlanTerm" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="PremiumTerm" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="PremiumAmount" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="SumAssured" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="SummaryXml" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PdfLocation" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="pdfDataXml" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="IsSmoker" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="SignatureFilePath" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="BDMSignatureFilePath" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="BDMId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="IsAssisted" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="InputXML" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="LeadId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifl.rapid.customer.model.impl.CityImpl" table="Loc_Mst_City">
+		<cache usage="read-write" />
+		<id name="CityId" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="CityCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CityName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="IsActive" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="CreatedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="StateId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="com.ifl.rapid.customer.model.impl.Config_Mst_GenericMasterImpl" table="Config_Mst_GenericMaster">
+		<cache usage="read-write" />
+		<id name="GenericMasterId" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="MasterType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="MasterId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="MasterKey" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="IsActive" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="Description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifl.rapid.customer.model.impl.CRM_Trn_AddressImpl" table="CRM_Trn_Address">
+		<cache usage="read-write" />
+		<id name="AddressId" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="ContactId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="AddressTypeId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="AddressLine1" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="AddressLine2" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="AddressLine3" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="District" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="StateId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="CityId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="Pincode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CountryId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="IsActive" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.ifl.rapid.customer.model.impl.CRM_Trn_ContactImpl" table="CRM_Trn_Contact">
+		<cache usage="read-write" />
+		<id name="ContactId" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="Salutation" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="FirstName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="MiddleName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="LastName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PANNo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Gender" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="BloodGroup" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="DateOfBirth" type="org.hibernate.type.TimestampType" />
+		<property name="MaritalStatus" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="QualificationId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="OccupationId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="SourceId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="CategoryId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ReferredBy" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ContactTypeId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="DNDActivated" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="PoliticallyExposed" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="EIANumber" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="SeqGenerator" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ReferenceNo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="EIAServiceProvider" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="AadharCardNo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="WeddingAnniversary" type="org.hibernate.type.TimestampType" />
+		<one-to-one name="PhotographBlobModel" access="com.liferay.portal.dao.orm.hibernate.PrivatePropertyAccessor" class="com.ifl.rapid.customer.model.CRM_Trn_ContactPhotographBlobModel" cascade="save-update" outer-join="false" constrained="true" />
+		<property name="CreatedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="IsActive" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifl.rapid.customer.model.CRM_Trn_ContactPhotographBlobModel" table="CRM_Trn_Contact" lazy="true">
+		<id name="ContactId" column="ContactId">
+			<generator class="foreign">
+				<param name="property">com.ifl.rapid.customer.model.impl.CRM_Trn_ContactImpl</param>
+			</generator>
+		</id>
+		<property column="Photograph" name="PhotographBlob" type="blob" />
+	</class>
+	<class name="com.ifl.rapid.customer.model.impl.CRM_Trn_PhoneImpl" table="CRM_Trn_Phone">
+		<cache usage="read-write" />
+		<id name="PhoneId" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="ContactId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="PhoneType" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="PhoneNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="IsActive" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifl.rapid.customer.model.impl.CRM_Trn_PolicyAddressImpl" table="CRM_Trn_PolicyAddress">
+		<cache usage="read-write" />
+		<id name="PolicyAddressId" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="ContactId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="PolicyNo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="AddressId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="IsActive" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.ifl.rapid.customer.model.impl.CRMTrnContactCommunicationImpl" table="CRM_Trn_ContactCommunication">
+		<cache usage="read-write" />
+		<id name="ContactCommunicationId" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="ContactId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="CommunicationMedium" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="CommunicationMediumId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="IsActive" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifl.rapid.customer.model.impl.CRMTrnFamilyMemberImpl" table="CRM_Trn_FamilyMember">
+		<cache usage="read-write" />
+		<id name="FamilyMemberId" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="ContactId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="MemberId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="RelationshipId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="FinanciallyDependent" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="IsActive" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.ifl.rapid.customer.model.impl.LocMstBranchLocationImpl" table="Loc_Mst_BranchLocation">
+		<cache usage="read-write" />
+		<id name="BranchId" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="BranchName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="BranchOpeningTime" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="BranchClosingTime" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="AddressFirstLine" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="AddressSecondLine" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PrimaryContactNo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="OtherContactNo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="FaxNumber" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="LocationId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="LocationId_old" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Longitude" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="Latitude" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="BranchCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="IsActive" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifl.rapid.customer.model.impl.LocMstLocationImpl" table="Loc_Mst_Location">
+		<cache usage="read-write" />
+		<id name="LocationId" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="StateId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="CityId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="PinCode" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="AreaName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Latitude" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="Longitude" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="CreatedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="IsActive" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifl.rapid.customer.model.impl.PrdMstProductImpl" table="Prd_Mst_Product">
+		<cache usage="read-write" />
+		<id name="ProductId" type="java.lang.String">
+			<generator class="assigned" />
+		</id>
+		<property name="ProductKey" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="DisplayOrder" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="RenewalDuration" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="ShortTermDuration" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="MinPlanTerm" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="MaxPlanTerm" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="MinSumAssured" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="MaxSumAssured" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="IsRegularPremium" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="IsLimitedPremium" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="IsSinglePremium" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="IsActive" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="CreatedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifl.rapid.customer.model.impl.QrcMstRequestsImpl" table="Qrc_Mst_Requests">
+		<cache usage="read-write" />
+		<id name="RequestId" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="Category" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CallType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CallSubType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Keyword" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="IsActive" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="CreatedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifl.rapid.customer.model.impl.QrcMstServicesImpl" table="Qrc_Mst_Services">
+		<cache usage="read-write" />
+		<id name="ServiceId" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="ServiceName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="IsActive" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifl.rapid.customer.model.impl.QrcMstSubServicesImpl" table="Qrc_Mst_Sub_Services">
+		<cache usage="read-write" />
+		<id name="SubServiceId" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="SubServiceName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="SubServiceUrl" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ServiceId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="IsActive" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.ifl.rapid.customer.model.impl.QrcTrnHistoryImpl" table="Qrc_Trn_History">
+		<cache usage="read-write" />
+		<id name="HistoryId" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="ContactId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="CreatedContactId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="RequestType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ChangeRequestType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PickupDate" type="org.hibernate.type.TimestampType" />
+		<property name="PickupTime" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="XMLData" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="AddressTypeId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="BranchId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="IsActive" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="CreatedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifl.rapid.customer.model.impl.QrcTrnOtpImpl" table="Qrc_Trn_Otp">
+		<cache usage="read-write" />
+		<id name="Otp_Id" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="Otp" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ContactId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="CreatedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="IsActive" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifl.rapid.customer.model.impl.QrcTrnServiceRequestsImpl" table="Qrc_Trn_ServiceRequests">
+		<cache usage="read-write" />
+		<id name="ServiceRequestId" type="int">
+			<generator class="identity" />
+		</id>
+		<property name="ContactId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="SrId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="ProcessId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Source" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Channel" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Priority" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="PolicyNo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CaseDetails" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="IsManual" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="IsLAUpdated" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Comments" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="IsSignVerified" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="RequestId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="AssignedTo" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="CreatedContactId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="HistoryId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="AddressTypeId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="IsActive" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="CreatedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ifl.rapid.customer.model.impl.StateImpl" table="Loc_Mst_State">
+		<cache usage="read-write" />
+		<id name="StateId" type="int">
+			<generator class="assigned" />
+		</id>
+		<property name="StateCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="StateName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="IsActive" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="CreatedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CreatedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="ModifiedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>
